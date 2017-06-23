@@ -1,0 +1,17 @@
+/* ---------------------------------------------------- */
+/* --- Ao criar mais arquivos .scss inclua-os aqui --- */
+/* --------------------------------------------------- */
+
+@import
+ "buttons",
+ "footer",
+ "form",
+ "header",
+ "lists",
+ "nav",
+ "variables"
+;
+
+body {
+	background: $branco;
+}   
