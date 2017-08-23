@@ -121,11 +121,11 @@
 
                                             <?php if($success == true) : ?>
 
-                                            <p class='bg-success' style="margin-left: 100px; text-align: center; color: #fff" >Inserido com Sucesso!</p>
+                                            <p class='bg-success' style="margin-left: 100px; text-align: center; color: #fff" >Alteração realizada com Sucesso!</p>
 
                                             <?php endif; ?>
 
-                                            <button style="margin-left: 100px" type="submit" class="btn btn-purple waves-effect waves-light" name="cadastrar">Cadastrar</button>
+                                            <button style="margin-left: 100px" type="submit" class="btn btn-purple waves-effect waves-light" name="atualizar">Atualizar</button>
                                         </form>
                                     </div><!-- end col -->
                                 </div><!-- end row -->  
