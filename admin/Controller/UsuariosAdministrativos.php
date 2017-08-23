@@ -48,7 +48,7 @@ if(isset($_POST['atualizar'])):
   $id = (int)$_GET['id'];
 
   if($usuarioAdm->update($id)) {
-    echo 'atualizado';
+      return $success = true;
   }
 
 endif;
