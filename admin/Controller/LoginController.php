@@ -14,10 +14,12 @@ $loginAdm = new DAOUsuariosAdministrativos();
 
 if( isset($_POST['fazerLogin']) ) {
 
-    $user = $_POST['usuario'];
-    $pass = $_POST['senha'];
-    $resultado = $loginAdm->login($user, $pass);
-    echo $resultado->nome;              
+    $user = isset($_POST['usuario']) ? $_POST['usuario'] : '';
+    $pass = isset($_POST['senha']) ? $_POST['usuario'] : '';
+
+    if ( $user ) :
+        $resultado = $loginAdm->login($user, $pass);
+    endif;
 
     if ( $resultado ) :
         $_SESSION['usuario'] = $user; 
