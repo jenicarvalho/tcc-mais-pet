@@ -27,7 +27,7 @@
 
                         <div class="form-group">
                             <div class="col-xs-12">
-                                   <input type="password" class="form-control" id="exampleInputPassword1" placeholder="******" name="senha">
+                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="******" name="senha">
 
                                 <?php if($success == false) : ?>
                                 <p class='bg-danger' style="text-align: center; color: #fff; margin-top: 10px" >Dados incorretos</p>

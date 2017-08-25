@@ -16,4 +16,9 @@ class PaginasController
     {
         include "view/Painel/index.php";
     }
+
+    public function PainelVerUsuariosAdm()
+    {
+        include "view/Painel/lista-usuarios-administrativos.php";
+    }
 }

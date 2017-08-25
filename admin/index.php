@@ -19,4 +19,8 @@ switch($pagina) {
     case "painel" : 
     $ctrl->Painel();
     break;
+    
+    case "administrativos" : 
+    $ctrl->PainelVerUsuariosAdm();
+    break;
 }
