@@ -8,9 +8,10 @@
 
 session_save_path("/tmp"); 
 
-require_once "http://jenicarvalho.com.br/maispet/DAO/DAOUsuariosAdministrativos.php";
+require_once "Model/UsuariosAdministrativos.php";
+$resultado = '';
 
-$loginAdm = new DAOUsuariosAdministrativos();
+$loginAdm = new UsuariosAdministrativos();
 
 if( isset($_POST['fazerLogin']) ) {
 
@@ -24,9 +25,16 @@ if( isset($_POST['fazerLogin']) ) {
 
     if ( $resultado ) :
         $_SESSION['usuario'] = $user; 
-        header('Location: http://jenicarvalho.com.br/maispet/admin/?pagina=painel');
+        header('Location: http://localhost/maispet/admin/?pagina=painel');
         return $success = true;
     else :
       return $success = false;
     endif;
+}
+
+
+//Logout
+if (isset($_GET['logout']) == true) {
+    unset($_SESSION['usuario']);
+    header('Location: http://localhost/maispet/admin/?pagina=login');
 }

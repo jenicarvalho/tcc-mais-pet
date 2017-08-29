@@ -14,7 +14,7 @@ class PaginasController
 
     public function Painel()
     {
-        include "view/Painel/index.php";
+        include "View/Painel/index.php";
     }
 
     public function PainelVerUsuariosAdm()

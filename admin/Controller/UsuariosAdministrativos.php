@@ -10,7 +10,7 @@
 
   $usuarioAdm = new UsuariosAdministrativos();
 
-//cadastr
+//cadastra
 if( isset($_POST['cadastrar']) && $_POST['nome'] != ""):
 
     $nome = $_POST['nome'];
@@ -58,7 +58,7 @@ if( isset($_GET['acao']) &&  $_GET['acao'] == 'deletar' ) :
 
   $id = (int)$_GET['id'];
   if( $usuarioAdm->delete( $id )) {
-    echo 'deletado';
+    return $successDelete = true;
   }
 endif;
 

@@ -9,10 +9,11 @@
 
 
     if ( isset($_SESSION['usuario']) ) : 
-    $success = true;
+    $success = false;
+    $successDelete = false;
     require_once "Model/UsuariosAdministrativos.php";
     require_once "view/includes/head.php";
-    $usuarioAdm = new UsuariosAdministrativos();
+    require_once "Controller/UsuariosAdministrativos.php"
 ?>
 <body class="fixed-left">
 
@@ -48,52 +49,7 @@
         <!-- Top Bar End -->
 
 
-        <!-- ========== Left Sidebar Start ========== -->
-        <div class="left side-menu">
-            <div class="sidebar-inner slimscrollleft">
-
-                <!-- User -->
-                <div class="user-box">
-                    <div class="user-img">
-                        <img src="view/assets/images/users/avatar-1.jpg" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
-                        <div class="user-status offline"><i class="zmdi zmdi-dot-circle"></i></div>
-                    </div>
-                    <h5><a href="#">Maurício Lopes</a> </h5>
-                    <ul class="list-inline">
-                        <li>
-                            <a href="#" >
-                                <i class="zmdi zmdi-settings"></i>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#" class="text-custom">
-                                <i class="zmdi zmdi-power"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- End User -->
-
-                <!--- Sidemenu -->
-                <div id="sidebar-menu">
-                    <ul>
-                        <li>
-                            <a href="?pagina=painel" class="waves-effect"><i class="zmdi zmdi-view-dashboard"></i> <span> Inicio </span> </a>
-                        </li>
-                        <li>
-                            <a href="?pagina=administrativos" class="waves-effect"><i class="zmdi zmdi zmdi-accounts-add"></i> <span> Ver usuários </span> </a>
-                        </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                </div>
-                <!-- Sidebar -->
-                <div class="clearfix"></div>
-
-            </div>
-
-        </div>
-        <!-- Left Sidebar End -->
+        <?php require_once("sidebar.php") ?>
 
 
         <div class="content-page">
@@ -164,7 +120,6 @@
                                         </form>
                                     </div><!-- end col -->
                                 </div><!-- end row -->  
-
                                 <?php  else :?>  
 
                                 <h4 class="header-title m-t-0 m-b-30">Todos os usuarios cadastrados</h4>
@@ -178,8 +133,7 @@
                                               <th>Nome</th> 
                                               <th>E-mail</th> 
                                               <th>CPF</th>   
-                                              <th>Login</th>           
-                                              <th>senha</th>   
+                                              <th>Login</th>   
                                               <th>Ações</th>  
                                           </tr> 
                                           </thead> 
@@ -191,7 +145,6 @@
                                                <td><?php echo $valor->email?> </td>
                                                <td><?php echo $valor->cpf?> </td>
                                                <td><?php echo $valor->login?> </td>
-                                               <td><?php echo $valor->senha?> </td>
                                                <td>
                                                     <a href="?pagina=administrativos&acao=editar&id=<?php echo $valor->id ?>">Editar </a> |
 
@@ -199,11 +152,66 @@
                                                </td> 
                                              </tr> 
                                            <?php endforeach;?>
+
+                                           <?php if($successDelete == true) : ?>
+                                          
+                                           <p class='bg-success' style="text-align: center; color: #fff" >Deletado com Sucesso!</p>
+
+                                           <?php endif; ?>
                                           </tbody> 
                                           </table> 
                                         </div>
                                     </div><!-- end col -->
-                                </div><!-- end row -->
+                                </div>  
+                            </div>
+
+                            <div class="card-box">
+                                <h4 class="header-title m-t-0 m-b-30">Cadastrar Novo Administrador</h4>
+                                <div class="row">
+                                  <?php if($success == true) : ?>
+
+                                  <p class='bg-success' style="text-align: center; color: #fff" >Inserido com Sucesso!</p>
+
+                                  <?php endif; ?>
+                                    <div class="col-lg-12">
+                                        <form class="form" method="post">
+                                          <div class="form-group">
+                                            <label for="exampleInputName2">Nome</label>
+                                            <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe" name="nome" required>
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="exampleInputEmail2">Email</label>
+                                            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com" name="email" required>
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="exampleInputEmail2">CPF</label>
+                                            <input type="text" class="form-control" id="exampleInputEmail2" placeholder="CPF" name="cpf" required>
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="exampleInputEmail2">Login</label>
+                                            <input type="text" class="form-control" id="exampleInputEmail2" placeholder="Login" name="login" required>
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="exampleInputEmail2">Senha</label>
+                                            <input type="password" class="form-control" id="exampleInputEmail2" placeholder="Senha" name="senha" required>
+                                          </div>
+
+                                          <div class="form-group">
+                                            <label for="exampleInputEmail2">Senha</label>
+                                            <input type="password" class="form-control" id="exampleInputEmail2" placeholder="Senha" name="senha" required>
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="exampleInputEmail2">Nível</label>
+                                            <select name="nivel" class="form-control" required>
+                                                <option value="1">Administrador (Tem acesso total)</option>
+                                                <option value="2">Veterinário</option>
+                                                <option value="3">Assistente</option>
+                                            </select>
+                                          </div>
+                                          <button type="submit" class="btn btn-default" name="cadastrar">Enviar</button>
+                                        </form>
+                                    </div><!-- end col -->
+                                </div>
                                 <?php endif; ?>  
                             
                             </div>

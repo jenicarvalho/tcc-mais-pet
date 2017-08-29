@@ -49,58 +49,8 @@ if ( isset($_SESSION['usuario']) ) : ?>
         <!-- Top Bar End -->
 
 
-        <!-- ========== Left Sidebar Start ========== -->
-        <div class="left side-menu">
-            <div class="sidebar-inner slimscrollleft">
+        <?php require_once("sidebar.php") ?>
 
-                <!-- User -->
-                <div class="user-box">
-                    <div class="user-img">
-                        <img src="view/assets/images/users/avatar-1.jpg" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
-                        <div class="user-status offline"><i class="zmdi zmdi-dot-circle"></i></div>
-                    </div>
-                    <h5><a href="#">Maurício Lopes</a> </h5>
-                    <ul class="list-inline">
-                        <li>
-                            <a href="#" >
-                                <i class="zmdi zmdi-settings"></i>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#" class="text-custom">
-                                <i class="zmdi zmdi-power"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- End User -->
-
-                <!--- Sidemenu -->
-                <div id="sidebar-menu">
-                    <ul>
-                        <li>
-                            <a href="?pagina=painel" class="waves-effect"><i class="zmdi zmdi-view-dashboard"></i> <span> Inicio </span> </a>
-                        </li>
-                        <li>
-                            <a href="?pagina=administrativos" class="waves-effect"><i class="zmdi zmdi zmdi-accounts-add"></i> <span> Ver usuários </span> </a>
-                        </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                </div>
-                <!-- Sidebar -->
-                <div class="clearfix"></div>
-
-            </div>
-
-        </div>
-        <!-- Left Sidebar End -->
-
-
-
-        <!-- ============================================================== -->
-        <!-- Start right Content here -->
-        <!-- ============================================================== -->
         <div class="content-page">
             <!-- Start content -->
             <div class="content">
@@ -230,16 +180,11 @@ if ( isset($_SESSION['usuario']) ) : ?>
     </div>
     <!-- END wrapper -->
 
-<?php
-    require_once "view/includes/footer.php";
-?>
+<?php require_once "view/includes/footer.php"; ?>
 
+<?php else : ?>
 
+    <script>alert("Você não tem acesso.");</script>
+    <meta http-equiv="refresh" content="0; url=http://localhost/maispet/admin/?pagina=login">
 
-
-
-
-<?php 
-	else :
-	echo "Sem acesso";
-endif;
+<?php endif; ?>

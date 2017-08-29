@@ -1,5 +1,6 @@
 <?php
     $success = true;
+    $resultado = '';
     require_once "Controller/LoginController.php";
     require_once "view/includes/head.php";
 ?>
@@ -21,13 +22,13 @@
 
                         <div class="form-group ">
                             <div class="col-xs-12">
-                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="seuemail@conta.com" name="usuario">
+                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="seuemail@conta.com" name="usuario" required>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="col-xs-12">
-                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="******" name="senha">
+                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="******" name="senha" required>
 
                                 <?php if($success == false) : ?>
                                 <p class='bg-danger' style="text-align: center; color: #fff; margin-top: 10px" >Dados incorretos</p>
@@ -39,12 +40,6 @@
                             <div class="col-xs-12">     
                                 <button type="submit" class="btn btn-custom btn-bordred btn-block waves-effect waves-light" name="fazerLogin">Enviar</button>
                             </div>                           
-                        </div>
-
-                        <div class="form-group m-t-30 m-b-0">
-                            <div class="col-sm-12">
-                                <a href="page-recoverpw.html" class="text-muted"><i class="fa fa-lock m-r-5"></i> Esqueceu a senha?</a>
-                            </div>
                         </div>
                     </form>
 
