@@ -1,0 +1,298 @@
+/* MENU STYLE */
+
+.navbar {
+	background-color: rgba(204, 204, 204, 0);
+}
+
+.menuText {
+	color: #fff;
+	font-weight: 600;
+}
+
+.login {
+	float: right;
+	margin-top: 10px !important;
+}
+
+.btn-login {
+	margin-top: 0px;
+}
+
+.loginTextButton {
+	margin: 9px 15px 9px 15px !important;
+	font-weight: 600;
+}
+
+.menuHover:hover ul li {
+	background-color: rgba(214, 284, 244) !important;
+}
+
+
+/* STYLE */
+
+.logoAndSearch {
+	margin-top: -73px;
+	background-size: cover;
+    position: relative;
+    background-image: url(../img/back-home.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-attachment: fixed;
+    z-index: -1;
+}
+
+
+@media (width: 1600px) {
+	.logoAndSearch {
+		min-height: 476px;
+		padding-top: 120px;
+	}
+	.searchList {
+		min-height: 476px;
+		padding-top: 20px;
+	}
+}
+
+@media (width: 1366px) {
+	.logoAndSearch {
+		min-height: 350px;
+		padding-top: 70px;
+	}
+
+	.searchList {
+		min-height: 350px;
+		padding-top: 70px;
+	}
+}
+
+@media (width: 1280px) {
+	.logoAndSearch {
+		min-height: 640px;
+		padding-top: 200px;
+	}
+
+	.searchList {
+		min-height: 350px;
+		padding-top: 70px;
+	}
+}
+
+.logo h1 {
+	font-size: 66px;
+	font-weight: 500;
+	text-align: center;
+	color: #fff;
+}
+
+.search {
+	width: 65%;
+	margin: 0 auto;
+}
+
+.formSearch {
+	
+}
+
+.inputSearch {
+	width: 70%;
+	float: left;
+	padding-left: 10px;
+	height: 35px;
+	border-radius: 4px;
+}
+
+.btnSearch {
+	width: 28%;
+	height: 34px;
+	float: left;
+	margin-top: 1px;
+	margin-left: 2%;
+	border-radius: 4px;
+	background-color: #fff;
+}
+
+.filters {
+	width: 100%;
+	float: left;
+}
+
+.formFilters label {
+	padding-left: 5%;
+}
+
+.formFilters select {
+	width: 90%;
+	margin-left: 5%;
+	margin-right: 5%;
+	height: 25px;
+	border-radius: 4px;
+	margin-top: 20px;
+}
+
+.btnFilter {
+	width: 90%;
+	margin-left: 5%;
+	margin-right: 5%;
+	height: 30px;
+	border-radius: 4px;
+	margin-top: 20px;
+	font-weight: 600;
+}
+
+.btnFilter:hover {
+	background-color: #0090c7;
+	color: #fff;
+}
+
+.playCard {
+	padding-top: 30px;
+	padding-bottom: 30px;
+	border-bottom: 1px solid #5f5f5f;
+}
+
+.space {
+	width: 100%;
+	height: 40px;
+}
+
+.age {
+	margin-top: 20px;
+	min-height: 20px;
+}
+
+.age i {
+	float: left;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.age h3 {
+	float: left;
+	margin-left: 10px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.brood {
+	margin-top: 10px;
+	min-height: 20px;
+}
+
+.brood i {
+	float: left;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.brood h3 {
+	float: left;
+	margin-left: 10px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.neighborhood {
+	margin-top: 10px;
+	min-height: 20px;
+}
+
+.neighborhood i {
+	float: left;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.neighborhood h3 {
+	float: left;
+	margin-left: 10px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.featuredData {
+	color: #5f5f5f;
+}
+
+.featuredData h2 {
+	font-size: 20px;
+	font-weight: 600;
+}
+
+.featuredData h3 {
+	font-size: 14px;
+	font-weight: 500;
+	float: left;
+}
+
+.featuredPicture {
+	width: 100%;
+}
+
+.featuredPicture img {
+	width: 70%;
+	float: right;
+}
+
+.featuredData hr {
+	width: 50%;
+	color: #000;
+	float: left;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+
+.sliderPadding {
+	padding-top: 30px;
+	padding-left: 50px;
+	padding-right: 25% !important;
+}
+
+.playCardActions {
+	margin-top: 30px;
+}
+
+.btnCard {
+	width: 100%;
+}
+
+.arrowDown {
+	text-align: center;
+	width: 100px;
+	margin: 0 auto;
+}
+
+.arrowDown i {
+	font-size: 4.5em;
+	color: #fff;
+	padding-top: 180px;
+}
+
+.arrowDown a:hover i {
+	color: #2f206b !important;
+}
+
+/*  FOOTER  */
+
+footer {
+	background-color: #ccc !important;
+	min-height: 200px;
+	padding-top: 10px;
+}
+
+footer h3 {
+	margin-bottom: 15px;
+}
+
+.footerAboutUs {
+	padding-bottom: 15px
+}
+
+.copyright {
+	text-align: center;
+	padding-top: 15px;
+	color: #fff;
+	background-color: #333;
+	height: 50px;
+}
+
+/*  END FOOTER  */
