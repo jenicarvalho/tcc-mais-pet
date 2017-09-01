@@ -19,4 +19,8 @@ switch($pagina) {
     case "signup" : 
     $ctrl->Signup();
     break;
+
+    case "listagem_animais" : 
+    $ctrl->ListaAnimais();
+    break;
 }

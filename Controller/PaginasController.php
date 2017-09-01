@@ -16,4 +16,9 @@ class PaginasController
     {
         include "view/Home/signup.php";
     }
+
+    public function ListaAnimais()
+    {
+        include "view/Animais/animalsList.php";
+    }
 }
