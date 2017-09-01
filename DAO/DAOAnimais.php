@@ -13,24 +13,33 @@ class DAOAnimais extends Dao {
 	public $table = "animal";
 
 	public function insert(){
-		$sql  = "INSERT INTO $this->table (nome, email, cpf, login, senha) VALUES (:nome, :email, :cpf, :login, :senha)";
+		$sql  = "INSERT INTO $this->table (animal, raca, porte, sexo, cor, tipo, nomeAnimal, fotoAnimal, descricao) VALUES (:animal, :raca, :porte, :sexo, :cor, :tipo, :nomeAnimal, :fotoAnimal, :descricao)";
 		$stmt = DB::prepare($sql);
-		$stmt->bindParam(':nome', $this->nome);
-		$stmt->bindParam(':email', $this->email);
-		$stmt->bindParam(':cpf', $this->cpf);
-		$stmt->bindParam(':login', $this->login);
-		$stmt->bindParam(':senha', $this->senha);
+		$stmt->bindParam(':animal', $this->animal);
+		$stmt->bindParam(':raca', $this->raca);
+		$stmt->bindParam(':porte', $this->porte);
+		$stmt->bindParam(':sexo', $this->sexo;
+		$stmt->bindParam(':cor', $this->cor);
+		$stmt->bindParam(':tipo', $this->tipo);
+		$stmt->bindParam(':nomeAnimal', $this->nomeAnimal);
+		$stmt->bindParam(':fotoAnimal', $this->fotoAnimal);
+		$stmt->bindParam(':descricao', $this->descricao);
+
 		return $stmt->execute(); 
 	 }
 
 	public function update($id){
-		$sql  = "UPDATE $this->table SET nome = :nome,  email = :email, cpf = :cpf, login = :login, senha = :senha WHERE id = :id";
+		$sql  = "UPDATE $this->table SET animal = :animal, raca = :raca, porte = :porte, sexo = :sexo, cor = :cor, tipo = :tipo, nomeAnimal = :nomeAnimal, fotoAnimal = :fotoAnimal, descricao = :descricao WHERE id = :id";
 		$stmt = DB::prepare($sql);
-		$stmt->bindParam(':nome', $this->nome);
-		$stmt->bindParam(':email', $this->email);
-		$stmt->bindParam(':cpf', $this->cpf);
-		$stmt->bindParam(':login', $this->login);
-		$stmt->bindParam(':senha', $this->senha);
+		$stmt->bindParam(':animal', $this->animal);
+		$stmt->bindParam(':raca', $this->raca);
+		$stmt->bindParam(':porte', $this->porte);
+		$stmt->bindParam(':sexo', $this->sexo;
+		$stmt->bindParam(':cor', $this->cor);
+		$stmt->bindParam(':tipo', $this->tipo);
+		$stmt->bindParam(':nomeAnimal', $this->nomeAnimal);
+		$stmt->bindParam(':fotoAnimal', $this->fotoAnimal);
+		$stmt->bindParam(':descricao', $this->descricao);
 		$stmt->bindParam(':id', $id);
 		return $stmt->execute();
 	}
