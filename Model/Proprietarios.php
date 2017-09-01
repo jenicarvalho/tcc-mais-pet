@@ -37,6 +37,11 @@ class Proprietarios extends DAOProprietarios {
 		$this->email = $email;
 	}
 
+	public function getEmail(){
+		return $this->email;
+	}
+	
+
 	public function setCpf($cpf){
 		$this->cpf = $cpf;
 	}
@@ -76,4 +81,45 @@ class Proprietarios extends DAOProprietarios {
 	public function getSexo(){
 		return $this->sexo;
 	}
+
+	public function setBairro($bairro){
+		$this->bairro = $bairro;
+	}
+
+	public function getBairro(){
+		return $this->bairro;
+	}
+
+	public function setCidade($cidade){
+		$this->cidade = $cidade;
+	}
+
+	public function getCidade(){
+		return $this->cidade;
+
+	}
+	public function setEstado($estado){
+		$this->estado = $estado;
+	}
+
+	public function getBairro(){
+		return $this->estado;
+	}
+
+	public function setCelular($celular){
+		$this->celular = $celular;
+	}
+
+	public function getCelular(){
+		return $this->celular;
+	}
+
+	public function setTelefone($telefone){
+		$this->telefone = $telefone;
+	}
+
+	public function getTelefone(){
+		return $this->telefone;
+	}
+
 }
