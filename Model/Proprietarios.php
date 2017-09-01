@@ -73,7 +73,7 @@ class Proprietarios extends DAOProprietarios {
 		$this->sexo = $sexo;
 	}
 
-	public function getDataNascimento(){
+	public function getSexo(){
 		return $this->sexo;
 	}
 }
