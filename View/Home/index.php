@@ -1,16 +1,22 @@
-<?php require_once "view/includes/header.php";?>
+<?php
+
+    require_once "view/includes/head.php";
+    require_once "view/includes/body.php";
+    require_once "view/includes/navMenu.php";
+?>
+
 
     <section id="logoAndSearch" class="logoAndSearch">
       <div class="container">
         <div class="row">
           <div class="col-md-6 col-sm-12">
-            <img src="dogsTalk.png">
+            <img src="assets/img/dogsTalk.png" class="dogsTalk">
           </div>
           <div class="col-md-6 col-sm-12">
             <div class="row">
               <div class="col-md-12 col-sm-12">
                 <div class="logo">
-                  <img src="assets/img/logo.PNG" class="logoLightHome">
+                  <img src="assets/img/logo.png" class="logoLightHome">
                 </div>
               </div>
               <div class="col-md-12 col-sm-12">
@@ -34,5 +40,9 @@
       </div>
     </section>
 
-<?php require_once "view/includes/footer.php";?>
-		
+
+<?php
+
+   require_once "view/includes/footer-Registers.php";
+?>
+    

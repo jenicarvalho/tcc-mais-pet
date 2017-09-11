@@ -1,4 +1,9 @@
-<?php require_once "view/includes/header.php";?>
+<?php
+
+    require_once "view/includes/head.php";
+    require_once "view/includes/body.php";
+    require_once "view/includes/navMenu.php";
+?>
 
   <section class="searchList">
     <div class="container">
@@ -123,5 +128,8 @@
     </div>
   </section>
 
-<?php require_once "view/includes/footer.php";?>
-		
+<?php
+
+   require_once "view/includes/footer-Registers.php";
+?>
+    

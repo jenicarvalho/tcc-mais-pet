@@ -1,10 +1,11 @@
-<?php 
-  $success = false;
-  require_once("Controller/ProprietariosController.php");
-  require_once "view/includes/header.php";
+<?php
+
+    require_once "view/includes/head.php";
+    require_once "view/includes/body.php";
+    require_once "view/includes/navMenu.php";
 ?>
 
-    <section class="signUp">
+    <section class="">
       <div class="container">
         <div class="row">
           <div class="col-md-12 col-sm-12">
@@ -31,11 +32,7 @@
                   <input type="text" class="inputRegister" name="birthdayDate" placeholder="Data de Nascimento...">
                 </div>
                 <div class="col-md-6 col-sm-12">
-                  <select name="" id="sex"  class="inputRegister" >
-                    <option value="">Sexo</option>
-                    <option value="f">Feminino</option>
-                    <option value="m">Masculino</option>
-                  </select>
+                  <input type="text" class="inputRegister" name="sex" placeholder="Sexo...">
                 </div>
               </div>
               <div class="row inputLine">
@@ -51,23 +48,15 @@
                   <input type="text" class="inputRegister" name="city" placeholder="Cidade...">
                 </div>
                 <div class="col-md-6 col-sm-12">
-                  <select name="" id="sex" class="inputRegister" name="state">
-                    <option value="">Estado</option>
-                    <option value="sp">São Paulo</option>
-                    <option value="rj">Rio de Janeiro</option>
-                    <option value="mg">Minas Gerais</option>
-                  </select>
+                  <input type="text" class="inputRegister" name="state" placeholder="Estado...">
                 </div>
               </div>
               <div class="row inputLine">
-                <div class="col-md-4 col-sm-12">
+                <div class="col-md-7 col-sm-12">
                   <input type="text" class="inputRegister" name="document" placeholder="CPF...">
                 </div>
                 <div class="col-md-5 col-sm-12">
-                  <input type="text" class="inputRegister" name="email" placeholder="E-mail...">
-                </div>
-                <div class="col-md-3 col-sm-12">
-                  <input type="text" class="inputRegister" name="senha" placeholder="Senha...">
+                  <input type="text" class="inputRegister" name="E-mail" placeholder="E-mail...">
                 </div>
               </div>
               <div class="row inputLine">
@@ -86,9 +75,15 @@
             </form>
             <i class="fa fa-lock spanLockerIcon"></i><span class="spanLocker">Suas informações estão seguras conosco!</span>
           </div>
+          <div class="col-md-6 col-sm-12">
+            <img src="assets/img/pcDog.png" class="pcDog">
+          </div>
         </div>
       </div>
     </section>
 
-<?php require_once "view/includes/footer.php";?>
+<?php
+
+   require_once "view/includes/footer-Registers.php";
+?>
 		

@@ -102,7 +102,7 @@ class Proprietarios extends DAOProprietarios {
 		$this->estado = $estado;
 	}
 
-	public function getBairro(){
+	public function getEstado(){
 		return $this->estado;
 	}
 

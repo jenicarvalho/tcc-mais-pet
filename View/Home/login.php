@@ -1,4 +1,10 @@
-<?php require_once "view/includes/header.php";?>
+<?php
+
+    require_once "view/includes/head.php";
+    require_once "view/includes/body.php";
+    require_once "view/includes/navMenu.php";
+?>
+
 
     <section class="signUp" id="loginPage">
       <div class="container">
@@ -25,7 +31,7 @@
               </div>
               <div class="row inputLine">
                 <div class="col-md-12 col-sm-12">
-                  <input type="text" class="inputRegister" name="birthdayDate" placeholder="Senha...">
+                  <input type="password" class="inputRegister" name="birthdayDate" placeholder="Senha...">
                 </div>
               </div>
               <div class="row inputLine">
@@ -41,5 +47,9 @@
       </div>
     </section>
 
-<?php require_once "view/includes/footer.php";?>
+
+<?php
+
+   require_once "view/includes/footer-Registers.php";
+?>
     

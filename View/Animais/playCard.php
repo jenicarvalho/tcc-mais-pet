@@ -1,47 +1,55 @@
 <?php
 
-include ("header.php"); ?>
+    require_once "view/includes/head.php";
+    require_once "view/includes/body.php";
+    require_once "view/includes/navMenu.php";
+?>
+
 
   <section class="searchList">
     <div class="container">
       <div class="row">
         <div class="col-md-3 col-sm-12">
-          <div class="logo">
-            <h1>LOGO</h1>
-          </div>
-          <div class="filters">
-            <form action="#" class="formFilters">
-              <label>Informações do Proprietário</label>
-              <select name="Idade">
-                <option>2-3 Anos</option>
-                <option>3-4</option>
-              </select>
-              <div style="clear: both;"></div>
-              <select name="Tipagem">
-                <option>Tipo 1</option>
-                <option>Tipo 2</option>
-              </select>
-              <div style="clear: both;"></div>
-              <select name="Quantidade de Crias">
-                <option>0</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-              </select>
-              <div style="clear: both;"></div>
-              <select name="Popularidade">
-                <option>Normal</option>
-                <option>Boa</option>
-                <option>Ótima</option>
-              </select>
-              <div style="clear: both;"></div>
-              <select name="Pedigree">
-                <option>Sim</option>
-                <option>Não</option>
-              </select>
-              <div style="clear: both;"></div>
-              <input type="submit" value="FILTRAR" class="btnFilter">
-            </form>
+          <div class="ownerInformation">
+            <div class="ownerPicture">
+              <img src="img/astor.png" class="ownerPicture">
+            </div>
+            <div class="row">
+              <div class="col-md-12 col-sm-12">
+                <ul class="OwnerSocialMedia">
+                  <li class="facebookIcon"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                  <li class="twitterIcon"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                  <li class="googlePlusIcon"><a href="#"><i class="fa fa-google" aria-hidden="true"></i></a></li>
+                  <li class="instagramIcon"><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                </ul>
+              </div>
+            </div>
+            <h4>Informações do Propritário</h4>
+            <hr>
+            <div class="row paddingInformationContact">
+              <div class="col-md-2 col-sm-2">
+                <i class="fa fa-user contactIcons" aria-hidden="true"></i>
+              </div>
+              <div class="col-md-10 col-sm-10">
+                <p>Robson Caetano</p>
+              </div>
+            </div>
+            <div class="row paddingInformationContact">
+              <div class="col-md-2 col-sm-2">
+                <i class="fa fa-phone contactIcons" aria-hidden="true"></i>
+              </div>
+              <div class="col-md-10 col-sm-10">
+                <p>+55 19 98698-0548</p>
+              </div>
+            </div>
+            <div class="row paddingInformationContact">
+              <div class="col-md-2 col-sm-2">
+                <i class="fa fa-envelope contactIcons" aria-hidden="true"></i>
+              </div>
+              <div class="col-md-10 col-sm-10">
+                <p>robsoncaetano@gmail.com</p>
+              </div>
+            </div>
           </div>
         </div>
         <div class="col-md-9">
@@ -49,7 +57,7 @@ include ("header.php"); ?>
             <div class="row">
               <div class="col-md-3 col-sm-4">
                 <div class="featuredPicture">
-                  <img src="img/astor.png">
+                  <img src="img/astor.png" class="paddingCard">
                 </div>
               </div>
               <div class="col-md-6 col-sm-8">
@@ -72,7 +80,7 @@ include ("header.php"); ?>
             <div class="row">
               <div class="col-md-12 col-sm-12">
                 <div class="sliderPadding">
-                  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                  <div id="myCarousel" class="carousel slide sliderPosition" data-ride="carousel">
                     <!-- Indicators -->
                     <ol class="carousel-indicators">
                       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -82,10 +90,10 @@ include ("header.php"); ?>
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner">
                       <div class="item active">
-                        <img src="img/astor3.JPG" alt="Astor">
+                        <img src="img/astor1.JPG" alt="Astor">
                       </div>
                       <div class="item">
-                        <img src="img/astor3.JPG" alt="Astor">
+                        <img src="img/astor2.JPG" alt="Astor">
                       </div>
                       <div class="item">
                         <img src="img/astor3.JPG" alt="Astor">
@@ -106,13 +114,13 @@ include ("header.php"); ?>
             </div>
             <div class="row playCardActions">
               <div class="col-md-4 col-sm-12">
-                <button class="btn btn-default btnCard">Avaliar</button>
+                <button class="btn btnCard playCardActionsButtons">Avaliar</button>
               </div>
               <div class="col-md-4 col-sm-12">
-                <button class="btn btn-default btnCard">Denunciar</button>
+                <button class="btn btnCard playCardActionsButtons">Denunciar</button>
               </div>
               <div class="col-md-4 col-sm-12">
-                <button class="btn btn-default btnCard">Detalhes</button>
+                <button class="btn btnCard playCardActionsButtons">Detalhes</button>
               </div>
             </div>
           </div>
@@ -124,5 +132,5 @@ include ("header.php"); ?>
 
 <?php
 
-include ("footer.php"); ?>
-		
+   require_once "view/includes/footer-Registers.php";
+?>
