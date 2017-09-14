@@ -3,6 +3,10 @@
     require_once "view/includes/head.php";
     require_once "view/includes/body.php";
     require_once "view/includes/navMenu.php";
+
+    $success = "erro";
+    require_once("Controller/ProprietariosController.php");
+
 ?>
 
     <section class="">
@@ -16,15 +20,15 @@
                 <li class="breadCrumbList">Cadastro</li>
               </ul>
             </div>
-            <h1 class="titleHeaderPage">Cadastro (Proprietário)</h1>
+            <h1 class="titleHeaderPage">Cadastro (Proprietário) <?php echo $success?></h1>
           </div>
         </div>
         <div class="row formArea" method="post">
           <div class="col-md-6 col-sm-12">
-            <form class="contact_form">
+            <form class="contact_form" method="post">
               <div class="row inputLine">
                 <div class="col-md-12 col-sm-12">
-                  <input type="text" class="inputRegister" placeholder="Nome Completo...">
+                  <input type="text" class="inputRegister" placeholder="Nome Completo..." name="nome">
                 </div>
               </div>
               <div class="row inputLine">
@@ -56,7 +60,7 @@
                   <input type="text" class="inputRegister" name="document" placeholder="CPF...">
                 </div>
                 <div class="col-md-5 col-sm-12">
-                  <input type="text" class="inputRegister" name="E-mail" placeholder="E-mail...">
+                  <input type="text" class="inputRegister" name="email" placeholder="E-mail...">
                 </div>
               </div>
               <div class="row inputLine">
@@ -69,7 +73,7 @@
               </div>
               <div class="row inputLine">
                 <div class="col-md-12 col-sm-12">
-                  <input type="submit" value="Enviar" class="btnRegister">
+                  <input type="submit" value="Enviar" class="btnRegister" name="cadastrar">
                 </div>
               </div>
             </form>
