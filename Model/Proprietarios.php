@@ -17,8 +17,7 @@ class Proprietarios extends DAOProprietarios {
 	public $endereco;
 	public $senha;
 	public $data_nascimento;
-	public $sexo;
-	
+	public $sexo;	
 	public $bairro;
 	public $cidade;
 	public $estado;

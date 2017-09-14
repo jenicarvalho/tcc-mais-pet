@@ -3,7 +3,7 @@
  *	Project: Mais Pet
  *	Created: 18/08
  *	User: Jeniffer Carvalho
- * 	Usage: Dao de usuarios adm que extende dao
+ * 	Usage: Dao de proprietarios que extende dao
  */
 
 require_once 'DAO/DAO.php';
@@ -13,12 +13,11 @@ class DAOProprietarios extends Dao {
 	public $table = "cliente";
 
 	public function insert(){
-		$sql  = "INSERT INTO $this->table (nome, email, cpf, login, endereco, senha, data_nascimento, sexo, bairro, cidade, estado, celular, telefone) VALUES (:nome, :email, :cpf, :login, :endereco, :senha, :data_nascimento, :sexo, :bairro, :cidade, :estado, :celular, :telefone)";
+		$sql  = "INSERT INTO $this->table (nome, email, cpf, endereco, senha, data_nascimento, sexo, bairro, cidade, estado, celular, telefone) VALUES (:nome, :email, :cpf, :login, :endereco, :senha, :data_nascimento, :sexo, :bairro, :cidade, :estado, :celular, :telefone)";
 		$stmt = DB::prepare($sql);
 		$stmt->bindParam(':nome', $this->nome);
 		$stmt->bindParam(':email', $this->email);
 		$stmt->bindParam(':cpf', $this->cpf);
-		$stmt->bindParam(':login', $this->login);
 		$stmt->bindParam(':endereco', $this->endereco);
 		$stmt->bindParam(':senha', $this->senha);
 		$stmt->bindParam(':data_nascimento', $this->data_nascimento);
@@ -32,12 +31,11 @@ class DAOProprietarios extends Dao {
 	 }
 
 	public function update($id){
-		$sql  = "UPDATE $this->table SET nome = :nome,  email = :email, cpf = :cpf, login = :login, endereco = :endereco, senha = :senha, data_nascimento = :data_nascimento, sexo = :sexo, bairro = :bairro, cidade = :cidade, estado = :estado, celular = :celular, telefone = :telefone WHERE id = :id";
+		$sql  = "UPDATE $this->table SET nome = :nome,  email = :email, cpf = :cpf,  endereco = :endereco, senha = :senha, data_nascimento = :data_nascimento, sexo = :sexo, bairro = :bairro, cidade = :cidade, estado = :estado, celular = :celular, telefone = :telefone WHERE id = :id";
 		$stmt = DB::prepare($sql);
 		$stmt->bindParam(':nome', $this->nome);
 		$stmt->bindParam(':email', $this->email);
 		$stmt->bindParam(':cpf', $this->cpf);
-		$stmt->bindParam(':login', $this->login);
 		$stmt->bindParam(':endereco', $this->endereco);
 		$stmt->bindParam(':senha', $this->senha);
 		$stmt->bindParam(':data_nascimento', $this->data_nascimento);
