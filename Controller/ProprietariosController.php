@@ -1,34 +1,33 @@
   <?php
 /**
  *  Project: Mais Pet
- *  Created: 18/08
+ *  Created: 11/09
  *  User: Jeniffer Carvalho
- *  Usage: cria classe com os dados dos usuarios admninistrativos
+ *  Usage: controller dos proprietarios
  */
 
   require_once "Model/Proprietarios.php";
 
-  $usuarioAdm = new Proprietarios();
+  $proprietario = new Proprietarios();
 
 //cadastra
 if( isset($_POST['cadastrar']) && $_POST['nome'] != ""):
 
-    $nome = $_POST['nome'];
-    $email = $_POST['email'];
-    $cpf = $_POST['cpf'];
-    $login = $_POST['login'];
-    $senha = $_POST['senha'];
+    // $nome = $_POST['nome'];
+    // $email = $_POST['email'];
+    // $cpf = $_POST['cpf'];
+    // $login = $_POST['login'];
+    // $senha = $_POST['senha'];
 
-    $usuarioAdm->setNome($nome);
-    $usuarioAdm->setEmail($email);
-    $usuarioAdm->setCpf($cpf);
-    $usuarioAdm->setLogin($login);
-    $usuarioAdm->setSenha($senha);
+    // $usuarioAdm->setNome($nome);
+    // $usuarioAdm->setEmail($email);
+    // $usuarioAdm->setCpf($cpf);
+    // $usuarioAdm->setLogin($login);
+    // $usuarioAdm->setSenha($senha);
 
-    if( $usuarioAdm->insert() ) {
-      return $success = true;
-    }
-
+      return $success = "foi";
+    // if( $proprietario->insert() ) {
+    // }
 endif;  
 
 // atualiza
