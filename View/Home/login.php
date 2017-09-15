@@ -3,6 +3,7 @@
     require_once "view/includes/head.php";
     require_once "view/includes/body.php";
     require_once "view/includes/navMenu.php";
+    require_once "Controller/LoginController.php";
 ?>
 
 
@@ -22,25 +23,24 @@
         <div class="row formArea" method="post">
           <div class="col-md-4 col-sm-12"></div>
           <div class="col-md-4 col-sm-12">
-            <h1 class="titleHeaderPageLogin">Login (Proprietário)</h1>
-            <form class="formlogin">
+            <h1 class="titleHeaderPageLogin">Login</h1>
+            <form class="formlogin" method="post">
               <div class="row inputLine">
                 <div class="col-md-12 col-sm-12">
-                  <input type="text" class="inputRegister" placeholder="Login...">
+                  <input type="email" class="inputRegister" name="usuario" placeholder="Login..." required>
                 </div>
               </div>
               <div class="row inputLine">
                 <div class="col-md-12 col-sm-12">
-                  <input type="password" class="inputRegister" name="birthdayDate" placeholder="Senha...">
+                  <input type="password" class="inputRegister" name="senha" placeholder="Senha..." required>
                 </div>
               </div>
               <div class="row inputLine">
                 <div class="col-md-12 col-sm-12">
-                  <input type="submit" value="Entrar" class="btnRegister">
+                  <input type="submit" value="Entrar" class="btnRegister" name="fazerLogin">
                 </div>
               </div>
             </form>
-            <i class="fa fa-lock spanLockerIcon"></i><span class="spanLocker">Suas informações estão seguras conosco!</span>
           </div>
           <div class="col-md-4 col-sm-12"></div>
         </div>

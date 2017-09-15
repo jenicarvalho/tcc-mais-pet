@@ -13,7 +13,7 @@ class DAOProprietarios extends Dao {
 	public $table = "cliente";
 
 	public function insert(){
-		$sql  = "INSERT INTO $this->table (nome, email, cpf, endereco, senha, data_nascimento, sexo, bairro, cidade, estado, celular, telefone) VALUES (:nome, :email, :cpf, :login, :endereco, :senha, :data_nascimento, :sexo, :bairro, :cidade, :estado, :celular, :telefone)";
+		$sql  = "INSERT INTO $this->table (nome, email, cpf, endereco, senha, data_nascimento, sexo, bairro, cidade, estado, celular, telefone) VALUES (:nome, :email, :cpf, :endereco, :senha, :data_nascimento, :sexo, :bairro, :cidade, :estado, :celular, :telefone)";
 		$stmt = DB::prepare($sql);
 		$stmt->bindParam(':nome', $this->nome);
 		$stmt->bindParam(':email', $this->email);
@@ -49,12 +49,12 @@ class DAOProprietarios extends Dao {
 		return $stmt->execute();
 	}
 
-	public function login($login, $pass) {
-		$sql = "SELECT * FROM $this->table WHERE email = :login and senha = :senha ";
+	public function login($email, $pass) {
+		$sql = "SELECT * FROM $this->table WHERE email = :email and senha = :senha ";
 		
 		try {
 			$stmt = DB::prepare($sql);
-			$stmt->bindParam(':login', $login, PDO::PARAM_STR);
+			$stmt->bindParam(':email', $email, PDO::PARAM_STR);
 			$stmt->bindParam(':senha', $pass, PDO::PARAM_STR);
 			$stmt->execute();
 

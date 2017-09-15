@@ -23,4 +23,8 @@ switch($pagina) {
     case "listagem_animais" : 
     $ctrl->ListaAnimais();
     break;
+
+    case "painel_cliente" : 
+    $ctrl->PainelCliente();
+    break;
 }

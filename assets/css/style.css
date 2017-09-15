@@ -507,7 +507,7 @@
     height: 40px;
     background-color: rgba(130, 101, 159, 0);
     border-radius: 14px;
-    /* border: 1px; */
+    transition: all 0.3s ease-in-out;
     border-color: #fff;
     font-weight: 700;
     font-size: 18px;
@@ -587,7 +587,6 @@
 
 
 
-
 /*  FOOTER  */
 
 footer {
@@ -620,3 +619,21 @@ footer h3 {
 }
 
 /*  END FOOTER  */
+
+
+/* HELPERS */
+
+.bg-success {
+    background-color: #3bcb00 !important;
+    color: #fff;
+    text-align: center;
+    padding: 7px;
+    border: 1px solid;
+    box-shadow: 2px 2px;
+    transition: box-shadow 0.2s ease;
+}
+
+
+.bg-success:hover {
+    box-shadow: -1px 0px;
+}

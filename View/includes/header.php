@@ -24,18 +24,16 @@
                   <div class="row">
                     <div class="col-md-9">
                       <ul class="nav navbar-nav menuHover">
-              				  <li><a href="#" class="menuText">Home</a></li>
-              				  <li><a href="#" class="menuText">Política de Provacidade</a></li>
-              				  <li><a href="#" class="menuText">Parcerias</a></li>
-                        <li><a href="#" class="menuText">Anuncie Aqui</a></li>
-                        <li><a href="#" class="menuText">Acesso MVP</a></li>
-                        <li><a href="signup.php" class="menuText">Cadastro</a></li>
+              				  <li><a href="?pagina=index" class="menuText">Home</a></li>
+              				  <li><a href="?pagina=privacidade" class="menuText">Política de Privacidade</a></li>
+              				  <li><a href="?pagina=parcerias" class="menuText">Busca com filtros</a></li>
+                        <li><a href="?pagina=signup" class="menuText">Cadastro</a></li>
                       </ul>
                     </div>
                     <div class="col-md-3 col-sm-3">
                       <div class="login">
                         <div class="btn-login">
-                          <p class="loginTextButton"><a class="hoverLoginText" href="login.php">Login</a></p>
+                          <p class="loginTextButton"><a class="hoverLoginText" href="?pagina=login">Login</a></p>
                         </div>
                       </div>
                     </div>

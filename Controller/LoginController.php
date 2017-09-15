@@ -1,17 +1,17 @@
 <?php
 /**
  *  Project: Mais Pet
- *  Created: 23/08
+ *  Created: 14/09
  *  User: Jeniffer Carvalho
- *  Usage: Controller do login
+ *  Usage: Controller do login Cliente
  */
 
 session_save_path("/tmp"); 
 
-require_once "Model/UsuariosAdministrativos.php";
+require_once "Model/Proprietarios.php";
 $resultado = '';
 
-$loginAdm = new UsuariosAdministrativos();
+$loginProprietario = new Proprietarios();
 
 if( isset($_POST['fazerLogin']) ) {
 
@@ -19,13 +19,13 @@ if( isset($_POST['fazerLogin']) ) {
     $pass = isset($_POST['senha']) ? $_POST['senha'] : '';
 
     if ( $user ) :
-        $resultado = $loginAdm->login($user, $pass);
+        $resultado = $loginProprietario->login($user, $pass);
 
     endif;
 
     if ( $resultado ) :
         $_SESSION['usuario'] = $user; 
-        header('Location: http://localhost/maispet/admin/?pagina=painel');
+        header('Location: http://localhost/maispet/?pagina=painel_cliente');
         return $success = true;
     else :
       return $success = false;
@@ -36,5 +36,5 @@ if( isset($_POST['fazerLogin']) ) {
 //Logout
 if (isset($_GET['logout']) == true) {
     unset($_SESSION['usuario']);
-    header('Location: http://localhost/maispet/admin/?pagina=login');
+    header('Location: http://localhost/maispet/?pagina=login');
 }

@@ -32,6 +32,9 @@
                         <li>
                             <a href="?pagina=administrativos" class="waves-effect"><i class="zmdi zmdi zmdi-accounts-add"></i> <span>Manter Administradores</span> </a>
                         </li>
+                        <li>
+                            <a href="?pagina=proprietarios" class="waves-effect"><i class="zmdi zmdi zmdi-accounts-add"></i> <span>Manter Proprietários</span> </a>
+                        </li>
                     </ul>
                     <div class="clearfix"></div>
                 </div>

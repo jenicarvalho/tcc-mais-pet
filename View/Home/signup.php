@@ -80,12 +80,16 @@
                 </div>
               </div>
             </form>
-            <i class="fa fa-lock spanLockerIcon"></i><span class="spanLocker">Suas informações estão seguras conosco!</span>
 
             <?php if($success == true) : ?>
-              <p class='bg-success'>Cadastro Realizado!</p>
+              <div class="row inputLine">
+                <div class="col-md-12 col-sm-12">
+                  <p class='bg-success'>Cadastro Realizado!</p>
+                </div>
+              </div>
             <?php endif; ?>
 
+            <i class="fa fa-lock spanLockerIcon"></i><span class="spanLocker">Suas informações estão seguras conosco!</span>
           </div>
           <div class="col-md-6 col-sm-12">
             <img src="assets/img/pcDog.png" class="pcDog">

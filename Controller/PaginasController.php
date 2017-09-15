@@ -21,4 +21,9 @@ class PaginasController
     {
         include "view/Animais/animalsList.php";
     }
+
+    public function PainelCliente()
+    {
+        include "view/Painel/index.php";
+    }
 }
