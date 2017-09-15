@@ -6,12 +6,9 @@
 ?>
 
 
-    <section id="logoAndSearch" class="logoAndSearch">
+    <section class="logoAndSearch">
       <div class="container">
         <div class="row">
-          <div class="col-md-6 col-sm-12">
-            <img src="assets/img/dogsTalk.png" class="dogsTalk">
-          </div>
           <div class="col-md-6 col-sm-12">
             <div class="row">
               <div class="col-md-12 col-sm-12">
@@ -36,6 +33,28 @@
               </div>
             </div>
           </div>
+          <div class="col-md-6 col-sm-12">
+            
+          </div>
+        </div>
+      </div>
+    </section>
+  </div> <!-- END DIV BACKGROUND -->
+
+    <section class="feautures">
+      <div class="container">
+        <div class="sectionTitle">
+          <h2>Diferenciais</h2>
+          <hr/>
+        </div>
+        <div class="row phonePadding">
+          <div class="col-md-4"></div>
+          <div class="col-md-4">
+            <div class="feauturePhoneArea">
+              <img class="feauturePhone" src="assets/img/phone.png">
+            </div>
+          </div>
+          <div class="col-md-4"></div>
         </div>
       </div>
     </section>

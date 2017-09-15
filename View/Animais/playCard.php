@@ -6,7 +6,7 @@
 ?>
 
 
-  <section class="searchList">
+  <section class="searchList defaultBackground">
     <div class="container">
       <div class="row">
         <div class="col-md-3 col-sm-12">

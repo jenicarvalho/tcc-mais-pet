@@ -2,7 +2,7 @@
 
     require_once "view/includes/head.php";
     require_once "view/includes/body.php";
-    require_once "view/includes/navMenu.php";
+    require_once "view/includes/navMenuDashboard.php";
 
     $success = false;
     require_once("Controller/ProprietariosController.php");
@@ -13,14 +13,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12 col-sm-12">
-            <div class="breadCrumbHeader">
-              <ul>
-                <li class="breadCrumbList">Home</li>
-                <li class="breadCrumbList">/</li>
-                <li class="breadCrumbList">Cadastro</li>
-              </ul>
-            </div>
-            <h1 class="titleHeaderPage">Cadastro (Proprietário)</h1>
+            <h1 class="titleHeaderPage">Cadastro (Novo Animal)</h1>
           </div>
         </div>
         <div class="row formArea" method="post">
@@ -98,4 +91,4 @@
 
    require_once "view/includes/footer-Registers.php";
 ?>
-		
+	

@@ -21,4 +21,14 @@ class PaginasController
     {
         include "view/Animais/animalsList.php";
     }
+
+    public function dashboardProfile()
+    {
+        include "view/Home/dashboardProfile.php";
+    }
+
+    public function newAnimal()
+    {
+        include "view/Home/newAnimal.php";
+    }
 }
