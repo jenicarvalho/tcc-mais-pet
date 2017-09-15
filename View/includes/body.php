@@ -1,1 +1,1 @@
-<body class="defaultBackground">
+<body>

@@ -26,5 +26,12 @@ switch($pagina) {
 
     case "painel_cliente" : 
     $ctrl->PainelCliente();
+    
+    case "dashboardProfile" : 
+    $ctrl->dashboardProfile();
+    break;
+
+    case "newAnimal" : 
+    $ctrl->newAnimal();
     break;
 }
