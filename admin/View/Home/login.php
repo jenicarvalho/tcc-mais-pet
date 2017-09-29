@@ -10,7 +10,7 @@
         <div class="clearfix"></div>
         <div class="wrapper-page">
             <div class="text-center">
-                <a href="index.html" class="logo"><span>Mais<span>Pet</span></span></a>
+                <a href="index.html" class="logo"><img src="view/assets/images/logo-dark.png" style="width: 100px; margin-bottom: 20px"></a>
                 <h5 class="text-muted m-t-0 font-600">: Área Administrativa :</h5>
             </div>
             <div class="m-t-40 card-box">

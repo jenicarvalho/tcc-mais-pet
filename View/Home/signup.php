@@ -71,7 +71,7 @@
                   <input type="email" class="inputRegister" name="email" placeholder="E-mail..." required>
                 </div>
                 <div class="col-md-4 col-sm-12">
-                  <input type="text" class="inputRegister" name="pass" placeholder="Senha..." required>
+                  <input type="password" class="inputRegister" name="pass" placeholder="Senha..." required>
                 </div>
               </div>
               <div class="row inputLine">

@@ -23,4 +23,8 @@ switch($pagina) {
     case "administrativos" : 
     $ctrl->PainelVerUsuariosAdm();
     break;
+    
+    case "proprietarios" : 
+    $ctrl->PainelVerProprietarios();
+    break;
 }

@@ -25,7 +25,8 @@ class PaginasController
     public function PainelCliente()
     {
         include "view/Painel/index.php";
-
+    }
+    
     public function dashboardProfile()
     {
         include "view/Home/dashboardProfile.php";

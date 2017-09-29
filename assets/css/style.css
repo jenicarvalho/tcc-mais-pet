@@ -739,8 +739,9 @@ footer h3 {
 
 /* HELPERS */
 
-.bg-success {
-    background-color: #3bcb00 !important;
+
+
+.bg-success, .bg-danger {
     color: #fff;
     text-align: center;
     padding: 7px;
@@ -749,7 +750,14 @@ footer h3 {
     transition: box-shadow 0.2s ease;
 }
 
+.bg-success {
+    background-color: #3bcb00 !important;
+}
 
-.bg-success:hover {
+.bg-danger {
+    background-color: #ff0000 !important;
+}
+
+.bg-success:hover, .bg-danger:hover {
     box-shadow: -1px 0px;
 }

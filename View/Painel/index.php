@@ -31,7 +31,7 @@
                 <i class="fa fa-user contactIcons" aria-hidden="true"></i>
               </div>
               <div class="col-md-10 col-sm-10">
-                <p>Robson Caetano</p>
+                <p>Jeniffer Carvalho</p>
               </div>
             </div>
             <div class="row paddingInformationContact">
@@ -47,7 +47,7 @@
                 <i class="fa fa-envelope contactIcons" aria-hidden="true"></i>
               </div>
               <div class="col-md-10 col-sm-10">
-                <p>robsoncaetano@gmail.com</p>
+                <p>jeni@jeni.com</p>
               </div>
             </div>            
             <div class="row paddingInformationContact">

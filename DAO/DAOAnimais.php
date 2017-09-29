@@ -3,7 +3,7 @@
  *	Project: Mais Pet
  *	Created: 18/08
  *	User: Jeniffer Carvalho
- * 	Usage: Dao de usuarios adm que extende dao
+ * 	Usage: Dao de animais adm que extende dao
  */
 
 require_once 'DAO/DAO.php';

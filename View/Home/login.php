@@ -1,5 +1,6 @@
 <?php
 
+    $success = true;
     require_once "view/includes/head.php";
     require_once "view/includes/body.php";
     require_once "view/includes/navMenu.php";
@@ -40,6 +41,15 @@
                   <input type="submit" value="Entrar" class="btnRegister" name="fazerLogin">
                 </div>
               </div>
+
+            <?php if($success == false) : ?>
+              <div class="row inputLine">
+                <div class="col-md-12 col-sm-12">
+                  <p class='bg-danger'>Erro ao fazer login</p>
+                </div>
+              </div>
+            <?php endif; ?>
+
             </form>
           </div>
           <div class="col-md-4 col-sm-12"></div>

@@ -21,4 +21,9 @@ class PaginasController
     {
         include "view/Painel/lista-usuarios-administrativos.php";
     }
+
+    public function PainelVerProprietarios()
+    {
+        include "view/Painel/lista-proprietarios.php";
+    }
 }
