@@ -117,11 +117,11 @@
       <nav class="nav-main">
         <div class="container">
           <ul data-breakpoint="992" class="flexnav">
-            <li><a href="index.html">Inicial</a></li>
-            <li><a href="job-list.html">Ver todos os animais</a></li>
-            <li><a href="page-team.html">Profissionais</a></li>
-            <li><a href="page-about.html">Mantenedora</a></li>
-            <li><a href="contacts.html">Contato</a></li>
+            <li><a href="?pagina=index">Inicial</a></li>
+            <li><a href="?pagina=index">Ver todos os animais</a></li>
+            <li><a href="?pagina=profissionais">Profissionais</a></li>
+            <li><a href="?pagina=mantenedora">Mantenedora</a></li>
+            <li><a href="?pagina=contato">Contato</a></li>
           </ul>
         </div>
       </nav>      

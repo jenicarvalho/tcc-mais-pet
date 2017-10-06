@@ -10,9 +10,9 @@
                   <h3 class="widget-title">Links</h3>
                   <div class="widget-content">
                     <ul>
-                      <li><a href="#">Mantenedora</a></li>
-                      <li><a href="#">Profissionais</a></li>
-                      <li><a href="#">Fale Conosco</a></li>
+                      <li><a href="?pagina=mantenedora">Mantenedora</a></li>
+                      <li><a href="?pagina=profissionais">Profissionais</a></li>
+                      <li><a href="?pagina=contato">Fale Conosco</a></li>
                     </ul>
                   </div>
                 </div>

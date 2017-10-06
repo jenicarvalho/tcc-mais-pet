@@ -57,5 +57,23 @@ class PaginasController
         require_once "view/Painel/novo-anuncio.php";
     }
 
+    public function internaAnuncio()
+    {
+        require_once "view/Home/interna-anuncio.php";
+    }
 
+    public function listaProfissionais()
+    {
+        require_once "view/Home/profissionais.php";
+    }
+
+    public function mostraMantenedora()
+    {
+        require_once "view/Home/mantenedora.php";
+    }
+
+    public function mostraContato()
+    {
+        require_once "view/Home/contato.php";
+    }
 }

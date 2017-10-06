@@ -28,6 +28,23 @@ switch($pagina) {
     $ctrl->newAnimal();
     break; 
 
+    case "interna_anuncio" :
+    $ctrl->internaAnuncio();
+    break;
+
+    case "profissionais" :
+    $ctrl->listaProfissionais();
+    break;
+
+    case "mantenedora" :
+    $ctrl->mostraMantenedora();
+    break;
+
+    case "contato" :
+    $ctrl->mostraContato();
+    break;
+
+
     // Painel
     case "painel_cliente" : 
     $ctrl->PainelCliente();
