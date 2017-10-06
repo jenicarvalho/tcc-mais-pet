@@ -1,8 +1,5 @@
 <?php
 
-    require_once "view/includes/head.php";
-    require_once "view/includes/body.php";
-    require_once "view/includes/navMenuDashboard.php";
 
     $success = false;
     require_once("Controller/ProprietariosController.php");

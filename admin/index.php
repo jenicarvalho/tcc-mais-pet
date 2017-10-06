@@ -27,4 +27,8 @@ switch($pagina) {
     case "proprietarios" : 
     $ctrl->PainelVerProprietarios();
     break;
+    
+    case "anuncios" : 
+    $ctrl->PainelVerAnuncios();
+    break;
 }

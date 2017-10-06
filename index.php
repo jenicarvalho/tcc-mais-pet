@@ -24,14 +24,32 @@ switch($pagina) {
     $ctrl->ListaAnimais();
     break;
 
-    case "painel_cliente" : 
-    $ctrl->PainelCliente();
-    
-    case "dashboardProfile" : 
-    $ctrl->dashboardProfile();
-    break;
-
     case "newAnimal" : 
     $ctrl->newAnimal();
+    break; 
+
+    // Painel
+    case "painel_cliente" : 
+    $ctrl->PainelCliente();
+    break;    
+
+    case "painel_perfil" : 
+    $ctrl->painelPerfil();
+    break;   
+
+    case "painel_anuncios" : 
+    $ctrl->painelAnuncios();
+    break; 
+
+    case "perfis_bloqueados" : 
+    $ctrl->painelPerfilsBloqueados();
+    break;
+
+    case "painel_depoimentos" : 
+    $ctrl->painelDepoimentos();
+    break;
+
+    case "novo_anuncio" :
+    $ctrl->novoAnuncio();
     break;
 }

@@ -25,8 +25,10 @@ if( isset($_POST['fazerLogin']) ) {
 
     if ( $resultado ) :
         $_SESSION['usuario'] = $user; 
-        header('Location: http://localhost/maispet/?pagina=painel_cliente');
-        return $success = true;
+    ?>
+        <meta http-equiv="refresh" content="0; url=?pagina=painel_cliente">
+    <?php    
+    return $success = true;
     else :
       return $success = false;
     endif;
@@ -36,5 +38,7 @@ if( isset($_POST['fazerLogin']) ) {
 //Logout
 if (isset($_GET['logout']) == true) {
     unset($_SESSION['usuario']);
-    header('Location: http://localhost/maispet/?pagina=login');
+    ?>
+        <meta http-equiv="refresh" content="0; url=?pagina=login">
+    <?php    
 }

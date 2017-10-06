@@ -1,102 +1,131 @@
 <?php
 
-    require_once "view/includes/head.php";
-    require_once "view/includes/body.php";
-    require_once "view/includes/navMenu.php";
+    require_once "view/includes/header.php";
 
     $success = false;
     require_once("Controller/ProprietariosController.php");
 
 ?>
 
-    <section class="logoAndSearch">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 col-sm-12">
-            <div class="breadCrumbHeader">
-              <ul>
-                <li class="breadCrumbList">Home</li>
-                <li class="breadCrumbList">/</li>
-                <li class="breadCrumbList">Cadastro</li>
+    <!-- Main -->
+    <div class="main" role="main">
+
+      <!-- Page Heading -->
+      <section class="page-heading">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <h1>Crie uma conta</h1>
+            </div>
+            <div class="col-md-6">
+              <ul class="breadcrumb">
+                <li><a href="index.php">Home</a></li>
+                <li class="active">Criar Conta</li>
               </ul>
             </div>
-            <h1 class="titleHeaderPage">Cadastro (Proprietário)</h1>
           </div>
         </div>
-        <div class="row formArea" method="post">
-          <div class="col-md-6 col-sm-12">
-            <form class="contact_form" method="post">
-              <div class="row inputLine">
-                <div class="col-md-12 col-sm-12">
-                  <input type="text" class="inputRegister" placeholder="Nome Completo..." name="nome" required>
-                </div>
-              </div>
-              <div class="row inputLine">
-                <div class="col-md-6 col-sm-12">
-                  <input type="text" class="inputRegister" name="birthdayDate" placeholder="Data de Nascimento..." required>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                  <input type="text" class="inputRegister" name="sex" placeholder="Sexo..." required>
-                </div>
-              </div>
-              <div class="row inputLine">
-                <div class="col-md-7 col-sm-12">
-                  <input type="text" class="inputRegister" name="street" placeholder="Endereço..." required>
-                </div>
-                <div class="col-md-5 col-sm-12">
-                  <input type="text" class="inputRegister" name="neighborhood" placeholder="Bairro..." required>
-                </div>
-              </div>
-              <div class="row inputLine">
-                <div class="col-md-6 col-sm-12">
-                  <input type="text" class="inputRegister" name="city" placeholder="Cidade..." required>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                  <input type="text" class="inputRegister" name="state" placeholder="Estado..." required>
-                </div>
-              </div>
-              <div class="row inputLine">
-                <div class="col-md-6 col-sm-12">
-                  <input type="text" class="inputRegister" name="phone" placeholder="Celular..." required>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                  <input type="text" class="inputRegister" name="phoneHouse" placeholder="Telefone..." required>
-                </div>
-              </div>
-              <div class="row inputLine">
-                <div class="col-md-4 col-sm-12">
-                  <input type="text" class="inputRegister" name="document" placeholder="CPF..." required>
-                </div>
-                <div class="col-md-4 col-sm-12">
-                  <input type="email" class="inputRegister" name="email" placeholder="E-mail..." required>
-                </div>
-                <div class="col-md-4 col-sm-12">
-                  <input type="password" class="inputRegister" name="pass" placeholder="Senha..." required>
-                </div>
-              </div>
-              <div class="row inputLine">
-                <div class="col-md-12 col-sm-12">
-                  <input type="submit" value="Enviar" class="btnRegister" name="cadastrar">
-                </div>
-              </div>
-            </form>
+      </section>
+      <!-- Page Heading / End -->
 
-            <?php if($success == true) : ?>
-              <div class="row inputLine">
-                <div class="col-md-12 col-sm-12">
-                  <p class='bg-success'>Cadastro Realizado!</p>
-                </div>
-              </div>
-            <?php endif; ?>
-
-            <i class="fa fa-lock spanLockerIcon"></i><span class="spanLocker">Suas informações estão seguras conosco!</span>
-          </div>
-          <div class="col-md-6 col-sm-12"> 
+      <!-- Page Content -->
+      <section class="page-content">
+        <div class="container">
           
+          <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+              <!-- Profile Form -->
+              <form action="#" method="post" id="submit-job-form" class="job-manager-form" enctype="multipart/form-data">
+
+                <!-- Job Information Fields -->
+                <fieldset class="fieldset-job_title">
+                  <label for="job_title">Nome</label>
+                  <div class="field">
+                    <input type="text" class="form-control" name="nome" id="job_title" placeholder="" value=""/>
+                  </div>
+                </fieldset>
+
+                <fieldset>
+                  <label>Email <span class="required">*</span></label>
+                  <div class="field">
+                    <input type="email" class="form-control" name="create_account_email" id="account_email" placeholder="you@yourdomain.com" value="" />
+                  </div>
+                </fieldset>
+                
+                <fieldset class="fieldset-job_title">
+                  <label for="job_title">CPF</label>
+                  <div class="field">
+                    <input type="text" class="form-control" name="nome" id="job_title" placeholder="" value=""/>
+                  </div>
+                </fieldset>
+                
+                <fieldset class="fieldset-job_title">
+                  <label for="job_title">Endereço</label>
+                  <div class="field">
+                    <input type="text" class="form-control" name="nome" id="job_title" placeholder="" value=""/>
+                  </div>
+                </fieldset>
+
+
+                <fieldset class="fieldset-job_title">
+                  <label for="job_title">Cidade</label>
+                  <div class="field">
+                    <input type="text" class="form-control" name="nome" id="job_title" placeholder="" value=""/>
+                  </div>
+                </fieldset>
+
+                <fieldset class="fieldset-job_title">
+                  <label for="job_title">Bairro</label>
+                  <div class="field">
+                    <input type="text" class="form-control" name="nome" id="job_title" placeholder="" value=""/>
+                  </div>
+                </fieldset>
+
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <fieldset class="fieldset-job_type">
+                      <label for="job_type">Estado</label>
+                      <div class="field select-style">
+                        <select name="job_type" id="job_type" class="form-control">
+                          <option value="SP">SP</option>
+                          <option value="RJ">RJ</option>
+                          <option value="MG">MG</option>
+                        </select>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+
+
+                <fieldset class="fieldset-job_title">
+                  <label for="job_title">Celular</label>
+                  <div class="field">
+                    <input type="text" class="form-control" name="nome" id="job_title" placeholder="" value=""/>
+                  </div>
+                </fieldset>
+                
+                <fieldset class="fieldset-job_title">
+                  <label for="job_title">Telefone</label>
+                  <div class="field">
+                    <input type="text" class="form-control" name="nome" id="job_title" placeholder="" value=""/>
+                  </div>
+                </fieldset>
+
+                <div class="spacer"></div>
+
+                <p>
+                  <input type="submit" name="submit_job" class="btn btn-primary" value="Alterars &rarr;" />
+                </p>
+
+              </form>
+            </div>
           </div>
+
         </div>
-      </div>
-    </section>
+      </section>
+      <!-- Page Content / End -->
+
 
 <?php
 

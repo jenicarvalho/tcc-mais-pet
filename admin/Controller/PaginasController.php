@@ -26,4 +26,9 @@ class PaginasController
     {
         include "view/Painel/lista-proprietarios.php";
     }
+
+    public function PainelVerAnuncios()
+    {
+        include "view/Painel/lista-anuncios.php";
+    }
 }

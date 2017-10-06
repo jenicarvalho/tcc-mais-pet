@@ -4,36 +4,58 @@ class PaginasController
 {
     public function Index()
     {
-        include "View/Home/index.php";
+        require_once "View/Home/index.php";
     }
 
     public function Login()
     {
-        include "view/Home/login.php";
+        require_once "view/Home/login.php";
     }
 
     public function Signup()
     {
-        include "view/Home/signup.php";
+        require_once "view/Home/signup.php";
     }
 
     public function ListaAnimais()
     {
-        include "view/Animais/animalsList.php";
+        require_once "view/Animais/animalsList.php";
     }
 
     public function PainelCliente()
     {
-        include "view/Painel/index.php";
-    }
-    
-    public function dashboardProfile()
-    {
-        include "view/Home/dashboardProfile.php";
+        require_once "view/Painel/index.php";
     }
 
     public function newAnimal()
     {
-        include "view/Home/newAnimal.php";
+        require_once "view/Home/newAnimal.php";
     }
+
+    public function painelPerfil()
+    {
+        require_once "view/Painel/editar-perfil.php";
+    }
+
+    public function painelAnuncios()
+    {
+        require_once "view/Painel/meus-anuncios.php";
+    }
+
+    public function painelPerfilsBloqueados()
+    {
+        require_once "view/Painel/perfis-bloqueados.php";
+    }
+
+    public function painelDepoimentos()
+    {
+        require_once "view/Painel/painel-depoimentos.php";
+    }
+
+    public function novoAnuncio()
+    {
+        require_once "view/Painel/novo-anuncio.php";
+    }
+
+
 }

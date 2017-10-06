@@ -63,7 +63,7 @@ require_once(PATH."/Controller/UsuariosAdministrativos.php");
   <?php else: ?>
     
     <h3>Cadastro</h3>
-    <form class="form-inline" method="post">
+    <form class="form-inline" method="post" onsubmit="validarCPF()">
       <div class="form-group">
         <label for="exampleInputName2">Nome</label>
         <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe" name="nome">
@@ -74,7 +74,7 @@ require_once(PATH."/Controller/UsuariosAdministrativos.php");
       </div>
       <div class="form-group">
         <label for="exampleInputEmail2">CPF</label>
-        <input type="text" class="form-control" id="exampleInputEmail2" placeholder="CPF" name="cpf">
+        <input type="text" class="form-control" id="cpf" placeholder="CPF" name="cpf">
       </div>
       <div class="form-group">
         <label for="exampleInputEmail2">Login</label>
@@ -126,5 +126,40 @@ require_once(PATH."/Controller/UsuariosAdministrativos.php");
 
   </div>
 
+<script>
+  var cpf = document.getElementById("cpf").value;
+
+  function validarCPF(cpf){
+ //get input
+ if(input_cpf){
+   var input=input_cpf.toString();
+
+   var numeros=[];
+   var pesos_A=[10,9,8,7,6,5,4,3,2];
+   var pesos_B=[11,10,9,8,7,6,5,4,3,2];
+   var sum=0;
+   var x1=0;
+   var x2=0;
+
+   for(var i=0;i=2){
+     x1=11-mod;
+   }
+
+   //calcula digito 2
+   sum=0;
+   for(var i=0;i=2){
+     x2=11-mod;
+   }
+
+   if(x1==input[9] && x2==input[10]){
+     return true;
+   }else{
+     return false;
+   }
+   }else{
+     return false;
+   }
+};
+</script>
   </body>
 </html>

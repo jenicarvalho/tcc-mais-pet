@@ -13,12 +13,13 @@ class DAOAnimais extends Dao {
 	public $table = "animal";
 
 	public function insert(){
-		$sql  = "INSERT INTO $this->table (animal, raca, porte, sexo, cor, tipo, nomeAnimal, fotoAnimal, descricao) VALUES (:animal, :raca, :porte, :sexo, :cor, :tipo, :nomeAnimal, :fotoAnimal, :descricao)";
+		$sql  = "INSERT INTO $this->table (idProprietario, data_nascimento, raca, porte, sexo, cor, tipo, nomeAnimal, fotoAnimal, descricao) VALUES (:idProprietario, :data_nascimento, :raca, :porte, :sexo, :cor, :tipo, :nomeAnimal, :fotoAnimal, :descricao)";
 		$stmt = DB::prepare($sql);
-		$stmt->bindParam(':animal', $this->animal);
+		$stmt->bindParam(':idProprietario', $this->idproprietario);
+		$stmt->bindParam(':data_nascimento', $this->dtnascimento);
 		$stmt->bindParam(':raca', $this->raca);
 		$stmt->bindParam(':porte', $this->porte);
-		$stmt->bindParam(':sexo', $this->sexo;
+		$stmt->bindParam(':sexo', $this->sexo);
 		$stmt->bindParam(':cor', $this->cor);
 		$stmt->bindParam(':tipo', $this->tipo);
 		$stmt->bindParam(':nomeAnimal', $this->nomeAnimal);
@@ -34,7 +35,7 @@ class DAOAnimais extends Dao {
 		$stmt->bindParam(':animal', $this->animal);
 		$stmt->bindParam(':raca', $this->raca);
 		$stmt->bindParam(':porte', $this->porte);
-		$stmt->bindParam(':sexo', $this->sexo;
+		$stmt->bindParam(':sexo', $this->sexo);
 		$stmt->bindParam(':cor', $this->cor);
 		$stmt->bindParam(':tipo', $this->tipo);
 		$stmt->bindParam(':nomeAnimal', $this->nomeAnimal);

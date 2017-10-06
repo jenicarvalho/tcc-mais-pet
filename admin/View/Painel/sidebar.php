@@ -35,6 +35,9 @@
                         <li>
                             <a href="?pagina=proprietarios" class="waves-effect"><i class="zmdi zmdi zmdi-accounts-add"></i> <span>Manter Proprietários</span> </a>
                         </li>
+                        <li>
+                            <a href="?pagina=anuncios" class="waves-effect"><i class="zmdi zmdi zmdi-accounts-add"></i> <span>Manter Anúncios</span> </a>
+                        </li>
                     </ul>
                     <div class="clearfix"></div>
                 </div>

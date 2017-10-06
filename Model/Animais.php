@@ -31,6 +31,14 @@ class Animais extends DAOAnimais {
 		return $this->idproprietario;
 	}
 
+	public function dataNascimento($dtnascimento){
+		$this->dtnascimento = $dtnascimento;
+	}
+
+	public function getdataNascimento(){
+		return $this->dtnascimento;
+	}
+
 	public function setAnimal($animal){
 		$this->animal = $animal;
 	}
