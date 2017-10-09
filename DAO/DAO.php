@@ -24,6 +24,16 @@ abstract class Dao extends DB {
 		return $stmt->fetch();
 	}
 
+	//retorna apenas 1 item
+	public function findAnimal($idAnimal) {
+		$sql = "SELECT * FROM $this->table WHERE idAnimal = :idAnimal";
+		$stmt = DB::prepare($sql);
+		$stmt->bindParam(':idAnimal', $idAnimal, PDO::PARAM_INT);
+		$stmt->execute();
+		return $stmt->fetch();
+	}
+
+
 	//retorna todos os itens
 	public function findAll() {
 		$sql = "SELECT * FROM $this->table";

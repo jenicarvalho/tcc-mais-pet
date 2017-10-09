@@ -76,4 +76,9 @@ class PaginasController
     {
         require_once "view/Home/contato.php";
     }
+
+    public function editarAnuncio()
+    {
+        require_once "view/Home/editar-anuncio.php";
+    }
 }

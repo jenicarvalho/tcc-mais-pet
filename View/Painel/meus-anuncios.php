@@ -44,7 +44,7 @@
                     ?>
 
                   <li class="job_listing">
-                    <a href="#">
+                    <a href="?pagina=editar_anuncio&cod=<?php echo $valor->idAnimal?>">
                       <img src="assets/images/animais/mel.jpg" alt="" class="company_logo" width="70">
                       <div class="position">
                         <h3><?php echo $valor->nomeAnimal; ?></h3>
@@ -69,11 +69,6 @@
 
               <div class="spacer"></div>
 
-              <div class="row">
-                <div class="col-md-4 col-md-offset-4">
-                  <a class="load_more_jobs btn btn-default" href="#">Ver todos</a>
-                </div>
-              </div>
             </div>
 
             <?php require_once "view/includes/sidebar-painel.php"; ?>

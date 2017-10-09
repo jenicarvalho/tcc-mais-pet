@@ -35,6 +35,7 @@ class DAOUsuariosAdministrativos extends Dao {
 		return $stmt->execute();
 	}
 
+
 	public function login($login, $pass) {
 		$sql = "SELECT * FROM $this->table WHERE email = :login and senha = :senha ";
 		

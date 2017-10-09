@@ -86,7 +86,7 @@
         <div class="container">
           <!-- Logo -->
           <div class="logo">
-            <a href="index.html"><img src="assets/images/logo.png" alt="Mais Pet"></a>
+            <a href="?pagina=index"><img src="assets/images/logo.png" alt="Mais Pet"></a>
             <!-- <h1><a href="index.html"><span>Pet</span>Sitter</a></h1>
             <p class="tagline">Find an Awesome PetSitter</p> -->
           </div>

@@ -69,4 +69,8 @@ switch($pagina) {
     case "novo_anuncio" :
     $ctrl->novoAnuncio();
     break;
+
+    case "editar_anuncio" :
+    $ctrl->editarAnuncio();
+    break;
 }
