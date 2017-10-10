@@ -165,7 +165,18 @@
 		});
 	</script>
 
+  <script>
+  </script>
 
+<?php 
+
+  //Logout
+  if (isset($_GET['logout']) == true) {
+      unset($_SESSION['usuarioCliente']);
+      header('Location: http://localhost/maispet/?pagina=login');
+  }
+
+?>
 	
 </body>
 </html>

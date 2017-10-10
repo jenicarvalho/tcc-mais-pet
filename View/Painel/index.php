@@ -1,6 +1,16 @@
 <?php
 
+/**
+ *  Project: Mais Pet
+ *  Created: 01/10
+ *  User: Jeniffer Carvalho
+ *  Usage: Tela inicial do sistema logado
+ */
+
+if ( isset($_SESSION['usuarioCliente']) ) : 
+  
     require_once "Model/Animais.php";
+    require_once "Controller/LoginController.php";
 
     $animal = new Animais();
     require_once "view/includes/header-dashboard.php";
@@ -44,8 +54,8 @@
                     ?>
 
                   <li class="job_listing">
-                    <a href="#">
-                      <img src="assets/images/animais/mel.jpg" alt="" class="company_logo" width="70">
+                    <a href="?pagina=editar_anuncio&cod=<?php echo $valor->idAnimal?>">
+                      <img src="uploads/animais/<?php echo $valor->fotoAnimal; ?>" alt="" class="company_logo">
                       <div class="position">
                         <h3><?php echo $valor->nomeAnimal; ?></h3>
                         <div class="company">
@@ -53,10 +63,10 @@
                         </div>
                       </div>
                       <div class="location">
-                          <?php echo $sexo?> 
+                          <p>Sexo <br> <?php echo $sexo?></p> 
                       </div>
                       <div class="location">
-                          <p>Idade: <br>  <?php echo $valor->data_nascimento ?> anos </p>
+                          <p>Idade <br>  <?php echo $valor->data_nascimento ?> anos </p>
                       </div>
                       <div class="location">
                         Editar
@@ -78,3 +88,10 @@
 <?php
    require_once "view/includes/footer-Registers.php";
 ?>
+
+<?php else : ?>
+
+    <script> alert("Faça login para ter acesso.");</script>
+    <meta http-equiv="refresh" content="0; url=http://localhost/maispet/?pagina=login">
+
+<?php endif; ?>

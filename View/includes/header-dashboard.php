@@ -49,6 +49,20 @@
 </head>
 <body>
 
+<?php
+
+// id do cliente 
+$idcliente = $_SESSION['usuarioCliente']->id;
+
+// CLasse com os dados do cliente armazenada em um objeto
+include_once "Model/Proprietarios.php";
+
+$proprietario = new Proprietarios();
+
+$resultado = $proprietario->find($idcliente);
+
+?>
+
   <div class="site-wrapper">
 
     <!-- Header -->
@@ -65,11 +79,10 @@
           <button type="button" class="navbar-toggle">
               <i class="fa fa-bars"></i>
             </button>
-
             <!-- Banner -->
             <div class="head-info usuario-info">
               <ul class="head-info-list">
-                <li><span>Bem vindo(a)</span> Jeniffer!</li>
+                <li><span>Bem vindo(a)</span> <?php echo $resultado->nome ?>!</li>
               </ul>
             </div>
             <!-- Banner / End -->
@@ -85,7 +98,7 @@
             <li><a href="?pagina=painel_anuncios">Meus Anúncios</a></li>
             <li><a href="?pagina=perfis_bloqueados">Perfis Bloqueados</a></li>
             <li><a href="?pagina=painel_depoimentos">Depoimentos</a></li>
-            <li class="destaque"><a href="?pagina=novo_anuncio">Novo Anúncio</a></li>
+            <li class="destaque"><a href="?pagina=novo_anuncio">Anunciar novo animal</a></li>
           </ul>
         </div>
       </nav>      

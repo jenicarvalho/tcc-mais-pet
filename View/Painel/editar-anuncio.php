@@ -4,6 +4,12 @@
 
     $success = false;
     require_once("Controller/AnimaisController.php");
+    require_once("Model/Animais.php");
+
+    $animal = new Animais();
+
+    $idAnimal = (int)$_GET['cod'];  
+    $resultadoAnimal = $animal->findAnimal($idAnimal);
 
 ?>
 
@@ -15,22 +21,17 @@
           
           <div class="row">
             <div class="content col-md-8 col-md-8 col-md-offset-1 col-md-push-3">
-
-              <div class="alert alert-info">
-                <strong>Atenção!</strong> Ao cadastrar um animal ele automaticamente será anunciado.
-              </div>
               <!-- Profile Form -->
               <form method="post" id="submit-job-form" class="job-manager-form" enctype="multipart/form-data">
                 
-                <h3>Cadastre abaixo um novo anúncio de animal</h3>
+                <h3>Edite o anúncio do animal abaixo</h3>
                 
                 <?php
 
                     if($success == true) {?>
                       <div class="alert alert-success alert-dismissable">
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="fa fa-times"></i></button>
-                        <strong>Anúncio Realizado!</strong> Seu animal foi cadastrado e agora você esta pronto para receber contatos.
-                      </div>
+                        <strong>Anúncio Alterado!</strong></div>
                     <?php
                   }
                 ?>
@@ -39,7 +40,7 @@
                 <fieldset class="fieldset-job_title">
                   <label for="job_title">Nome do animal</label>
                   <div class="field">
-                    <input type="text" class="form-control" name="animal_nome" id="job_title" placeholder="" value="" required/>
+                    <input type="text" class="form-control" name="animal_nome" id="job_title" placeholder="" value="<?php echo $resultadoAnimal->nomeAnimal;?>" required/>
                   </div>
                 </fieldset>
 
@@ -49,9 +50,8 @@
                     <fieldset class="fieldset-job_type">
                       <label for="job_type">Tipo</label>
                       <div class="field select-style">
-                        <select name="animal_tipo" id="tipo-animal" class="form-control" required>
-                          <option value="Cachorro">Cachorro</option>
-                          <option value="Gato">Gato</option>
+                        <select name="animal_tipo" id="job_type" class="form-control" required>                     
+                          <option value="<?php echo $resultadoAnimal->tipo;?>" selected="selected"><?php echo $resultadoAnimal->tipo;?></option>
                         </select>
                       </div>
                     </fieldset>
@@ -61,6 +61,7 @@
                       <label for="job_category">Cor</label>
                       <div class="field select-style">
                         <select name="animal_cor" id="animal_cor" class="form-control" required>
+                          <option value="<?php echo $resultadoAnimal->cor;?>" selected><?php echo $resultadoAnimal->cor;?></option>
                           <option value="Branco">Branco</option>
                           <option value="Preto">Preto</option>
                           <option value="Amarelo">Amarelo</option>
@@ -76,6 +77,7 @@
                       <label for="job_type">Sexo</label>
                       <div class="field select-style">
                         <select name="animal_sexo" id="job_type" class="form-control" required>
+                          <option value="<?php echo $resultadoAnimal->sexo;?>" selected><?php echo $resultadoAnimal->sexo;?></option>
                           <option value="Fêmea">Fêmea</option>
                           <option value="Macho">Macho</option>
                         </select>
@@ -87,6 +89,7 @@
                       <label for="job_category">Porte</label>
                       <div class="field select-style">
                         <select name="animal_porte" id="animal_porte" class="form-control" required>
+                          <option value="<?php echo $resultadoAnimal->porte;?>" selected><?php echo $resultadoAnimal->porte;?></option>
                           <option value="Médio">Médio</option>
                           <option value="Grande">Grande</option>
                           <option value="Pequeno">Pequeno</option>
@@ -102,6 +105,7 @@
                       <label for="job_type">Idade</label>
                       <div class="field select-style">
                         <select name="animal_idade" id="job_type" class="form-control" required>
+                          <option value="<?php echo $resultadoAnimal->data_nascimento;?>" selected><?php echo $resultadoAnimal->data_nascimento;?></option>
                           <option value="1 ano">1 ano</option>
                           <option value="2 anos">2 anos</option>
                           <option value="3 anos">3 anos</option>
@@ -113,6 +117,7 @@
                       </div>
                     </fieldset>
                   </div>
+                  <?php if($resultadoAnimal->tipo == "Cachorro") :?>
                   <div class="col-md-6" id="raca_cachorro">
                     <fieldset class="fieldset-job_category">
                       <label for="job_category">Raça</label>
@@ -137,7 +142,8 @@
                       </div>
                     </fieldset>
                   </div>
-                  <div class="col-md-6" id="raca_gato" style="display: none;">
+                  <?php else: ?>
+                  <div class="col-md-6" id="raca_gato">
                     <fieldset class="fieldset-job_category">
                       <label for="job_category">Raça</label>
                       <div class="field select-style">
@@ -154,12 +160,20 @@
                       </div>
                     </fieldset>
                   </div>
+                  <?php endif; ?>
                 </div>
 
                 <fieldset class="fieldset-company_logo">
-                  <label for="company_logo">Foto</label>
+                  <label for="company_logo">Foto do animal</label>
+
+                  <img src="<?php echo 'uploads/animais/' . $resultadoAnimal->fotoAnimal ?>" alt="" class="company_logo foto-animal" width="70">
                   <div class="field">
-                    <input type="file" class="form-control" name="animal_foto" id="company_logo" required/>
+                    <div for=""> Deseja alterar a imagem do animal?</div> 
+                    Sim <input type="radio" name="foto_radio" value="sim" id="radio-sim" />
+                    Não <input type="radio" name="foto_radio" value="nao" id="radio-nao" checked/>
+                  </div>
+                  <div class="field" id="input-sim" style="display: none" >
+                    <input type="file" class="form-control" name="animal_foto" />
                     <small class="description">Tamanho máximo: 2 MB. Tipo: jpg.</small>
                   </div>
                 </fieldset>
@@ -167,16 +181,17 @@
                 <fieldset class="fieldset-job_description">
                   <label>Descrição</label>
                   <div class="field">
-                    <textarea cols="30" rows="8" class="form-control" name="animal_descricao"></textarea>
+                    <textarea cols="30" rows="8" class="form-control" name="animal_descricao"><?php echo $resultadoAnimal->descricao;?></textarea>
                   </div>
                 </fieldset>
 
                 <div class="spacer"></div>
-
+                <input type="hidden" name="fotoAntiga" value="<?php echo $resultadoAnimal->fotoAnimal?>">
                 <input type="hidden" name="idProprietario" value="<?php echo $resultado->id?>">
 
                 <p>
-                  <input type="submit" name="cadastra_animal" class="btn btn-primary" value="Cadastrar Animal &rarr;" />
+                  <input type="submit" name="atualizar" class="btn btn-primary" value="Atualizar Animal &rarr;" />
+                  <input type="submit" name="atualizar" class="btn btn-danger pull-right" value="Deletar Animal" />
                 </p>
 
               </form>
@@ -188,6 +203,12 @@
 
         </div>
       </section>
+
+<script>
+  
+
+</script>
+
 <?php
 
    require_once "view/includes/footer-Registers.php";

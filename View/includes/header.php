@@ -74,7 +74,11 @@
             <div class="menu-container">
               <ul class="header-top-nav header-top-nav__tertiary">
                 <li><a href="?pagina=signup"><i class="fa-pencil-square-o fa"></i> Crie sua conta</a></li>
+                <?php if ( isset($_SESSION['usuarioCliente']) ) : ?>
+                <li><a href="?pagina=painel_cliente"><i class="fa-sign-in fa"></i> Acessar Painel</a></li>
+              <?php else :  ?>
                 <li><a href="?pagina=login"><i class="fa-lock fa"></i> Faça login</a></li>
+              <?php endif ?>
               </ul>
             </div>
           </div>

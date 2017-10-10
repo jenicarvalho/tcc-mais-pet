@@ -33,7 +33,7 @@
                 <h3>Login</h3>
                 <form method="POST" role="form">
                   <div class="form-group">
-                    <label>Usuário<span class="required">*</span></label>
+                    <label>E-mail<span class="required">*</span></label>
                     <input type="text" name="usuario" class="form-control">
                   </div>
                   <div class="form-group">

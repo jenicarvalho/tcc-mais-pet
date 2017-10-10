@@ -4386,3 +4386,10 @@ ul.job_listings li.job_listing.job_position_featured a:focus,ul.job_listings li.
     background: #eee;
     color: #888
 }
+
+.foto-animal {
+    border: 1px solid #eee;
+    padding: 4px;
+    background: #fff;
+    margin-left: 8px;
+}

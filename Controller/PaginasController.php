@@ -79,6 +79,6 @@ class PaginasController
 
     public function editarAnuncio()
     {
-        require_once "view/Home/editar-anuncio.php";
+        require_once "view/Painel/editar-anuncio.php";
     }
 }

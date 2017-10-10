@@ -58,7 +58,7 @@ class Proprietarios extends DAOProprietarios {
 	}
 
 	public function setSenha($senha){
-		$this->senha = $senha;
+		$this->senha = md5($senha);
 	}
 
 	public function getSenha(){

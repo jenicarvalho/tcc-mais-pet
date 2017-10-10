@@ -45,7 +45,7 @@
 
                   <li class="job_listing">
                     <a href="?pagina=editar_anuncio&cod=<?php echo $valor->idAnimal?>">
-                      <img src="assets/images/animais/mel.jpg" alt="" class="company_logo" width="70">
+                      <img src="uploads/animais/<?php echo $valor->fotoAnimal; ?>" alt="" class="company_logo">
                       <div class="position">
                         <h3><?php echo $valor->nomeAnimal; ?></h3>
                         <div class="company">
@@ -53,7 +53,7 @@
                         </div>
                       </div>
                       <div class="location">
-                          <?php echo $sexo?> 
+                          <p>Sexo <br> <?php echo $sexo?></p> 
                       </div>
                       <div class="location">
                           <p>Idade: <br>  <?php echo $valor->data_nascimento ?> anos </p>
