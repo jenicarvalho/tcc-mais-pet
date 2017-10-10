@@ -19,17 +19,36 @@ class PaginasController
 
     public function ListaAnimais()
     {
-        require_once "view/Animais/animalsList.php";
+        require_once "view/Home/mostra-animais.php";
+    }
+    public function newAnimal()
+    {
+        require_once "view/Home/newAnimal.php";
+    }
+
+    public function internaAnuncio()
+    {
+        require_once "view/Home/interna-anuncio.php";
+    }
+
+    public function listaProfissionais()
+    {
+        require_once "view/Home/profissionais.php";
+    }
+
+    public function mostraMantenedora()
+    {
+        require_once "view/Home/mantenedora.php";
+    }
+
+    public function mostraContato()
+    {
+        require_once "view/Home/contato.php";
     }
 
     public function PainelCliente()
     {
         require_once "view/Painel/index.php";
-    }
-
-    public function newAnimal()
-    {
-        require_once "view/Home/newAnimal.php";
     }
 
     public function painelPerfil()
@@ -56,27 +75,6 @@ class PaginasController
     {
         require_once "view/Painel/novo-anuncio.php";
     }
-
-    public function internaAnuncio()
-    {
-        require_once "view/Home/interna-anuncio.php";
-    }
-
-    public function listaProfissionais()
-    {
-        require_once "view/Home/profissionais.php";
-    }
-
-    public function mostraMantenedora()
-    {
-        require_once "view/Home/mantenedora.php";
-    }
-
-    public function mostraContato()
-    {
-        require_once "view/Home/contato.php";
-    }
-
     public function editarAnuncio()
     {
         require_once "view/Painel/editar-anuncio.php";
