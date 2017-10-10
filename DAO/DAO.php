@@ -34,6 +34,14 @@ abstract class Dao extends DB {
 	}
 
 
+	//retorna todos os itens como limitacao
+	public function findAllLimit($limit) {
+		$sql = "SELECT * FROM $this->table LIMIT $limit";
+		$stmt = DB::prepare($sql);
+		$stmt->execute();
+		return $stmt->fetchAll();
+	}
+
 	//retorna todos os itens
 	public function findAll() {
 		$sql = "SELECT * FROM $this->table";
@@ -41,6 +49,7 @@ abstract class Dao extends DB {
 		$stmt->execute();
 		return $stmt->fetchAll();
 	}
+
 
 	//deleta o item
 	public function delete($id) {

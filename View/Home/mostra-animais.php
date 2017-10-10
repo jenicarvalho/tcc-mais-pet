@@ -35,7 +35,7 @@
 			                <h2 class="with-subtitle" data-animation="fadeInUp" data-animation-delay="0">Últimos Animais <small data-animation="fadeInUp" data-animation-delay="100">Confira os animais que recém chegaram!</small></h2>
 			                <div class="row">
 
-                  			<?php foreach( $animal->findAll() as $key => $valor) : ?>
+                  			<?php foreach( $animal->findAllLimit(1) as $key => $valor) : ?>
 
 			                  <div class="col-xs-12 col-sm-6 col-md-4" data-animation="fadeInLeft" data-animation-delay="0">
 			                    <div class="job-listing-box">
