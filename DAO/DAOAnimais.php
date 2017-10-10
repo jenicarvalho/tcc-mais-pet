@@ -46,4 +46,12 @@ class DAOAnimais extends Dao {
 		return $stmt->execute();
 	}
 
+
+	//deleta o item
+	public function deleteAnimal($idAnimal) {
+		$sql = "DELETE FROM $this->table WHERE idAnimal = :idAnimal";
+		$stmt = DB::prepare($sql);
+		$stmt->bindParam(':idAnimal', $idAnimal, PDO::PARAM_INT);
+		return $stmt->execute();
+	}
 }

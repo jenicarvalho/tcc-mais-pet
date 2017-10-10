@@ -1,13 +1,15 @@
 <?php
 
-    require_once "view/includes/header-dashboard.php";
-
+    //variaveis de controle
     $success = false;
+    $successDelete = false; 
+
+    //includes
+    require_once "view/includes/header-dashboard.php";
     require_once("Controller/AnimaisController.php");
     require_once("Model/Animais.php");
 
     $animal = new Animais();
-
     $idAnimal = (int)$_GET['cod'];  
     $resultadoAnimal = $animal->findAnimal($idAnimal);
 
@@ -21,21 +23,30 @@
           
           <div class="row">
             <div class="content col-md-8 col-md-8 col-md-offset-1 col-md-push-3">
-              <!-- Profile Form -->
+              <?php if($success == true) : ?>
+
+                  <div class="alert alert-success alert-dismissable">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="fa fa-times"></i></button>
+                    <strong>Anúncio Alterado!</strong>
+                  </div>
+
+              <?php endif; ?>
+
+              <?php if($successDelete == true) : ?>
+
+                <div class="alert alert-danger alert-dismissable">
+                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="fa fa-times"></i></button>
+                  <strong>Sucesso!</strong> Animal deletado e anúncio retirado da base.
+                  <br> Você será direcionado...
+                  <meta http-equiv="refresh" content="4; url=?pagina=painel_anuncios">
+                </div>
+
+              <?php else : ?>            
+                
               <form method="post" id="submit-job-form" class="job-manager-form" enctype="multipart/form-data">
                 
                 <h3>Edite o anúncio do animal abaixo</h3>
                 
-                <?php
-
-                    if($success == true) {?>
-                      <div class="alert alert-success alert-dismissable">
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="fa fa-times"></i></button>
-                        <strong>Anúncio Alterado!</strong></div>
-                    <?php
-                  }
-                ?>
-
                 <!-- Job Information Fields -->
                 <fieldset class="fieldset-job_title">
                   <label for="job_title">Nome do animal</label>
@@ -43,7 +54,6 @@
                     <input type="text" class="form-control" name="animal_nome" id="job_title" placeholder="" value="<?php echo $resultadoAnimal->nomeAnimal;?>" required/>
                   </div>
                 </fieldset>
-
 
                 <div class="row">
                   <div class="col-md-6">
@@ -191,11 +201,13 @@
 
                 <p>
                   <input type="submit" name="atualizar" class="btn btn-primary" value="Atualizar Animal &rarr;" />
-                  <input type="submit" name="atualizar" class="btn btn-danger pull-right" value="Deletar Animal" />
+                  <a href="?pagina=editar_anuncio&acao=deletar&cod=<?php echo $resultadoAnimal->idAnimal?>"  class="btn btn-danger pull-right">Deletar Animal</a>
                 </p>
 
               </form>
-              <!-- Profile Form / End -->
+
+              <?php endif; ?>
+
             </div>
 
             <?php require_once "view/includes/sidebar-painel.php"; ?>

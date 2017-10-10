@@ -26,7 +26,7 @@ if(is_dir("$dir")){
       $nome_foto = $_FILES[ 'animal_foto' ][ 'name' ];
       $extensao = pathinfo ( $nome_foto, PATHINFO_EXTENSION );
       $extensao = strtolower ( $extensao );        
-      
+
       if ( strstr ( '.jpg;.jpeg;.gif;.png', $extensao ) ) {
           $novoNome = uniqid ( time () ) . '.' . $extensao;     
           $destino = 'uploads/animais/ ' . $novoNome;
@@ -145,8 +145,8 @@ endif;
 // deleta
 if( isset($_GET['acao']) &&  $_GET['acao'] == 'deletar' ) :
 
-  $id = (int)$_GET['id'];
-  if( $animal->delete( $id )) {
+  $id = (int)$_GET['cod'];
+  if( $animal->deleteAnimal( $id )) {
     return $successDelete = true;
   }
 endif;
