@@ -1,8 +1,10 @@
 <?php
     require_once "view/includes/header.php";
     require_once "Model/Animais.php";
+    require_once "Model/Proprietarios.php";
 
     $animal = new Animais();
+    $proprietario = new Proprietarios();
 ?>
 
 		<!-- Main -->
@@ -35,7 +37,9 @@
 			                <h2 class="with-subtitle" data-animation="fadeInUp" data-animation-delay="0">Últimos Animais <small data-animation="fadeInUp" data-animation-delay="100">Confira os animais que recém chegaram!</small></h2>
 			                <div class="row">
 
-                  			<?php foreach( $animal->findAllLimit(9) as $key => $valor) : ?>
+                  			<?php foreach( $animal->findAllCustom("LIMIT 9") as $key => $valor) : ?>
+
+                  			<?php $nomeProprietario = $proprietario->find($valor->idProprietario)?>
 
 			                  <div class="col-xs-12 col-sm-6 col-md-4" data-animation="fadeInLeft" data-animation-delay="0">
 			                    <div class="job-listing-box">
@@ -55,7 +59,7 @@
 			                      </div>
 			                      <footer class="job-listing-footer">
 			                        <ul class="meta">
-			                          <li class="category">Dono: <strong>Gisele Oliveira</strong></li>
+			                          <li class="category">Dono: <strong><?php echo $nomeProprietario->nome ?></strong></li>
 			                          <li class="date"><a href="#">Veja o perfil completo</a></li>
 			                        </ul>
 			                      </footer>
@@ -73,7 +77,7 @@
 
 							<!-- Widget :: Categories -->
 							<div class="widget_categories widget widget__sidebar">
-								<h3 class="widget-title">Filtre sua busca</h3>
+								<h3 class="widget-title">Filtre Sua Busca</h3>
 					              <form action="#" method="POST" role="form">
 					                <div class="form-group">
 					                  <div class="select-style">
@@ -191,7 +195,7 @@
 
 							<!-- Widget :: Tabbed -->
 							<div class="tabbed-widget widget widget__sidebar">
-								<h3 class="widget-title">Confira</h3>
+								<h3 class="widget-title">Confira Outros Animais</h3>
 								<div class="widget-content">
 									<div class="tabs">
 										<!-- Nav tabs -->
@@ -203,40 +207,38 @@
 										<div class="tab-content">
 											<div class="tab-pane fade in active" id="tab-1">
 												<ul class="latest-posts-list">
+												<?php foreach( $animal->findAllCustom("WHERE tipo = 'Gato' ") as $key => $valor) :  ?>
 													<li>
-														<figure class="thumbnail"><a href="#"><img src="http://placehold.it/60x60" alt=""></a></figure>
-														<span class="date">24/07/2013</span>
-														<h5 class="title"><a href="#">Duis placerat rhoncus arcu sit amet aliquam</a></h5>
-													</li>
-													<li>
-														<figure class="thumbnail"><a href="#"><img src="http://placehold.it/60x60" alt=""></a></figure>
-														<span class="date">16/07/2013</span>
-														<h5 class="title"><a href="#">Mauris in arcu aliq, elementum nibh nec</a></h5>
-													</li>
-													<li>
-														<figure class="thumbnail"><a href="#"><img src="http://placehold.it/60x60" alt=""></a></figure>
-														<span class="date">14/07/2013</span>
-														<h5 class="title"><a href="#">Vestibulum in ligula rutrum faucibus</a></h5>
-													</li>
+														<figure class="thumbnail">
+															<a href="#">
+																<img src="uploads/animais/<?php echo $valor->fotoAnimal?>" alt="<?php echo $valor->nomeAnimal?>" width="50">
+															</a>
+														</figure>
+														<h5 class="title"><a href="#"><?php echo $valor->nomeAnimal?></a></h5>
+														<small>
+															<?php echo $valor->sexo ?>, 
+								                        	<?php echo $valor->data_nascimento ?>
+								                        </small>
+													</li>		
+												<?php endforeach ?>	
 												</ul>
 											</div>
 											<div class="tab-pane fade" id="tab-2">
 												<ul class="latest-posts-list">
+												<?php foreach( $animal->findAllCustom("WHERE tipo = 'Cachorro' ") as $key => $valor) :  ?>
 													<li>
-														<figure class="thumbnail"><a href="#"><img src="http://placehold.it/60x60" alt=""></a></figure>
-														<span class="date">24/07/2013</span>
-														<h5 class="title"><a href="#">Duis placerat rhoncus arcu sit amet aliquam</a></h5>
-													</li>
-													<li>
-														<figure class="thumbnail"><a href="#"><img src="http://placehold.it/60x60" alt=""></a></figure>
-														<span class="date">16/07/2013</span>
-														<h5 class="title"><a href="#">Mauris in arcu aliq, elementum nibh nec</a></h5>
-													</li>
-													<li>
-														<figure class="thumbnail"><a href="#"><img src="http://placehold.it/60x60" alt=""></a></figure>
-														<span class="date">14/07/2013</span>
-														<h5 class="title"><a href="#">Vestibulum in ligula rutrum faucibus</a></h5>
-													</li>
+														<figure class="thumbnail">
+															<a href="#">
+																<img src="uploads/animais/<?php echo $valor->fotoAnimal?>" alt="<?php echo $valor->nomeAnimal?>" width="50">
+															</a>
+														</figure>
+														<h5 class="title"><a href="#"><?php echo $valor->nomeAnimal?></a></h5>
+														<small>
+															<?php echo $valor->sexo ?>, 
+								                        	<?php echo $valor->data_nascimento ?>
+								                        </small>
+													</li>		
+												<?php endforeach ?>	
 												</ul>
 											</div>
 										</div>
