@@ -35,16 +35,23 @@
 			                <h2 class="with-subtitle" data-animation="fadeInUp" data-animation-delay="0">Últimos Animais <small data-animation="fadeInUp" data-animation-delay="100">Confira os animais que recém chegaram!</small></h2>
 			                <div class="row">
 
-                  			<?php foreach( $animal->findAllLimit(1) as $key => $valor) : ?>
+                  			<?php foreach( $animal->findAllLimit(9) as $key => $valor) : ?>
 
 			                  <div class="col-xs-12 col-sm-6 col-md-4" data-animation="fadeInLeft" data-animation-delay="0">
 			                    <div class="job-listing-box">
 			                      <figure class="job-listing-img">
-			                        <a href="job-profile.html"><img src="assets/images/animais/dog.png" alt="Brutus"></a>
+			                        <a href="job-profile.html"><img src="uploads/animais/<?php echo $valor->fotoAnimal ?>" alt="<?php echo $valor->nomeAnimal ?>"></a>
 			                      </figure>
 			                      <div class="job-listing-body">
 			                        <h4 class="name"><a href="job-profile.html"><?php echo $valor->nomeAnimal ?></a></h4>
-			                        <p>Macho, 2 anos, Preto, Porte Médio.</p>
+			                        <p>			                        	
+			                        	<?php echo $valor->tipo ?>, 
+			                        	<?php echo $valor->sexo ?>, 
+			                        	<?php echo $valor->data_nascimento ?>, 
+			                        	<?php echo $valor->cor ?>, 
+			                        	<?php echo $valor->porte ?>
+			                        	
+			                        </p>
 			                      </div>
 			                      <footer class="job-listing-footer">
 			                        <ul class="meta">
