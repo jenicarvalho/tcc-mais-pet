@@ -122,7 +122,7 @@
         <div class="container">
           <ul data-breakpoint="992" class="flexnav">
             <li><a href="?pagina=index">Inicial</a></li>
-            <li><a href="?pagina=index">Ver todos os animais</a></li>
+            <li><a href="?pagina=lista-animais">Ver todos os animais</a></li>
             <li><a href="?pagina=profissionais">Profissionais</a></li>
             <li><a href="?pagina=mantenedora">Mantenedora</a></li>
             <li><a href="?pagina=contato">Contato</a></li>
