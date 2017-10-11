@@ -48,17 +48,32 @@ endif;
 if(isset($_POST['atualizar'])):
 
   $nome = $_POST['nome'];
+  $senha = $_POST['pass'];
   $email = $_POST['email'];
-  $cpf = $_POST['cpf'];
-  $login = $_POST['login'];
-  $senha = $_POST['senha'];
+  $nascimento = $_POST['birthdayDate'];
+  $sexo = $_POST['sex'];
+  $endereco = $_POST['street'];
+  $bairro = $_POST['neighborhood'];
+  $cidade = $_POST['city'];
+  $estado = $_POST['state'];
+  $celular = $_POST['phone'];
+  $telefone = $_POST['phoneHouse'];
+  $cpf = $_POST['document'];
 
   $proprietario->setNome($nome);
   $proprietario->setEmail($email);
-  $proprietario->setCpf($cpf);
-  $proprietario->setLogin($login);
   $proprietario->setSenha($senha);
-  $id = (int)$_GET['id'];
+  $proprietario->setCpf($cpf);
+  $proprietario->setDataNascimento($nascimento);
+  $proprietario->setSexo($sexo);
+  $proprietario->setEndereco($endereco);
+  $proprietario->setBairro($bairro);
+  $proprietario->setCidade($cidade);
+  $proprietario->setEstado($estado);
+  $proprietario->setCelular($celular);
+  $proprietario->setTelefone($telefone);
+
+  $id = (int)$_POST['usuario_id'];
 
   if($proprietario->update($id)) {
       return $success = true;

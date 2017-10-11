@@ -20,7 +20,7 @@ switch($pagina) {
     $ctrl->Signup();
     break;
 
-    case "listagem_animais" : 
+    case "lista-animais" : 
     $ctrl->ListaAnimais();
     break;
 
@@ -28,7 +28,7 @@ switch($pagina) {
     $ctrl->newAnimal();
     break; 
 
-    case "interna_anuncio" :
+    case "interna-anuncio" :
     $ctrl->internaAnuncio();
     break;
 
@@ -68,5 +68,9 @@ switch($pagina) {
 
     case "novo_anuncio" :
     $ctrl->novoAnuncio();
+    break;
+
+    case "editar_anuncio" :
+    $ctrl->editarAnuncio();
     break;
 }

@@ -29,10 +29,11 @@ class DAOAnimais extends Dao {
 		return $stmt->execute(); 
 	 }
 
-	public function update($id){
-		$sql  = "UPDATE $this->table SET animal = :animal, raca = :raca, porte = :porte, sexo = :sexo, cor = :cor, tipo = :tipo, nomeAnimal = :nomeAnimal, fotoAnimal = :fotoAnimal, descricao = :descricao WHERE id = :id";
+	public function update($idAnimal){
+		$sql  = "UPDATE $this->table SET idProprietario = :idProprietario, data_nascimento = :data_nascimento, raca = :raca, porte = :porte, sexo = :sexo, cor = :cor, tipo = :tipo, nomeAnimal = :nomeAnimal, fotoAnimal = :fotoAnimal, descricao = :descricao WHERE idAnimal = :idAnimal";
 		$stmt = DB::prepare($sql);
-		$stmt->bindParam(':animal', $this->animal);
+		$stmt->bindParam(':idProprietario', $this->idproprietario);
+		$stmt->bindParam(':data_nascimento', $this->dtnascimento);
 		$stmt->bindParam(':raca', $this->raca);
 		$stmt->bindParam(':porte', $this->porte);
 		$stmt->bindParam(':sexo', $this->sexo);
@@ -41,23 +42,16 @@ class DAOAnimais extends Dao {
 		$stmt->bindParam(':nomeAnimal', $this->nomeAnimal);
 		$stmt->bindParam(':fotoAnimal', $this->fotoAnimal);
 		$stmt->bindParam(':descricao', $this->descricao);
-		$stmt->bindParam(':id', $id);
+		$stmt->bindParam(':idAnimal', $idAnimal);
 		return $stmt->execute();
 	}
 
-	public function login($login, $pass) {
-		$sql = "SELECT * FROM $this->table WHERE email = :login and senha = :senha ";
-		
-		try {
-			$stmt = DB::prepare($sql);
-			$stmt->bindParam(':login', $login, PDO::PARAM_STR);
-			$stmt->bindParam(':senha', $pass, PDO::PARAM_STR);
-			$stmt->execute();
 
-		} catch (PDOException $e) {
-			echo $e->getMessage();
-		}
-
-		return $stmt->fetch(PDO::FETCH_OBJ);
+	//deleta o item
+	public function deleteAnimal($idAnimal) {
+		$sql = "DELETE FROM $this->table WHERE idAnimal = :idAnimal";
+		$stmt = DB::prepare($sql);
+		$stmt->bindParam(':idAnimal', $idAnimal, PDO::PARAM_INT);
+		return $stmt->execute();
 	}
 }

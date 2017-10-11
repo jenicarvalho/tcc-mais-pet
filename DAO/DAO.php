@@ -24,6 +24,24 @@ abstract class Dao extends DB {
 		return $stmt->fetch();
 	}
 
+	//retorna apenas 1 item
+	public function findAnimal($idAnimal) {
+		$sql = "SELECT * FROM $this->table WHERE idAnimal = :idAnimal";
+		$stmt = DB::prepare($sql);
+		$stmt->bindParam(':idAnimal', $idAnimal, PDO::PARAM_INT);
+		$stmt->execute();
+		return $stmt->fetch();
+	}
+
+
+	//retorna todos os itens como limitacao
+	public function findAllCustom($custom) {
+		$sql = "SELECT * FROM $this->table $custom";
+		$stmt = DB::prepare($sql);
+		$stmt->execute();
+		return $stmt->fetchAll();
+	}
+
 	//retorna todos os itens
 	public function findAll() {
 		$sql = "SELECT * FROM $this->table";
@@ -31,6 +49,7 @@ abstract class Dao extends DB {
 		$stmt->execute();
 		return $stmt->fetchAll();
 	}
+
 
 	//deleta o item
 	public function delete($id) {

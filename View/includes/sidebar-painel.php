@@ -12,7 +12,7 @@
                       <i class="fa fa-user contactIcons" aria-hidden="true"></i>
                     </div>
                     <div class="col-md-10 col-sm-10">
-                      <p>Jeniffer Carvalho</p>
+                      <p><?php echo $resultado->nome ?></p>
                     </div>
                   </div>
                   <div class="row paddingInformationContact">
@@ -20,7 +20,7 @@
                       <i class="fa fa-phone contactIcons" aria-hidden="true"></i>
                     </div>
                     <div class="col-md-10 col-sm-10">
-                      <p>+55 19 98698-0548</p>
+                      <p><?php echo $resultado->celular ?></p>
                     </div>
                   </div>
                   <div class="row paddingInformationContact">
@@ -28,7 +28,7 @@
                       <i class="fa fa-envelope contactIcons" aria-hidden="true"></i>
                     </div>
                     <div class="col-md-10 col-sm-10">
-                      <p>jeni@jeni.com</p>
+                      <p><?php echo $resultado->email ?></p>
                     </div>
                   </div>            
                   <div class="row paddingInformationContact">
@@ -36,7 +36,7 @@
                       <i class="fa fa-pencil contactIcons" aria-hidden="true"></i>
                     </div>
                     <div class="col-md-10 col-sm-10">
-                      <p><a href="#">Editar</a></p>
+                      <p><a href="?pagina=painel_perfil">Editar</a></p>
                     </div>
                   </div>         
                   <div class="row paddingInformationContact">

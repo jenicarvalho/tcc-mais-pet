@@ -10,8 +10,48 @@
 
   $animal = new Animais();
 
+
 //cadastra
 if( isset($_POST['cadastra_animal']) && $_POST['animal_nome'] != ""):
+
+$dir = "uploads/animais/";
+
+$uploaddir = "$dir/";
+
+if(is_dir("$dir")){
+
+    if ( isset( $_FILES[ 'animal_foto' ][ 'name' ] ) && $_FILES[ 'animal_foto' ][ 'error' ] == 0) {        
+
+      $arquivo_tmp = $_FILES[ 'animal_foto' ][ 'tmp_name' ];
+      $nome_foto = $_FILES[ 'animal_foto' ][ 'name' ];
+      $extensao = pathinfo ( $nome_foto, PATHINFO_EXTENSION );
+      $extensao = strtolower ( $extensao );        
+
+      if ( strstr ( '.jpg;.jpeg;.gif;.png', $extensao ) ) {
+          $novoNome = uniqid ( time () ) . '.' . $extensao;     
+          $destino = 'uploads/animais/ ' . $novoNome;
+      }
+
+      @copy($_FILES['animal_foto']['tmp_name'], $uploaddir . $novoNome);
+      $arquivo_foto = $novoNome;
+  }
+}
+
+    // // verifica se foi enviado um arquivo
+    // if ( isset( $_FILES[ 'animal_foto' ][ 'name' ] ) && $_FILES[ 'animal_foto' ][ 'error' ] == 0 ) {     
+    //     $arquivo_tmp = $_FILES[ 'animal_foto' ][ 'tmp_name' ];
+    //     $nome_foto = $_FILES[ 'animal_foto' ][ 'name' ];
+    //     $extensao = pathinfo ( $nome_foto, PATHINFO_EXTENSION );
+    //     $extensao = strtolower ( $extensao );        
+    //     if ( strstr ( '.jpg;.jpeg;.gif;.png', $extensao ) ) {
+    //         $novoNome = uniqid ( time () ) . '.' . $extensao;     
+    //         $destino = 'uploads/animais/ ' . $novoNome;
+    //         if ( @move_uploaded_file ( $nome_foto, $destino ) ) {
+    //         }
+    //     }
+    //   $arquivo_foto = $novoNome;
+    // }
+
 
     $animal_nome = $_POST['animal_nome'];
     $animal_tipo = $_POST['animal_tipo'];
@@ -21,16 +61,17 @@ if( isset($_POST['cadastra_animal']) && $_POST['animal_nome'] != ""):
     $animal_porte = $_POST['animal_porte'];
     $animal_raca = $_POST['animal_raca'];
     $animal_descricao = $_POST['animal_descricao'];
+    $animal_proprietario = $_POST['idProprietario'];
 
     $animal->setRaca($animal_raca);
     $animal->setPorte($animal_porte);
-    $animal->setIdProprietario(15);
+    $animal->setIdProprietario($animal_proprietario);
     $animal->setSexo($animal_sexo);
     $animal->dataNascimento($animal_idade);
     $animal->setCor($animal_cor);
     $animal->setTipo($animal_tipo);
     $animal->setNomeAnimal($animal_nome);
-    $animal->setFotoAnimal('vazio.jpg');
+    $animal->setFotoAnimal($arquivo_foto);
     $animal->setDescricao($animal_descricao);
 
     if( $animal->insert() ) {
@@ -38,35 +79,77 @@ if( isset($_POST['cadastra_animal']) && $_POST['animal_nome'] != ""):
     }
 endif;  
 
+
+
 // atualiza
 if(isset($_POST['atualizar'])):
 
-  $nome = $_POST['nome'];
-  $email = $_POST['email'];
-  $cpf = $_POST['cpf'];
-  $login = $_POST['login'];
-  $senha = $_POST['senha'];
+    $dir = "uploads/animais/";
 
-  $animal->setNome($nome);
-  $animal->setEmail($email);
-  $animal->setCpf($cpf);
-  $animal->setLogin($login);
-  $animal->setSenha($senha);
-  $id = (int)$_GET['id'];
+    $uploaddir = "$dir/";
 
-  if($animal->update($id)) {
-      return $success = true;
-  }
+    if(is_dir("$dir")){
+
+        if ( isset( $_FILES[ 'animal_foto' ][ 'name' ] ) && $_FILES[ 'animal_foto' ][ 'error' ] == 0) {        
+
+          $arquivo_tmp = $_FILES[ 'animal_foto' ][ 'tmp_name' ];
+          $nome_foto = $_FILES[ 'animal_foto' ][ 'name' ];
+          $extensao = pathinfo ( $nome_foto, PATHINFO_EXTENSION );
+          $extensao = strtolower ( $extensao );        
+          
+          if ( strstr ( '.jpg;.jpeg;.gif;.png', $extensao ) ) {
+              $novoNome = uniqid ( time () ) . '.' . $extensao;     
+              $destino = 'uploads/animais/ ' . $novoNome;
+          }
+
+          @copy($_FILES['animal_foto']['tmp_name'], $uploaddir . $novoNome);
+          $arquivo_foto = $novoNome;
+      }
+    }
+
+    $radiofoto = $_POST['foto_radio'];
+
+    if($radiofoto == 'nao') {
+       $arquivo_foto = $_POST['fotoAntiga'];
+    }
+
+    $animal_nome = $_POST['animal_nome'];
+    $animal_tipo = $_POST['animal_tipo'];
+    $animal_cor = $_POST['animal_cor'];
+    $animal_idade = $_POST['animal_idade'];
+    $animal_sexo = $_POST['animal_sexo'];
+    $animal_porte = $_POST['animal_porte'];
+    $animal_raca = $_POST['animal_raca'];
+    $animal_descricao = $_POST['animal_descricao'];
+    $animal_proprietario = $_POST['idProprietario'];
+
+    $animal->setIdProprietario($animal_proprietario);
+    $animal->setRaca($animal_raca);
+    $animal->setPorte($animal_porte);
+    $animal->setSexo($animal_sexo);
+    $animal->dataNascimento($animal_idade);
+    $animal->setCor($animal_cor);
+    $animal->setTipo($animal_tipo);
+    $animal->setNomeAnimal($animal_nome);
+    $animal->setFotoAnimal($arquivo_foto);
+    $animal->setDescricao($animal_descricao);
+  
+    $id = (int)$_GET['cod'];
+
+    if($animal->update($id)) {
+        return $success = true;
+    }
 
 endif;
 
 // deleta
 if( isset($_GET['acao']) &&  $_GET['acao'] == 'deletar' ) :
 
-  $id = (int)$_GET['id'];
-  if( $animal->delete( $id )) {
+  $id = (int)$_GET['cod'];
+  if( $animal->deleteAnimal( $id )) {
     return $successDelete = true;
   }
 endif;
+
 
 ?>

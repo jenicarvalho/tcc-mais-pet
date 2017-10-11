@@ -254,6 +254,30 @@ jQuery(function($){
 
     });  
     }
+
+
+    //troca de foto
+    $('#radio-sim').change(function (event) {
+        $("#input-sim").show();
+    });
+      
+    $('#radio-nao').change(function (event) {
+        $("#input-sim").hide();
+    });
+
+
+    //troca a raça
+    $('#tipo-animal').change(function (event) {
+        if($(this).val() == "Cachorro" ||  $(this).val() == "" ) {
+            $("#raca_cachorro").show();
+            $("#raca_gato").hide();
+        } else {
+            $("#raca_gato").show();
+            $("#raca_cachorro").hide();
+        }
+    });
+
+
 });
 
 
@@ -276,3 +300,4 @@ $(window).load(function () {
         }
     }
 });
+

@@ -1,4 +1,18 @@
 <?php
+
+/**
+ *  Project: Mais Pet
+ *  Created: 01/10
+ *  User: Jeniffer Carvalho
+ *  Usage: Tela inicial do sistema logado
+ */
+
+if ( isset($_SESSION['usuarioCliente']) ) : 
+  
+    require_once "Model/Animais.php";
+    require_once "Controller/LoginController.php";
+
+    $animal = new Animais();
     require_once "view/includes/header-dashboard.php";
 ?>
 
@@ -17,76 +31,52 @@
                 <div class="job_listings">           
 
                 <ul class="job_listings">
+                  <?php foreach( $animal->findAll() as $key => $valor) : ?>
+
+                    <?php 
+                      $tipo = $valor->tipo;
+
+                      if($tipo == 1) {
+                        $tipo = "Cachorro";
+                      }
+                      if($tipo == 2) {
+                        $tipo = "Gato";
+                      }
+
+                      $sexo = $valor->sexo;
+
+                      if($sexo == 1) {
+                        $sexo = "Fêmea";
+                      }
+                      if($sexo == 2) {
+                        $sexo = "Macho";
+                      }
+                    ?>
+
                   <li class="job_listing">
-                    <a href="#">
-                      <img src="assets/images/animais/mel.jpg" alt="" class="company_logo" width="70">
+                    <a href="?pagina=editar_anuncio&cod=<?php echo $valor->idAnimal?>">
+                      <img src="uploads/animais/<?php echo $valor->fotoAnimal; ?>" alt="" class="company_logo">
                       <div class="position">
-                        <h3>Brutus</h3>
+                        <h3><?php echo $valor->nomeAnimal; ?></h3>
                         <div class="company">
-                          <strong>Cachorro</strong>
+                          <strong><?php echo $tipo; ?></strong>
                         </div>
                       </div>
                       <div class="location">
-                          Macho 
+                          <p>Sexo <br> <?php echo $sexo?></p> 
                       </div>
                       <div class="location">
-                          <p>Adicionado em 10/09/2017 </p>
+                          <p>Idade <br>  <?php echo $valor->data_nascimento ?> anos </p>
                       </div>
                       <div class="location">
                         Editar
                       </div>
                     </a>
                   </li>
-                  <li class="job_listing">
-                    <a href="#">
-                      <img src="assets/images/animais/mel.jpg" alt="" class="company_logo" width="70">
-                      <div class="position">
-                        <h3>Brutus</h3>
-                        <div class="company">
-                          <strong>Cachorro</strong>
-                        </div>
-                      </div>
-                      <div class="location">
-                          Macho 
-                      </div>
-                      <div class="location">
-                          <p>Adicionado em 10/09/2017 </p>
-                      </div>
-                      <div class="location">
-                        Editar
-                      </div>
-                    </a>
-                  </li>
-                  <li class="job_listing">
-                    <a href="#">
-                      <img src="assets/images/animais/mel.jpg" alt="" class="company_logo" width="70">
-                      <div class="position">
-                        <h3>Brutus</h3>
-                        <div class="company">
-                          <strong>Cachorro</strong>
-                        </div>
-                      </div>
-                      <div class="location">
-                          Macho 
-                      </div>
-                      <div class="location">
-                          <p>Adicionado em 10/09/2017 </p>
-                      </div>
-                      <div class="location">
-                        Editar
-                      </div>
-                    </a>
-                  </li>
+                 <?php endforeach;?>
                 </ul>
               </div>
 
-              <div class="spacer"></div>
-
-              <div class="row">
-                <div class="col-md-4 col-md-offset-4">
-                  <a class="load_more_jobs btn btn-default" href="#">Ver todos</a>
-                </div>
-              </div>
             </div>
 
             <?php require_once "view/includes/sidebar-painel.php"; ?>
@@ -98,3 +88,10 @@
 <?php
    require_once "view/includes/footer-Registers.php";
 ?>
+
+<?php else : ?>
+
+    <script> alert("Faça login para ter acesso.");</script>
+    <meta http-equiv="refresh" content="0; url=http://localhost/maispet/?pagina=login">
+
+<?php endif; ?>

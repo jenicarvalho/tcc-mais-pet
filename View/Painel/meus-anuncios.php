@@ -44,8 +44,8 @@
                     ?>
 
                   <li class="job_listing">
-                    <a href="#">
-                      <img src="assets/images/animais/mel.jpg" alt="" class="company_logo" width="70">
+                    <a href="?pagina=editar_anuncio&cod=<?php echo $valor->idAnimal?>">
+                      <img src="uploads/animais/<?php echo $valor->fotoAnimal; ?>" alt="" class="company_logo">
                       <div class="position">
                         <h3><?php echo $valor->nomeAnimal; ?></h3>
                         <div class="company">
@@ -53,7 +53,7 @@
                         </div>
                       </div>
                       <div class="location">
-                          <?php echo $sexo?> 
+                          <p>Sexo <br> <?php echo $sexo?></p> 
                       </div>
                       <div class="location">
                           <p>Idade: <br>  <?php echo $valor->data_nascimento ?> anos </p>
@@ -69,11 +69,6 @@
 
               <div class="spacer"></div>
 
-              <div class="row">
-                <div class="col-md-4 col-md-offset-4">
-                  <a class="load_more_jobs btn btn-default" href="#">Ver todos</a>
-                </div>
-              </div>
             </div>
 
             <?php require_once "view/includes/sidebar-painel.php"; ?>

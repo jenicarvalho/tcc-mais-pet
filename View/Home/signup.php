@@ -37,6 +37,17 @@
               <!-- Profile Form -->
               <form action="#" method="post" id="submit-job-form" class="job-manager-form" enctype="multipart/form-data">
 
+                
+                <?php
+
+                    if($success == true) {?>
+                      <div class="alert alert-success alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="fa fa-times"></i></button>
+                        <strong>Cadastro Realizado!</strong> Obrigado por se cadastrar. <br><a href="?pagina=login">Clique aqui para fazer login.</a>
+                      </div>
+                    <?php
+                  }
+                ?>
                 <!-- Job Information Fields -->
                 <fieldset class="fieldset-job_title">
                   <label for="job_title">Nome</label>
@@ -48,21 +59,56 @@
                 <fieldset>
                   <label>Email <span class="required">*</span></label>
                   <div class="field">
-                    <input type="email" class="form-control" name="create_account_email" id="account_email" placeholder="you@yourdomain.com" value="" />
+                    <input type="email" class="form-control" name="email" id="account_email" placeholder="you@yourdomain.com" value="" />
+                  </div>
+                </fieldset>
+
+                <fieldset class="fieldset-job_title">
+                  <label for="job_title">Senha</label>
+                  <div class="field">
+                    <input type="password" class="form-control" name="pass" id="pass1" placeholder="" value=""/>
+                  </div>
+                </fieldset>
+
+                <fieldset class="fieldset-job_title">
+                  <label for="job_title">Confirmar Senha</label>
+                  <div class="field">
+                    <input type="password" class="form-control" name="pass" id="pass2" placeholder="" value=""/>
                   </div>
                 </fieldset>
                 
                 <fieldset class="fieldset-job_title">
                   <label for="job_title">CPF</label>
                   <div class="field">
-                    <input type="text" class="form-control" name="nome" id="job_title" placeholder="" value=""/>
+                    <input type="text" class="form-control" name="document" id="job_title" placeholder="" value=""/>
                   </div>
                 </fieldset>
                 
                 <fieldset class="fieldset-job_title">
+                  <label for="job_title">Data de Aniversário</label>
+                  <div class="field">
+                    <input type="text" class="form-control" name="birthdayDate" id="job_title" placeholder="10/10/1990" value=""/>
+                  </div>
+                </fieldset>
+
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <fieldset class="fieldset-job_type">
+                      <label for="job_type">Sexo</label>
+                      <div class="field select-style">
+                        <select name="sex" id="job_type" class="form-control">
+                          <option value="Feminino">Feminino</option>
+                          <option value="Masculino">Masculino</option>
+                        </select>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>                
+                <fieldset class="fieldset-job_title">
                   <label for="job_title">Endereço</label>
                   <div class="field">
-                    <input type="text" class="form-control" name="nome" id="job_title" placeholder="" value=""/>
+                    <input type="text" class="form-control" name="street" id="job_title" placeholder="" value=""/>
                   </div>
                 </fieldset>
 
@@ -70,14 +116,14 @@
                 <fieldset class="fieldset-job_title">
                   <label for="job_title">Cidade</label>
                   <div class="field">
-                    <input type="text" class="form-control" name="nome" id="job_title" placeholder="" value=""/>
+                    <input type="text" class="form-control" name="city" id="job_title" placeholder="" value=""/>
                   </div>
                 </fieldset>
 
                 <fieldset class="fieldset-job_title">
                   <label for="job_title">Bairro</label>
                   <div class="field">
-                    <input type="text" class="form-control" name="nome" id="job_title" placeholder="" value=""/>
+                    <input type="text" class="form-control" name="neighborhood" id="job_title" placeholder="" value=""/>
                   </div>
                 </fieldset>
 
@@ -87,7 +133,7 @@
                     <fieldset class="fieldset-job_type">
                       <label for="job_type">Estado</label>
                       <div class="field select-style">
-                        <select name="job_type" id="job_type" class="form-control">
+                        <select name="state" id="job_type" class="form-control">
                           <option value="SP">SP</option>
                           <option value="RJ">RJ</option>
                           <option value="MG">MG</option>
@@ -101,21 +147,21 @@
                 <fieldset class="fieldset-job_title">
                   <label for="job_title">Celular</label>
                   <div class="field">
-                    <input type="text" class="form-control" name="nome" id="job_title" placeholder="" value=""/>
+                    <input type="text" class="form-control" name="phone" id="job_title" placeholder="" value=""/>
                   </div>
                 </fieldset>
                 
                 <fieldset class="fieldset-job_title">
                   <label for="job_title">Telefone</label>
                   <div class="field">
-                    <input type="text" class="form-control" name="nome" id="job_title" placeholder="" value=""/>
+                    <input type="text" class="form-control" name="phoneHouse" id="job_title" placeholder="" value=""/>
                   </div>
                 </fieldset>
 
                 <div class="spacer"></div>
 
                 <p>
-                  <input type="submit" name="submit_job" class="btn btn-primary" value="Alterars &rarr;" />
+                  <input type="submit" name="cadastrar" class="btn btn-primary" value="CAdastrar &rarr;" />
                 </p>
 
               </form>
