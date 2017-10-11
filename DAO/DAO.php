@@ -35,8 +35,8 @@ abstract class Dao extends DB {
 
 
 	//retorna todos os itens como limitacao
-	public function findAllLimit($limit) {
-		$sql = "SELECT * FROM $this->table LIMIT $limit";
+	public function findAllCustom($custom) {
+		$sql = "SELECT * FROM $this->table $custom";
 		$stmt = DB::prepare($sql);
 		$stmt->execute();
 		return $stmt->fetchAll();
