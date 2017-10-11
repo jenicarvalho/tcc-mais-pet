@@ -6,12 +6,12 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-6">
-							<h1>Contacts</h1>
+							<h1>Contatos</h1>
 						</div>
 						<div class="col-md-6">
 							<ul class="breadcrumb">
-								<li><a href="index.html">Home</a></li>
-								<li class="active">Contacts</li>
+								<li><a href="?pagina=index.html">Inicial</a></li>
+								<li class="active">Contatos</li>
 							</ul>
 						</div>
 					</div>
@@ -32,25 +32,26 @@
 					
 					<div class="row">
 						<div class="col-md-9">
-							<h2>Contact Form</h2>
+							<h2>Formulário de contato</h2>
 							<form action="php/contact-form.php" id="contact-form">
 
 								<div class="alert alert-success hidden" id="contact-alert-success">
-									<strong>Success!</strong> Thank you for your message. Reply will be in a while!
+									<strong>Sucesso!</strong> Agradecemos o contato. Responderemos assim que possível!
 								</div>
 								<div class="alert alert-danger hidden" id="contact-alert-error">
-									<strong>Error!</strong> Something went wrong sending your message.
+									<strong>Ops!</strong> Algo deu errado...<br>
+									Entre em contato conosco através do telefone ao lado
 								</div>
 
 								<div class="row">
 									<div class="col-md-4">
 										<div class="form-group">
-											<label>Name <span class="required">*</span></label>
+											<label>Nome <span class="required">*</span></label>
 											<input type="text"
 												value=""
-												data-msg-required="Please enter your name."
+												placeholder="Informe seu nome completo."
 												class="form-control"
-												name="name" id="name">
+												name="nome" id="nome">
 										</div>
 									</div>
 									<div class="col-md-4">
@@ -58,8 +59,8 @@
 											<label>Email <span class="required">*</span></label>
 											<input type="email" 
 												value=""
-												data-msg-required="Please enter your email address."
-												data-msg-email="Please enter a valid email address."
+												placeholder="Informe seu email."
+												data-msg-email="Email Invalido."
 												class="form-control"
 												name="email"
 												id="email">
@@ -67,32 +68,32 @@
 									</div>
 									<div class="col-md-4">
 										<div class="form-group">
-											<label>Subject</label>
+											<label>Assunto</label>
 											<input type="text" 
 												value=""
-												data-msg-required="Please enter the subject."
+												placeholder="Escreva aqui o assunto da sua mensagem."
 												class="form-control"
-												name="subject"
-												id="subject">
+												name="assunto"
+												id="assunto">
 										</div>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-md-12">
 										<div class="form-group">
-											<label>Message <span class="required">*</span></label>
+											<label>Mensagem <span class="required">*</span></label>
 											<textarea
-												data-msg-required="Please enter your message."
+												placeholder="Escreva aqui sua mensagem."
 												rows="10"
 												class="form-control"
-												name="message"
-												id="message"></textarea>
+												name="mensagem"
+												id="mensagem"></textarea>
 										</div>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-md-12">
-										<input type="submit" value="Send Message" class="btn btn-primary" data-loading-text="Loading...">
+										<input type="submit" value="Enviar mensagem" class="btn btn-primary" data-loading-text="Carregando...">
 									</div>
 								</div>
 							</form>
@@ -101,39 +102,39 @@
 							<hr class="visible-sm visible-xs lg">
 							<!-- Widget :: Contacts Info -->
 							<div class="contacts-widget widget widget__sidebar">
-								<h3 class="widget-title">Contact Us</h3>
+								<h3 class="widget-title">Fale conosco</h3>
 								<div class="widget-content">
 									<ul class="contacts-info-list">
 										<li>
 											<i class="fa fa-map-marker"></i>
 											<div class="info-item">
-												Pet Sitter Co., Old Town Avenue, New York, USA 23000
+												Av. Presidente Getúlio Vargas, 324. Paulínia - SP
 											</div>
 										</li>
 										<li>
 											<i class="fa fa-phone"></i>
 											<div class="info-item">
-												+1700 124-5678<br>
-												+1700 124-5678
+												(19) 98199-8449<br>
+									
 											</div>
 										</li>
 										<li>
 											<i class="fa fa-envelope"></i>
 											<span class="info-item">
-												<a href="mailto:info@dan-fisher.com">info@dan-fisher.com</a>
+												<a href="mailto:atendimento@maispet.com">atendimento@maispet.com</a>
 											</span>
 										</li>
 										<li>
 											<i class="fa fa-skype"></i>
 											<div class="info-item">
-												<a href="#">dan_fisher</a><br>
-												<a href="#">help_danfisher</a>
+												<a href="#">Carlos_Junior</a><br>
+												<a href="#">Ajude_carlosjunior</a>
 											</div>
 										</li>
 										<li>
 											<i class="fa fa-clock-o"></i>
 											<div class="info-item">
-												Monday - Friday 9:00 - 21:00
+												Segunda - Sexta 8:00 - 18:00
 											</div>
 										</li>
 									</ul>

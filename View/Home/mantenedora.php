@@ -6,13 +6,12 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-6">
-							<h1>About Us</h1>
+							<h1>Sobre nós</h1>
 						</div>
 						<div class="col-md-6">
 							<ul class="breadcrumb">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="#">Pages</a></li>
-								<li class="active">About Us</li>
+								<li><a href="?pagina=index.html">Inicial</a></li>
+								<li class="active">Sobre nós</li>
 							</ul>
 						</div>
 					</div>
@@ -31,35 +30,29 @@
 							</figure>
 						</div>
 						<div class="col-md-6">
-							<h2>Welcome to Our Site!</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu nisi ac mi malesuada vestibulum. Phasellus tempor nunc eleifend cursus molestie. Mauris lectus arcu, pellentesque at sodales sit amet, condimentum id nunc. </p>
-
-							<p>Donec ornare mattis suscipit. Praesent fermentum accumsan vulputate. Sed velit nulla, sagittis non erat id, dictum vestibulum ligula. Maecenas sed enim sem. Etiam scelerisque gravida purus nec interdum. Phasellus venenatis ligula in faucibus consequat. Aliquam dictum nulla eu varius porta.  Phasellus tempor nunc.</p> 
-
+							<h2>Bem vindo ao Mais Pet!</h2>
+							<p>Nosso serviço foi desenvolvido pensando em você. Queremos ser a solução definitiva como ferramenta de busca de animais domésticos para reprodução. Aqui você encontra todas as informações que precisa para encontrar o parceiro(a) ideal para o seu Pet.
 							<div class="spacer-sm"></div>
 							
-							<a href="#" class="btn btn-success">Read More</a>
-						</div>
+
 					</div>
 
 					<div class="section-light">
 						<div class="row">
 							<div class="col-md-6">
-								<h2>Why People Choose Us?</h2>
+								<h2>Porque escolher os nossos serviços?</h2>
 								<div class="panel-group panel-group__alt" id="accordion">
 									<div class="panel panel-default">
 										<div class="panel-heading">
 											<h4 class="panel-title">
 												<a data-toggle="collapse" data-parent="#accordion" href="#accordion-1">
-													Nunc varius vel diam et blandit
+													Busca detalhada
 												</a>
 											</h4>
 										</div>
 										<div id="accordion-1" class="panel-collapse collapse in">
 											<div class="panel-body">
-												<p>Vivamus eget elit ultricies, convallis urna in, sagittis nulla. Duis sollicitudin suscipit nisi. Etiam sit amet ipsum urna. Etiam mi diam, tincidunt in libero vel, commodo suscipit risus. Nam pharetra auctor volutpat.</p>
-
-												Vivamus malesuada at nisl quis posuere. Aliquam interdum urna nec ligula viverra, non rhoncus enim iaculis.
+												<p>Nosso sistema avançado de gerenciamento de banco de dados permite que você refine a busca com os mais pequenos detalhes como idade, cor, peso, entre outros.
 											</div>
 										</div>
 									</div>
@@ -67,15 +60,13 @@
 										<div class="panel-heading">
 											<h4 class="panel-title">
 												<a data-toggle="collapse" data-parent="#accordion" href="#accordion-2" class="collapsed">
-													Morbi mollis turpis nec
+													Assistência profissional
 												</a>
 											</h4>
 										</div>
 										<div id="accordion-2" class="panel-collapse collapse">
 											<div class="panel-body">
-												<p>Vivamus eget elit ultricies, convallis urna in, sagittis nulla. Duis sollicitudin suscipit nisi. Etiam sit amet ipsum urna. Etiam mi diam, tincidunt in libero vel, commodo suscipit risus. Nam pharetra auctor volutpat.</p>
-
-												Vivamus malesuada at nisl quis posuere. Aliquam interdum urna nec ligula viverra, non rhoncus enim iaculis.
+												<p>Direto no nosso site, e sem nenhuma burocracia você pode solicitar que um profissional veterinário ateste o pedigree de algum animal e/ou faça o acompanhamento da gestação</p>
 											</div>
 										</div>
 									</div>
@@ -83,15 +74,13 @@
 										<div class="panel-heading">
 											<h4 class="panel-title">
 												<a data-toggle="collapse" data-parent="#accordion" href="#accordion-3" class="collapsed">
-													Curabitur rhoncus ut elit tristique
+													Classificação dos animais
 												</a>
 											</h4>
 										</div>
 										<div id="accordion-3" class="panel-collapse collapse">
 											<div class="panel-body">
-												<p>Vivamus eget elit ultricies, convallis urna in, sagittis nulla. Duis sollicitudin suscipit nisi. Etiam sit amet ipsum urna. Etiam mi diam, tincidunt in libero vel, commodo suscipit risus. Nam pharetra auctor volutpat.</p>
-
-												Vivamus malesuada at nisl quis posuere. Aliquam interdum urna nec ligula viverra, non rhoncus enim iaculis.
+												<p>Nosso sistema permite também a avaliação dos animais, por parte dos proprietários que já tiveram contato com aquele pet, dando mais segurança na escolha do futuro(a) parceiro(a) do seu Pet.</p>
 											</div>
 										</div>
 									</div>
@@ -147,133 +136,7 @@
 					</div>
 
 
-					<h2>Our Team</h2>
-					<ul class="team-list row">
-						<li class="team-item col-md-3">
-							<div class="team-item-inner">
-								<figure class="team-thumb">
-									<img src="http://placehold.it/288x268" alt="">
-								
-									<div class="overlay"></div>
-								
-									<ul class="team-social list-unstyled">
-										<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-										<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-										<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-									</ul>
-								
-								</figure>
-								<header class="team-head">
-									<h5 class="team-name">John Doe</h5>
-									<span class="team-head-info">CEO</span>
-								</header>
-								<div class="team-excerpt">
-									Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem
-									Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem
-								</div>
-							</div>
-						</li>
-						<li class="team-item col-md-3">
-							<div class="team-item-inner">
-								<figure class="team-thumb">
-									<img src="http://placehold.it/288x268" alt="">
-								
-									<div class="overlay"></div>
-								
-									<ul class="team-social list-unstyled">
-										<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-										<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-										<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-									</ul>
-								
-								</figure>
-								<header class="team-head">
-									<h5 class="team-name">Michael Smith</h5>
-									<span class="team-head-info">Web Designer</span>
-								</header>
-								<div class="team-excerpt">
-									Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem
-									Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem
-								</div>
-							</div>
-						</li>
-						<li class="team-item col-md-3">
-							<div class="team-item-inner">
-								<figure class="team-thumb">
-									<img src="http://placehold.it/288x268" alt="">
-								
-									<div class="overlay"></div>
-								
-									<ul class="team-social list-unstyled">
-										<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-										<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-										<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-									</ul>
-								
-								</figure>
-								<header class="team-head">
-									<h5 class="team-name">Sasha Gray</h5>
-									<span class="team-head-info">PHP Developer</span>
-								</header>
-								<div class="team-excerpt">
-									Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem
-									Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem
-								</div>
-							</div>
-						</li>
-						<li class="team-item col-md-3">
-							<div class="team-item-inner">
-								<figure class="team-thumb">
-									<img src="http://placehold.it/288x268" alt="">
-								
-									<div class="overlay"></div>
-								
-									<ul class="team-social list-unstyled">
-										<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-										<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-										<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-									</ul>
-								
-								</figure>
-								<header class="team-head">
-									<h5 class="team-name">Hanna Doe</h5>
-									<span class="team-head-info">HTML Coder</span>
-								</header>
-								<div class="team-excerpt">
-									Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem
-									Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem
-								</div>
-							</div>
-						</li>
-					</ul>
-
-					<hr class="lg">
-
-					<h2>Our Clients</h2>
-					<div class="row">
-						<div class="col-sm-3 col-md-3">
-							<div class="text-center">
-								<a href="#"><img src="images/samples/client-logo1.png" alt="" class="img-responsive"></a>
-							</div>
-						</div>
-						<div class="col-sm-3 col-md-3">
-							<div class="text-center">
-								<a href="#"><img src="images/samples/client-logo2.png" alt="" class="img-responsive"></a>
-							</div>
-						</div>
-						<div class="col-sm-3 col-md-3">
-							<div class="text-center">
-								<a href="#"><img src="images/samples/client-logo3.png" alt="" class="img-responsive"></a>
-							</div>
-						</div>
-						<div class="col-sm-3 col-md-3">
-							<div class="text-center">
-								<a href="#"><img src="images/samples/client-logo4.png" alt="" class="img-responsive"></a>
-							</div>
-						</div>
-					</div>
-
-				</div>
+					
 			</section>
 <?php
 
