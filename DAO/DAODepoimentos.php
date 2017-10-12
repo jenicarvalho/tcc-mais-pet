@@ -1,4 +1,4 @@
-s<?php
+<?php
 /**
  *	Project: Mais Pet
  *	Created: 12/10
