@@ -13,18 +13,18 @@
 //cadastra
 if( isset($_POST['cadastrar']) && $_POST['nome'] != ""):
 
-    $nome = $_POST['nome'];
-    $senha = $_POST['pass'];
-    $email = $_POST['email'];
-    $nascimento = $_POST['birthdayDate'];
-    $sexo = $_POST['sex'];
-    $endereco = $_POST['street'];
-    $bairro = $_POST['neighborhood'];
-    $cidade = $_POST['city'];
-    $estado = $_POST['state'];
-    $celular = $_POST['phone'];
-    $telefone = $_POST['phoneHouse'];
-    $cpf = $_POST['document'];
+    $nome = utf8_decode($_POST['nome']);
+    $senha = utf8_decode($_POST['pass']);
+    $email = utf8_decode($_POST['email']);
+    $nascimento = utf8_decode($_POST['birthdayDate']);
+    $sexo = utf8_decode($_POST['sex']);
+    $endereco = utf8_decode($_POST['street']);
+    $bairro = utf8_decode($_POST['neighborhood']);
+    $cidade = utf8_decode($_POST['city']);
+    $estado = utf8_decode($_POST['state']);
+    $celular = utf8_decode($_POST['phone']);
+    $telefone = utf8_decode($_POST['phoneHouse']);
+    $cpf = utf8_decode($_POST['document']);
 
     $proprietario->setNome($nome);
     $proprietario->setEmail($email);
@@ -47,18 +47,18 @@ endif;
 // atualiza
 if(isset($_POST['atualizar'])):
 
-  $nome = $_POST['nome'];
-  $senha = $_POST['pass'];
-  $email = $_POST['email'];
-  $nascimento = $_POST['birthdayDate'];
-  $sexo = $_POST['sex'];
-  $endereco = $_POST['street'];
-  $bairro = $_POST['neighborhood'];
-  $cidade = $_POST['city'];
-  $estado = $_POST['state'];
-  $celular = $_POST['phone'];
-  $telefone = $_POST['phoneHouse'];
-  $cpf = $_POST['document'];
+  $nome = utf8_decode($_POST['nome']);
+  $senha = utf8_decode($_POST['pass']);
+  $email = utf8_decode($_POST['email']);
+  $nascimento = utf8_decode($_POST['birthdayDate']);
+  $sexo = utf8_decode($_POST['sex']);
+  $endereco = utf8_decode($_POST['street']);
+  $bairro = utf8_decode($_POST['neighborhood']);
+  $cidade = utf8_decode($_POST['city']);
+  $estado = utf8_decode($_POST['state']);
+  $celular = utf8_decode($_POST['phone']);
+  $telefone = utf8_decode($_POST['phoneHouse']);
+  $cpf = utf8_decode($_POST['document']);
 
   $proprietario->setNome($nome);
   $proprietario->setEmail($email);

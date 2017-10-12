@@ -53,15 +53,15 @@ if(is_dir("$dir")){
     // }
 
 
-    $animal_nome = $_POST['animal_nome'];
-    $animal_tipo = $_POST['animal_tipo'];
-    $animal_cor = $_POST['animal_cor'];
-    $animal_idade = $_POST['animal_idade'];
-    $animal_sexo = $_POST['animal_sexo'];
-    $animal_porte = $_POST['animal_porte'];
-    $animal_raca = $_POST['animal_raca'];
-    $animal_descricao = $_POST['animal_descricao'];
-    $animal_proprietario = $_POST['idProprietario'];
+    $animal_nome = utf8_decode($_POST['animal_nome']);
+    $animal_tipo = utf8_decode($_POST['animal_tipo']);
+    $animal_cor = utf8_decode($_POST['animal_cor']);
+    $animal_idade = utf8_decode($_POST['animal_idade']);
+    $animal_sexo = utf8_decode($_POST['animal_sexo']);
+    $animal_porte = utf8_decode($_POST['animal_porte']);
+    $animal_raca = utf8_decode($_POST['animal_raca']);
+    $animal_descricao = utf8_decode($_POST['animal_descricao']);
+    $animal_proprietario = utf8_decode($_POST['idProprietario']);
 
     $animal->setRaca($animal_raca);
     $animal->setPorte($animal_porte);
@@ -107,21 +107,21 @@ if(isset($_POST['atualizar'])):
       }
     }
 
-    $radiofoto = $_POST['foto_radio'];
+    $radiofoto = utf8_decode($_POST['foto_radio']);
 
     if($radiofoto == 'nao') {
-       $arquivo_foto = $_POST['fotoAntiga'];
+       $arquivo_foto = utf8_decode($_POST['fotoAntiga']);
     }
 
-    $animal_nome = $_POST['animal_nome'];
-    $animal_tipo = $_POST['animal_tipo'];
-    $animal_cor = $_POST['animal_cor'];
-    $animal_idade = $_POST['animal_idade'];
-    $animal_sexo = $_POST['animal_sexo'];
-    $animal_porte = $_POST['animal_porte'];
-    $animal_raca = $_POST['animal_raca'];
-    $animal_descricao = $_POST['animal_descricao'];
-    $animal_proprietario = $_POST['idProprietario'];
+    $animal_nome = utf8_decode($_POST['animal_nome']);
+    $animal_tipo = utf8_decode($_POST['animal_tipo']);
+    $animal_cor = utf8_decode($_POST['animal_cor']);
+    $animal_idade = utf8_decode($_POST['animal_idade']);
+    $animal_sexo = utf8_decode($_POST['animal_sexo']);
+    $animal_porte = utf8_decode($_POST['animal_porte']);
+    $animal_raca = utf8_decode($_POST['animal_raca']);
+    $animal_descricao = utf8_decode($_POST['animal_descricao']);
+    $animal_proprietario = utf8_decode($_POST['idProprietario']);
 
     $animal->setIdProprietario($animal_proprietario);
     $animal->setRaca($animal_raca);
