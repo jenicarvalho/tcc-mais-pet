@@ -114,7 +114,7 @@
 										<p>Deixe isso com a equipe do Mais Pet.</p>
 									</div>
 									<div class="cta-btn">
-										<a href="?pagina=contato" class="btn btn-primary">Contato</a>
+										<a href="?pagina=contato" class="btn btn-success">Contato</a>
 									</div>
 								</div>
 								<!-- Call to Action - alternative / End -->
