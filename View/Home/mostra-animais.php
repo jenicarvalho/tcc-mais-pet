@@ -47,7 +47,7 @@
 			                        <a href="?pagina=interna-anuncio&CodAnimal=<?php echo $valor->idAnimal?>"><img src="uploads/animais/<?php echo $valor->fotoAnimal ?>" alt="<?php echo $valor->nomeAnimal ?>"></a>
 			                      </figure>
 			                      <div class="job-listing-body">
-			                        <h4 class="name"><a href="job-profile.html"><?php echo $valor->nomeAnimal ?></a></h4>
+			                        <h4 class="name"><a href="?pagina=interna-anuncio&CodAnimal=<?php echo $valor->idAnimal?>"><?php echo $valor->nomeAnimal ?></a></h4>
 			                        <p>			                        	
 			                        	<?php echo $valor->tipo ?>, 
 			                        	<?php echo $valor->sexo ?>, 
@@ -60,7 +60,7 @@
 			                      <footer class="job-listing-footer">
 			                        <ul class="meta">
 			                          <li class="category">Dono: <strong><?php echo $nomeProprietario->nome ?></strong></li>
-			                          <li class="date"><a href="#">Veja o perfil completo</a></li>
+			                          <li class="date"><a href="?pagina=interna-anuncio&CodAnimal=<?php echo $valor->idAnimal?>">Veja o perfil completo</a></li>
 			                        </ul>
 			                      </footer>
 			                    </div>

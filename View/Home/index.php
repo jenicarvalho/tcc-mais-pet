@@ -1,5 +1,10 @@
 <?php
-    require_once "view/includes/header.php";
+    require_once "view/includes/header.php";    
+    require_once "Model/Animais.php";
+    require_once "Model/Proprietarios.php";
+
+    $animal = new Animais();
+    $proprietario = new Proprietarios();
 ?>
 
 
@@ -73,78 +78,36 @@
               <div class="col-md-12">
                 <h2 class="with-subtitle" data-animation="fadeInUp" data-animation-delay="0">Últimos Animais <small data-animation="fadeInUp" data-animation-delay="100">Confira os animais que recém chegaram!</small></h2>
                 <div class="row">
-                  <div class="col-xs-6 col-sm-3 col-md-3" data-animation="fadeInLeft" data-animation-delay="0">
-                    <div class="job-listing-box">
-                      <figure class="job-listing-img">
-                        <a href="job-profile.html"><img src="assets/images/animais/dog.png" alt="Brutus"></a>
-                      </figure>
-                      <div class="job-listing-body">
-                        <h4 class="name"><a href="job-profile.html">Brutus</a></h4>
-                        <p>Macho, 2 anos, Preto, Porte Médio.</p>
-                      </div>
-                      <footer class="job-listing-footer">
-                        <ul class="meta">
-                          <li class="category">Dono: <strong>Gisele Oliveira</strong></li>
-                          <li class="date"><a href="#">Veja o perfil completo</a></li>
-                        </ul>
-                      </footer>
-                    </div>
-                  </div>
-                  <div class="col-xs-6 col-sm-3 col-md-3" data-animation="fadeInLeft" data-animation-delay="0">
-                    <div class="job-listing-box">
-                      <figure class="job-listing-img">
-                        <a href="job-profile.html"><img src="assets/images/animais/mel.jpg" alt="Mel"></a>
-                      </figure>
-                      <div class="job-listing-body">
-                        <h4 class="name"><a href="job-profile.html">Mel</a></h4>
-                        <p>Fêmea, 3 anos, Marrom, Porte Pequeno.</p>
-                      </div>
-                      <footer class="job-listing-footer">
-                        <ul class="meta">
-                          <li class="category">Dono: <strong>Tatiana Faveri</strong></li>
-                          <li class="date"><a href="#">Veja o perfil completo</a></li>
-                        </ul>
-                      </footer>
-                    </div>
-                  </div>
+                        <?php foreach( $animal->findAllCustom("LIMIT 6") as $key => $valor) : ?>
 
-                  <div class="clearfix visible-xs"></div>
-                  <div class="spacer visible-xs"></div>
+                        <?php $nomeProprietario = $proprietario->find($valor->idProprietario)?>
 
-                  <div class="col-xs-6 col-sm-3 col-md-3" data-animation="fadeInLeft" data-animation-delay="400">
-                    <div class="job-listing-box">
-                      <figure class="job-listing-img">
-                        <a href="job-profile.html"><img src="assets/images/animais/nick.jpg" alt=""></a>
-                      </figure>
-                      <div class="job-listing-body">
-                        <h4 class="name"><a href="job-profile.html">Nick</a></h4>
-                        <p>Macho, 1 ano, cinza, Porque Pequeno</p>
-                      </div>
-                      <footer class="job-listing-footer">
-                        <ul class="meta">
-                          <li class="category">Dono: <strong>Jeniffer Carvalho</strong></li>
-                          <li class="date"><a href="#">Veja o perfil completo</a></li>
-                        </ul>
-                      </footer>
-                    </div>
-                  </div>
-                  <div class="col-xs-6 col-sm-3 col-md-3" data-animation="fadeInLeft" data-animation-delay="600">
-                    <div class="job-listing-box">
-                      <figure class="job-listing-img">
-                        <a href="job-profile.html"><img src="assets/images/animais/pri.jpg" alt=""></a>
-                      </figure>
-                      <div class="job-listing-body">
-                        <h4 class="name"><a href="job-profile.html">Princesa</a></h4>
-                        <p>Fêmea, 3 anos, Rajado, Porte Pequeno</p>
-                      </div>
-                      <footer class="job-listing-footer">
-                        <ul class="meta">
-                          <li class="category">Dono: <strong>Bruno Silva</strong></li>
-                          <li class="date"><a href="#">Veja o perfil completo</a></li>
-                        </ul>
-                      </footer>
-                    </div>
-                  </div>
+                        <div class="col-xs-12 col-sm-3 col-md-3" data-animation="fadeInLeft" data-animation-delay="0">
+                          <div class="job-listing-box">
+                            <figure class="job-listing-img">
+                              <a href="?pagina=interna-anuncio&CodAnimal=<?php echo $valor->idAnimal?>"><img src="uploads/animais/<?php echo $valor->fotoAnimal ?>" alt="<?php echo $valor->nomeAnimal ?>"></a>
+                            </figure>
+                            <div class="job-listing-body">
+                              <h4 class="name"><a href="?pagina=interna-anuncio&CodAnimal=<?php echo $valor->idAnimal?>"><?php echo $valor->nomeAnimal ?></a></h4>
+                              <p>                               
+                                <?php echo $valor->tipo ?>, 
+                                <?php echo $valor->sexo ?>, 
+                                <?php echo $valor->data_nascimento ?>, 
+                                <?php echo $valor->cor ?>, 
+                                <?php echo $valor->porte ?>
+                                
+                              </p>
+                            </div>
+                            <footer class="job-listing-footer">
+                              <ul class="meta">
+                                <li class="category">Dono: <strong><?php echo $nomeProprietario->nome ?></strong></li>
+                                <li class="date"><a href="?pagina=interna-anuncio&CodAnimal=<?php echo $valor->idAnimal?>">Veja o perfil completo</a></li>
+                              </ul>
+                            </footer>
+                          </div>
+                        </div>
+
+                      <?php endforeach;?>
                 </div>
               </div>
             </div>
