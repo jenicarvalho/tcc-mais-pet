@@ -80,28 +80,28 @@
                 <div class="row">
                         <?php foreach( $animal->findAllCustom("LIMIT 6") as $key => $valor) : ?>
 
-                        <?php $nomeProprietario = $proprietario->find($valor->idProprietario)?>
+                        <?php $nomeProprietario = $proprietario->find(utf8_encode($valor->idProprietario))?>
 
                         <div class="col-xs-12 col-sm-3 col-md-3" data-animation="fadeInLeft" data-animation-delay="0">
                           <div class="job-listing-box">
                             <figure class="job-listing-img">
-                              <a href="?pagina=interna-anuncio&CodAnimal=<?php echo $valor->idAnimal?>"><img src="uploads/animais/<?php echo $valor->fotoAnimal ?>" alt="<?php echo $valor->nomeAnimal ?>"></a>
+                              <a href="?pagina=interna-anuncio&CodAnimal=<?php echo utf8_encode($valor->idAnimal)?>"><img src="uploads/animais/<?php echo utf8_encode($valor->fotoAnimal) ?>" alt="<?php echo utf8_encode($valor->nomeAnimal) ?>"></a>
                             </figure>
                             <div class="job-listing-body">
-                              <h4 class="name"><a href="?pagina=interna-anuncio&CodAnimal=<?php echo $valor->idAnimal?>"><?php echo $valor->nomeAnimal ?></a></h4>
+                              <h4 class="name"><a href="?pagina=interna-anuncio&CodAnimal=<?php echo utf8_encode($valor->idAnimal)?>"><?php echo utf8_encode($valor->nomeAnimal) ?></a></h4>
                               <p>                               
-                                <?php echo $valor->tipo ?>, 
-                                <?php echo $valor->sexo ?>, 
-                                <?php echo $valor->data_nascimento ?>, 
-                                <?php echo $valor->cor ?>, 
-                                <?php echo $valor->porte ?>
+                                <?php echo utf8_encode($valor->tipo) ?>, 
+                                <?php echo utf8_encode($valor->sexo) ?>, 
+                                <?php echo utf8_encode($valor->data_nascimento) ?>, 
+                                <?php echo utf8_encode($valor->cor) ?>, 
+                                <?php echo utf8_encode($valor->porte) ?>
                                 
                               </p>
                             </div>
                             <footer class="job-listing-footer">
                               <ul class="meta">
-                                <li class="category">Dono: <strong><?php echo $nomeProprietario->nome ?></strong></li>
-                                <li class="date"><a href="?pagina=interna-anuncio&CodAnimal=<?php echo $valor->idAnimal?>">Veja o perfil completo</a></li>
+                                <li class="category">Dono: <strong><?php echo utf8_encode($nomeProprietario->nome) ?></strong></li>
+                                <li class="date"><a href="?pagina=interna-anuncio&CodAnimal=<?php echo utf8_encode($valor->idAnimal)?>">Veja o perfil completo</a></li>
                               </ul>
                             </footer>
                           </div>

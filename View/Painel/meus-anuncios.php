@@ -47,16 +47,16 @@
                     <a href="?pagina=editar_anuncio&cod=<?php echo $valor->idAnimal?>">
                       <img src="uploads/animais/<?php echo $valor->fotoAnimal; ?>" alt="" class="company_logo">
                       <div class="position">
-                        <h3><?php echo $valor->nomeAnimal; ?></h3>
+                        <h3><?php echo utf8_encode($valor->nomeAnimal); ?></h3>
                         <div class="company">
-                          <strong><?php echo $tipo; ?></strong>
+                          <strong><?php echo utf8_encode($tipo); ?></strong>
                         </div>
                       </div>
                       <div class="location">
-                          <p>Sexo <br> <?php echo $sexo?></p> 
+                          <p>Sexo <br> <?php echo utf8_encode($sexo)?></p> 
                       </div>
                       <div class="location">
-                          <p>Idade: <br>  <?php echo $valor->data_nascimento ?> anos </p>
+                          <p>Idade: <br>  <?php echo utf8_encode($valor->data_nascimento) ?> anos </p>
                       </div>
                       <div class="location">
                         Editar
