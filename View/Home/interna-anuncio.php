@@ -1,11 +1,16 @@
 <?php
 
+    $successDepoimento = false;
+    require_once "Controller/DepoimentoController.php";
+
+    $successDenuncia = false;
+    require_once "Controller/DenunciaController.php";
+
     require_once "view/includes/header.php";    
     require_once "Model/Animais.php";
     require_once "Model/Proprietarios.php";
 
-    $sucessDepoimento = false;
-    require_once "Controller/DepoimentoController.php";
+
 
     $animal = new Animais();
     $proprietario = new Proprietarios();
@@ -47,7 +52,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-6">
-							<h1>Perfil do <?php echo utf8_encode($dadosAnimal->nomeAnimal) ?></h1>
+							<h1>Perfil do(a) <?php echo utf8_encode($dadosAnimal->nomeAnimal) ?></h1>
 						</div>
 						<div class="col-md-6">
 							<ul class="breadcrumb">
@@ -65,7 +70,34 @@
 					<div class="row">
 						<div class="content col-md-8 col-md-8 col-md-offset-1 col-md-push-3">
 							
+							<!-- Informações do animal -->
 							<div class="job-profile-info">
+
+								
+		       					 <?php
+
+		       					 	// Variaveis de controle do usuario
+
+				                    if($successDenuncia == true) {?>
+				                      <div class="alert alert-success alert-dismissable">
+				                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="fa fa-times"></i></button>
+				                        <strong>Denúncia feita!</strong> <br>
+				                        Obrigado por ajudar o Mais Pet :) Sua denúncia será analisada pela nossa equipe e o proprietário será notificado.
+				                      </div>
+				                    <?php
+				                  }
+				                ?> 		
+
+               					 <?php
+
+				                    if($successDepoimento == true) {?>
+				                      <div class="alert alert-success alert-dismissable">
+				                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="fa fa-times"></i></button>
+				                        <strong>Depoimento Feito!</strong> Obrigado!
+				                      </div>
+				                    <?php
+				                  }
+				                ?>  			                					
 								<div class="row">
 									<div class="col-md-5">
 										<figure class="alignnone">
@@ -129,16 +161,7 @@
 								<?php if ( isset($_SESSION['usuarioCliente']) ) : ?>
 
 								<h4>Deixe um comentário sobre o <?php echo utf8_encode($dadosAnimal->nomeAnimal) ?> abaixo!</h4>
-               					 <?php
 
-				                    if($sucessDepoimento == true) {?>
-				                      <div class="alert alert-success alert-dismissable">
-				                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="fa fa-times"></i></button>
-				                        <strong>Depoimento Feito!</strong> Obrigado!
-				                      </div>
-				                    <?php
-				                  }
-				                ?>  
 								<div class="comentario-animal">
 									
 									<form action="" method="post">
@@ -157,18 +180,13 @@
 								<?php endif ?>
 								
 								<div class="spacer-lg"></div>
-
-
-								<div class="alert alert-danger alert-dismissable">
-									<strong>Viu algo de errado aqui? Denuncie!</strong> 
-									Se você acha que esse anúncio fere as regras do site, <a href="#">clique aqui</a> para denunciar.
-								</div>	
-
 							</div>
+							<!-- / Informações do animal -->
 
+							<h3>Animais Relacionados</h3>
+							
 
-							<h3>Relacionados</h3>
-
+							<!-- Animais Relacionados -->
 							<div class="prev-next-holder text-right">
 								<a class="prev-btn" id="carousel-prev"><i class="fa fa-angle-left"></i></a>
 								<a class="next-btn" id="carousel-next"><i class="fa fa-angle-right"></i></a>
@@ -196,9 +214,27 @@
 								<?php endforeach?>
 								</div>
 							</div>
+							<!-- / Animais Relacionados -->
+							
+							<br>
+							<!-- Denuncia -->						
+							<div class="call-to-action centered">
+								<div class="cta-txt">
+									<h2>Viu algo de errado aqui? Denuncie!</h2>
+									<p>Nós também amamos animais e contamos com a sua ajuda para tornar o Mais Pet um lugar melhor. Se você acha que esse anúncio fere as regras do site, clique no botão abaixo para denunciar.</p>
+								</div>
+								<div class="cta-btn">
+									<form action="" method="post">
+										<input type="hidden" name="idDenunciado" value="<?php echo $dadosAnimal->idProprietario ?>">
+										<input type="hidden" name="idDenunciador" value="<?php echo $_SESSION['usuarioCliente']->id;?>">
+										<input type="submit" value="Denunciar" class="btn btn-danger" name="denunciar-anuncio">
+									</form>
+								</div>
+							</div>
+							<!-- / Denuncia -->
 						</div>
-						
-						<?php
+
+							<?php
 						   require_once "view/includes/sidebar-home.php";
 						?>
 

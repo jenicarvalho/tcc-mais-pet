@@ -23,7 +23,7 @@
   	$depoimento->setDepoimento($texto);
 
   	if( $depoimento->insert() ) {
-      return $sucessDepoimento = true;
+      return $successDepoimento = true;
     }
 
   }
