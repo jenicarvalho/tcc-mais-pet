@@ -24,10 +24,6 @@ switch($pagina) {
     $ctrl->ListaAnimais();
     break;
 
-    case "newAnimal" : 
-    $ctrl->newAnimal();
-    break; 
-
     case "interna-anuncio" :
     $ctrl->internaAnuncio();
     break;

@@ -44,7 +44,7 @@
 			                  <div class="col-xs-12 col-sm-6 col-md-4" data-animation="fadeInLeft" data-animation-delay="0">
 			                    <div class="job-listing-box">
 			                      <figure class="job-listing-img">
-			                        <a href="job-profile.html"><img src="uploads/animais/<?php echo $valor->fotoAnimal ?>" alt="<?php echo $valor->nomeAnimal ?>"></a>
+			                        <a href="?pagina=interna-anuncio&CodAnimal=<?php echo $valor->idAnimal?>"><img src="uploads/animais/<?php echo $valor->fotoAnimal ?>" alt="<?php echo $valor->nomeAnimal ?>"></a>
 			                      </figure>
 			                      <div class="job-listing-body">
 			                        <h4 class="name"><a href="job-profile.html"><?php echo $valor->nomeAnimal ?></a></h4>

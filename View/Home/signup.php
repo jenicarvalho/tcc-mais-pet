@@ -161,7 +161,7 @@
                 <div class="spacer"></div>
 
                 <p>
-                  <input type="submit" name="cadastrar" class="btn btn-primary" value="CAdastrar &rarr;" />
+                  <input type="submit" name="cadastrar" class="btn btn-primary" value="Cadastrar &rarr;" />
                 </p>
 
               </form>
