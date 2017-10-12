@@ -19,11 +19,6 @@
               <div class="alert alert-info">
                 <strong>Atenção!</strong> Ao cadastrar um animal ele automaticamente será anunciado.
               </div>
-              <!-- Profile Form -->
-              <form method="post" id="submit-job-form" class="job-manager-form" enctype="multipart/form-data">
-                
-                <h3>Cadastre abaixo um novo anúncio de animal</h3>
-                
                 <?php
 
                     if($success == true) {?>
@@ -33,7 +28,13 @@
                       </div>
                     <?php
                   }
-                ?>
+                ?>              
+              <!-- Profile Form -->
+              <form method="post" id="submit-job-form" class="job-manager-form" enctype="multipart/form-data">
+                
+                <h3>Cadastre abaixo um novo anúncio de animal</h3>
+                
+
 
                 <!-- Job Information Fields -->
                 <fieldset class="fieldset-job_title">
