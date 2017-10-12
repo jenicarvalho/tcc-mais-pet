@@ -98,6 +98,7 @@ $resultado = $proprietario->find($idcliente);
             <li><a href="?pagina=painel_anuncios">Meus Anúncios</a></li>
             <li><a href="?pagina=perfis_bloqueados">Perfis Bloqueados</a></li>
             <li><a href="?pagina=painel_depoimentos">Depoimentos</a></li>
+            <li><a href="?pagina=index">Voltar ao Site</a></li>
             <li class="destaque"><a href="?pagina=novo_anuncio">Anunciar novo animal</a></li>
           </ul>
         </div>
