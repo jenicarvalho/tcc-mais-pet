@@ -14,6 +14,7 @@ class Denuncias extends DAODenuncia {
 	public $data;
 	public $idDenunciador;
 	public $idDenunciado;
+	public $motivo;
 		
 	public function setData($data){
 		$this->data = $data;
@@ -37,5 +38,13 @@ class Denuncias extends DAODenuncia {
 
 	public function getIdDenunciado(){
 		return $this->idDenunciado;
+	}	
+
+	public function setMotivo($motivo){
+		$this->motivo = $motivo;
+	}
+
+	public function getMotivo(){
+		return $this->motivo;
 	}
 }

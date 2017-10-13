@@ -13,21 +13,22 @@ class DAODenuncia extends Dao {
 	public $table = "denuncia";
 
 	public function insert(){
-		$sql  = "INSERT INTO $this->table (data, idDenunciador, idDenunciado) VALUES (:data, :idDenunciador, :idDenunciado)";
+		$sql  = "INSERT INTO $this->table (data, idDenunciador, idDenunciado, motivo) VALUES (:data, :idDenunciador, :idDenunciado, :motivo)";
 		$stmt = DB::prepare($sql);
 		$stmt->bindParam(':data', $this->data);
 		$stmt->bindParam(':idDenunciador', $this->idDenunciador);
 		$stmt->bindParam(':idDenunciado', $this->idDenunciado);
-
+		$stmt->bindParam(':motivo', $this->motivo);
 		return $stmt->execute(); 
 	 }
 
 	public function update($id){
-		$sql  = "UPDATE $this->table SET data = :data, idDenunciador = :idDenunciador, idDenunciado = :idDenunciado, WHERE id = :id";
+		$sql  = "UPDATE $this->table SET data = :data, idDenunciador = :idDenunciador, idDenunciado = :idDenunciado,  motivo = :motivo WHERE id = :id";
 		$stmt = DB::prepare($sql);
 		$stmt->bindParam(':data', $this->data);
 		$stmt->bindParam(':idDenunciador', $this->idDenunciador);
 		$stmt->bindParam(':idDenunciado', $this->idDenunciado);
+		$stmt->bindParam(':motivo', $this->motivo);
 		return $stmt->execute();
 	}
 
