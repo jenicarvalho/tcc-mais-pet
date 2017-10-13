@@ -13,6 +13,7 @@ class Animais extends DAOAnimais {
 	public $table = "animal";
 	public $idproprietario;
 	public $animal;
+	public $dtnascimento;
 	public $raca;
 	public $porte;
 	public $sexo;
