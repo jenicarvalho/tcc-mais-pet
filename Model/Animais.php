@@ -12,7 +12,6 @@ class Animais extends DAOAnimais {
 
 	public $table = "animal";
 	public $idproprietario;
-	public $animal;
 	public $dtnascimento;
 	public $raca;
 	public $porte;
@@ -38,14 +37,6 @@ class Animais extends DAOAnimais {
 
 	public function getdataNascimento(){
 		return $this->dtnascimento;
-	}
-
-	public function setAnimal($animal){
-		$this->animal = $animal;
-	}
-
-	public function getAnimal(){
-		return $this->animal;
 	}
 
 	public function setRaca($raca){
