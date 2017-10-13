@@ -6,11 +6,11 @@
  * 	Usage: classe dos depoimentos
  */
 
-require_once 'DAO/DAODepoimentos.php';
+require_once 'DAO/DAOComentarios.php';
 
-class Depoimentos extends DAODepoimentos {
+class Comentarios extends DAOComentarios {
 	
-	public $table = "depoimento";
+	public $table = "comentario";
 	public $data;
 	public $idAnimal;
 	public $idProprietario;

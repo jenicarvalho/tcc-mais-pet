@@ -3,12 +3,12 @@
  *  Project: Mais Pet
  *  Created: 12/10
  *  User: Jeniffer Carvalho
- *  Usage: controller dos depoimentos
+ *  Usage: controller dos comentarios
  */
 
-  require_once "Model/Depoimentos.php";
+  require_once "Model/Comentarios.php";
 
-  $depoimento = new Depoimentos();
+  $comentario = new Comentarios();
 
   if(isset($_POST['envia-depoimento']) && $_POST['envia-depoimento'] != "") {
 
@@ -17,12 +17,12 @@
   	$idProprietario = utf8_decode($_POST['idProprietario']);
   	$data = date('Y-m-d');
 
-  	$depoimento->setData($data);
-  	$depoimento->setIdAnimal($idAnimal);
-  	$depoimento->setIdProprietario($idProprietario);
-  	$depoimento->setDepoimento($texto);
+  	$comentario->setData($data);
+  	$comentario->setIdAnimal($idAnimal);
+  	$comentario->setIdProprietario($idProprietario);
+  	$comentario->setDepoimento($texto);
 
-  	if( $depoimento->insert() ) {
+  	if( $comentario->insert() ) {
       return $successDepoimento = true;
     }
 

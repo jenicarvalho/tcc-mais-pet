@@ -12,7 +12,7 @@
                       <i class="fa fa-user contactIcons" aria-hidden="true"></i>
                     </div>
                     <div class="col-md-10 col-sm-10">
-                      <p><?php echo $resultado->nome ?></p>
+                      <p><?php echo utf8_encode($resultado->nome) ?></p>
                     </div>
                   </div>
                   <div class="row paddingInformationContact">
@@ -20,7 +20,7 @@
                       <i class="fa fa-phone contactIcons" aria-hidden="true"></i>
                     </div>
                     <div class="col-md-10 col-sm-10">
-                      <p><?php echo $resultado->celular ?></p>
+                      <p><?php echo utf8_encode($resultado->celular) ?></p>
                     </div>
                   </div>
                   <div class="row paddingInformationContact">
@@ -28,7 +28,7 @@
                       <i class="fa fa-envelope contactIcons" aria-hidden="true"></i>
                     </div>
                     <div class="col-md-10 col-sm-10">
-                      <p><?php echo $resultado->email ?></p>
+                      <p><?php echo utf8_encode($resultado->email) ?></p>
                     </div>
                   </div>            
                   <div class="row paddingInformationContact">

@@ -1,5 +1,10 @@
 <?php
     require_once "view/includes/header-dashboard.php";
+    require_once "Model/Comentarios.php";
+    
+    $idcliente = $_SESSION['usuarioCliente']->id;
+
+    $comentario = new Comentarios();
 ?>
 
     <!-- Main -->
@@ -12,15 +17,18 @@
             <div class="content col-md-8 col-md-8 col-md-offset-1 col-md-push-3">
 
               <div class="title-accent">
-                <h3>Depoimentos recebidos</h3>
+                <h3>Comentários dados</h3>
               </div>
               <div class="row">
-
+                
+                <?php 
+                    foreach( $comentario->findAllDepoimentos($idcliente) as $key => $valor): 
+                ?>                
                 <div class="col-md-12">
                   <hr class="visible-sm visible-xs lg">
                   <div class="testimonial">
                     <blockquote>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut laoreet mi. Integer vitae elit quis leo tincidunt euismod. Nullam blandit vestibulum lectus sed sollicitudin. </p>
+                      <p><?php echo $valor->depoimento ?></p>
                     </blockquote>
                     <div class="bq-author">
                       <figure class="author-img">
@@ -33,22 +41,8 @@
                   </div>
                 </div>                
 
-                <div class="col-md-12" style="padding: 3em 0">
-                  <hr class="visible-sm visible-xs lg">
-                  <div class="testimonial">
-                    <blockquote>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut laoreet mi. Integer vitae elit quis leo tincidunt euismod. Nullam blandit vestibulum lectus sed sollicitudin. </p>
-                    </blockquote>
-                    <div class="bq-author">
-                      <figure class="author-img">
-                        <img src="http://placehold.it/60x60" alt="">
+              <?php endforeach?>
 
-                      </figure>
-                      <h6>Tatiana</h6>
-                      <span class="bq-author-info">Dono da Mel</span>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
 

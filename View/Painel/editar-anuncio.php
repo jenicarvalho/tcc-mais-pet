@@ -51,7 +51,7 @@
                 <fieldset class="fieldset-job_title">
                   <label for="job_title">Nome do animal</label>
                   <div class="field">
-                    <input type="text" class="form-control" name="animal_nome" id="job_title" placeholder="" value="<?php echo $resultadoAnimal->nomeAnimal;?>" required/>
+                    <input type="text" class="form-control" name="animal_nome" id="job_title" placeholder="" value="<?php echo utf8_encode($resultadoAnimal->nomeAnimal);?>" required/>
                   </div>
                 </fieldset>
 
@@ -61,7 +61,7 @@
                       <label for="job_type">Tipo</label>
                       <div class="field select-style">
                         <select name="animal_tipo" id="job_type" class="form-control" required>                     
-                          <option value="<?php echo $resultadoAnimal->tipo;?>" selected="selected"><?php echo $resultadoAnimal->tipo;?></option>
+                          <option value="<?php echo utf8_encode($resultadoAnimal->tipo);?>" selected="selected"><?php echo utf8_encode($resultadoAnimal->tipo);?></option>
                         </select>
                       </div>
                     </fieldset>
@@ -71,7 +71,7 @@
                       <label for="job_category">Cor</label>
                       <div class="field select-style">
                         <select name="animal_cor" id="animal_cor" class="form-control" required>
-                          <option value="<?php echo $resultadoAnimal->cor;?>" selected><?php echo $resultadoAnimal->cor;?></option>
+                          <option value="<?php echo utf8_encode($resultadoAnimal->cor);?>" selected><?php echo utf8_encode($resultadoAnimal->cor);?></option>
                           <option value="Branco">Branco</option>
                           <option value="Preto">Preto</option>
                           <option value="Amarelo">Amarelo</option>
@@ -87,7 +87,7 @@
                       <label for="job_type">Sexo</label>
                       <div class="field select-style">
                         <select name="animal_sexo" id="job_type" class="form-control" required>
-                          <option value="<?php echo $resultadoAnimal->sexo;?>" selected><?php echo $resultadoAnimal->sexo;?></option>
+                          <option value="<?php echo utf8_encode($resultadoAnimal->sexo);?>" selected><?php echo utf8_encode($resultadoAnimal->sexo);?></option>
                           <option value="Fêmea">Fêmea</option>
                           <option value="Macho">Macho</option>
                         </select>
@@ -99,7 +99,7 @@
                       <label for="job_category">Porte</label>
                       <div class="field select-style">
                         <select name="animal_porte" id="animal_porte" class="form-control" required>
-                          <option value="<?php echo $resultadoAnimal->porte;?>" selected><?php echo $resultadoAnimal->porte;?></option>
+                          <option value="<?php echo utf8_encode($resultadoAnimal->porte);?>" selected><?php echo utf8_encode($resultadoAnimal->porte);?></option>
                           <option value="Médio">Médio</option>
                           <option value="Grande">Grande</option>
                           <option value="Pequeno">Pequeno</option>
@@ -115,7 +115,7 @@
                       <label for="job_type">Idade</label>
                       <div class="field select-style">
                         <select name="animal_idade" id="job_type" class="form-control" required>
-                          <option value="<?php echo $resultadoAnimal->data_nascimento;?>" selected><?php echo $resultadoAnimal->data_nascimento;?></option>
+                          <option value="<?php echo utf8_encode($resultadoAnimal->data_nascimento);?>" selected><?php echo utf8_encode($resultadoAnimal->data_nascimento);?></option>
                           <option value="1 ano">1 ano</option>
                           <option value="2 anos">2 anos</option>
                           <option value="3 anos">3 anos</option>
@@ -127,7 +127,7 @@
                       </div>
                     </fieldset>
                   </div>
-                  <?php if($resultadoAnimal->tipo == "Cachorro") :?>
+                  <?php if(utf8_encode($resultadoAnimal->tipo) == "Cachorro") :?>
                   <div class="col-md-6" id="raca_cachorro">
                     <fieldset class="fieldset-job_category">
                       <label for="job_category">Raça</label>
@@ -176,7 +176,7 @@
                 <fieldset class="fieldset-company_logo">
                   <label for="company_logo">Foto do animal</label>
 
-                  <img src="<?php echo 'uploads/animais/' . $resultadoAnimal->fotoAnimal ?>" alt="" class="company_logo foto-animal" width="70">
+                  <img src="<?php echo 'uploads/animais/' . utf8_encode($resultadoAnimal->fotoAnimal) ?>" alt="" class="company_logo foto-animal" width="70">
                   <div class="field">
                     <div for=""> Deseja alterar a imagem do animal?</div> 
                     Sim <input type="radio" name="foto_radio" value="sim" id="radio-sim" />
@@ -191,17 +191,17 @@
                 <fieldset class="fieldset-job_description">
                   <label>Descrição</label>
                   <div class="field">
-                    <textarea cols="30" rows="8" class="form-control" name="animal_descricao"><?php echo $resultadoAnimal->descricao;?></textarea>
+                    <textarea cols="30" rows="8" class="form-control" name="animal_descricao"><?php echo utf8_encode($resultadoAnimal->descricao);?></textarea>
                   </div>
                 </fieldset>
 
                 <div class="spacer"></div>
-                <input type="hidden" name="fotoAntiga" value="<?php echo $resultadoAnimal->fotoAnimal?>">
+                <input type="hidden" name="fotoAntiga" value="<?php echo utf8_encode($resultadoAnimal->fotoAnimal)?>">
                 <input type="hidden" name="idProprietario" value="<?php echo $resultado->id?>">
 
                 <p>
                   <input type="submit" name="atualizar" class="btn btn-primary" value="Atualizar Animal &rarr;" />
-                  <a href="?pagina=editar_anuncio&acao=deletar&cod=<?php echo $resultadoAnimal->idAnimal?>"  class="btn btn-danger pull-right">Deletar Animal</a>
+                  <a href="?pagina=editar_anuncio&acao=deletar&cod=<?php echo utf8_encode($resultadoAnimal->idAnimal)?>"  class="btn btn-danger pull-right">Deletar Animal</a>
                 </p>
 
               </form>

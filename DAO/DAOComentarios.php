@@ -8,9 +8,9 @@
 
 require_once 'DAO/DAO.php';
 
-class DAODepoimentos extends Dao {
+class DAOComentarios extends Dao {
 
-	public $table = "depoimento";
+	public $table = "comentario";
 
 	public function insert(){
 		$sql  = "INSERT INTO $this->table (data, idAnimal, idProprietario, depoimento) VALUES (:data, :idAnimal, :idProprietario, :depoimento)";
@@ -31,6 +31,15 @@ class DAODepoimentos extends Dao {
 		$stmt->bindParam(':idProprietario', $this->idProprietario);
 		$stmt->bindParam(':depoimento', $this->depoimento);
 		return $stmt->execute();
+	}
+
+	//retorna todos os itens
+	public function findAllDepoimentos($idProprietario) {
+		$sql = "SELECT * FROM $this->table WHERE idProprietario = :idProprietario";
+		$stmt = DB::prepare($sql);
+		$stmt->bindParam(':idProprietario', $idProprietario, PDO::PARAM_INT);
+		$stmt->execute();
+		return $stmt->fetchAll();
 	}
 
 

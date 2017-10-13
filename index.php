@@ -58,8 +58,8 @@ switch($pagina) {
     $ctrl->painelPerfilsBloqueados();
     break;
 
-    case "painel_depoimentos" : 
-    $ctrl->painelDepoimentos();
+    case "painel_comentarios" : 
+    $ctrl->painelComentarios();
     break;
 
     case "novo_anuncio" :

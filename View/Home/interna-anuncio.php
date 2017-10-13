@@ -1,7 +1,7 @@
 <?php
 
     $successDepoimento = false;
-    require_once "Controller/DepoimentoController.php";
+    require_once "Controller/ComentarioController.php";
 
     $successDenuncia = false;
     require_once "Controller/DenunciaController.php";

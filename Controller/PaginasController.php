@@ -66,9 +66,9 @@ class PaginasController
         require_once "view/Painel/perfis-bloqueados.php";
     }
 
-    public function painelDepoimentos()
+    public function painelComentarios()
     {
-        require_once "view/Painel/painel-depoimentos.php";
+        require_once "view/Painel/painel-comentarios.php";
     }
 
     public function novoAnuncio()
