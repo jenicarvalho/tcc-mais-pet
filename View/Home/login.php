@@ -15,8 +15,7 @@
             </div>
             <div class="col-md-6">
               <ul class="breadcrumb">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#">Pages</a></li>
+                <li><a href="?pagina=index">Inicial</a></li>
                 <li class="active">Login</li>
               </ul>
             </div>

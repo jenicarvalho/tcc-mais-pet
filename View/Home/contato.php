@@ -10,7 +10,7 @@
 						</div>
 						<div class="col-md-6">
 							<ul class="breadcrumb">
-								<li><a href="?pagina=index.html">Inicial</a></li>
+								<li><a href="?pagina=index">Inicial</a></li>
 								<li class="active">Contatos</li>
 							</ul>
 						</div>

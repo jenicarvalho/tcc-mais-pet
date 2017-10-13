@@ -19,7 +19,7 @@
             </div>
             <div class="col-md-6">
               <ul class="breadcrumb">
-                <li><a href="index.php">Home</a></li>
+                <li><a href="?pagina=index">Inicial</a></li>
                 <li class="active">Criar Conta</li>
               </ul>
             </div>

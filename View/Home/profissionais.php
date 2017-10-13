@@ -9,13 +9,12 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-6">
-							<h1>Team</h1>
+							<h1>Profissionais</h1>
 						</div>
 						<div class="col-md-6">
 							<ul class="breadcrumb">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="#">Pages</a></li>
-								<li class="active">Team</li>
+								<li><a href="?pagina=index">Inicial</a></li>
+								<li class="active">Profissionais</li>
 							</ul>
 						</div>
 					</div>
