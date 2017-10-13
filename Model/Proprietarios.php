@@ -23,6 +23,7 @@ class Proprietarios extends DAOProprietarios {
 	public $estado;
 	public $celular;
 	public $telefone;
+	public $dataCadastro;
 
 	public function setNome($nome){
 		$this->nome = $nome;
@@ -119,6 +120,14 @@ class Proprietarios extends DAOProprietarios {
 
 	public function getTelefone(){
 		return $this->telefone;
+	}
+
+	public function setDataCadastro($data){
+		$this->data = $data;
+	}
+
+	public function getDataCadastro(){
+		return $this->data;
 	}
 
 }

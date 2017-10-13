@@ -13,7 +13,7 @@ class DAOProprietarios extends Dao {
 	public $table = "cliente";
 
 	public function insert(){
-		$sql  = "INSERT INTO $this->table (nome, email, cpf, endereco, senha, data_nascimento, sexo, bairro, cidade, estado, celular, telefone) VALUES (:nome, :email, :cpf, :endereco, :senha, :data_nascimento, :sexo, :bairro, :cidade, :estado, :celular, :telefone)";
+		$sql  = "INSERT INTO $this->table (nome, email, cpf, endereco, senha, data_nascimento, sexo, bairro, cidade, estado, celular, telefone, data_cadastro) VALUES (:nome, :email, :cpf, :endereco, :senha, :data_nascimento, :sexo, :bairro, :cidade, :estado, :celular, :telefone, :data_cadastro)";
 		$stmt = DB::prepare($sql);
 		$stmt->bindParam(':nome', $this->nome);
 		$stmt->bindParam(':email', $this->email);
@@ -27,7 +27,8 @@ class DAOProprietarios extends Dao {
 		$stmt->bindParam(':estado', $this->estado);
 		$stmt->bindParam(':celular', $this->celular);
 		$stmt->bindParam(':telefone', $this->telefone);
-				return $stmt->execute(); 
+		$stmt->bindParam(':data_cadastro', $this->data);
+		return $stmt->execute(); 
 	 }
 
 	public function update($id){

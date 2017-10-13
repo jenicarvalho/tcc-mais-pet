@@ -25,6 +25,7 @@ if( isset($_POST['cadastrar']) && $_POST['nome'] != ""):
     $celular = utf8_decode($_POST['phone']);
     $telefone = utf8_decode($_POST['phoneHouse']);
     $cpf = utf8_decode($_POST['document']);
+    $data = date('Y-m-d');
 
     $proprietario->setNome($nome);
     $proprietario->setEmail($email);
@@ -38,6 +39,7 @@ if( isset($_POST['cadastrar']) && $_POST['nome'] != ""):
     $proprietario->setEstado($estado);
     $proprietario->setCelular($celular);
     $proprietario->setTelefone($telefone);
+    $proprietario->setDataCadastro($data);
 
     if( $proprietario->insert() ) {
       return $success = true;
