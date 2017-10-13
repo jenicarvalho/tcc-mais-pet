@@ -46,6 +46,14 @@ class DAOAnimais extends Dao {
 		return $stmt->execute();
 	}
 
+	//retorna todos os itens
+	public function findAllMeusAnimais($idProprietario) {
+		$sql = "SELECT * FROM $this->table WHERE idProprietario = :idProprietario";
+		$stmt = DB::prepare($sql);
+		$stmt->bindParam(':idProprietario', $idProprietario, PDO::PARAM_INT);
+		$stmt->execute();
+		return $stmt->fetchAll();
+	}
 
 	//deleta o item
 	public function deleteAnimal($idAnimal) {
