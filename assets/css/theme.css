@@ -2900,6 +2900,11 @@ nav.nav-main.dashboard .flexnav > li:first-child > a {
 .job-manager-form .alert {
   line-height: 24px;
 }
+
+.alert-danger a {
+  color: #bb3737 !important;
+}
+
 /* List */
 .job_filters {
   background: #ebebeb;

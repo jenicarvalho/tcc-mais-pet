@@ -1735,6 +1735,7 @@ cite > span {
   border-color: #f8e6e6;
   color: #bb3737;
 }
+
 .alert-danger hr {
   border-top-color: #f2d2d2;
 }
@@ -1744,6 +1745,7 @@ cite > span {
 .alert-danger .close {
   background: #e1b5b5;
 }
+
 /*
 // #Dropcaps
 // --------------------------------------------------
