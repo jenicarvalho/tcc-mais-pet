@@ -13,15 +13,17 @@
 if(isset($_POST['denunciar-anuncio']) && $_POST['denunciar-anuncio']) {
 
 
-	$idDenunciado = utf8_decode($_POST['idDenunciado']);
-	$idDenunciador = utf8_decode($_POST['idDenunciador']);
-  	$data = date('Y-m-d');
+  $idDenunciado = utf8_decode($_POST['idDenunciado']);
+  $idDenunciador = utf8_decode($_POST['idDenunciador']);
+  $data = date('Y-m-d');
+  $motivo = utf8_decode($_POST['motivo-denuncia']);
 
-  	$denuncia->setData($data);
-  	$denuncia->setIdDenunciado($idDenunciado);
-  	$denuncia->setIdDenunciador($idDenunciador);
+	$denuncia->setData($data);
+	$denuncia->setIdDenunciado($idDenunciado);
+  $denuncia->setIdDenunciador($idDenunciador);
+	$denuncia->setMotivo($motivo);
 
-  	if( $denuncia->insert() ) {
-  		return $successDenuncia = true;
-  	}
+	if( $denuncia->insert() ) {
+		return $successDenuncia = true;
+	}
 }
