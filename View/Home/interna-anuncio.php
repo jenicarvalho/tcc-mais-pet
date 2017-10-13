@@ -235,11 +235,31 @@
 									<p>Nós também amamos animais e contamos com a sua ajuda para tornar o Mais Pet um lugar melhor. Se você acha que esse anúncio fere as regras do site, clique no botão abaixo para denunciar.</p>
 								</div>
 								<div class="cta-btn">
-									<form action="" method="post">
-										<input type="hidden" name="idDenunciado" value="<?php echo $dadosAnimal->idProprietario ?>">
-										<input type="hidden" name="idDenunciador" value="<?php echo $_SESSION['usuarioCliente']->id;?>">
-										<input type="submit" value="Denunciar" class="btn btn-danger" name="denunciar-anuncio">
-									</form>
+									<a data-toggle="modal" class="btn btn-danger" data-target="#denuncia">Denunciar</a>
+																			<!-- Modal -->
+									<div class="modal fade" id="denuncia" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+													<h4 class="modal-title" id="myModalLabel">Escolha o motivo da denúncia</h4>
+												</div>
+												<div class="modal-body">
+													<form action="" method="post">
+														<input type="hidden" name="idDenunciado" value="<?php echo $dadosAnimal->idProprietario ?>">
+														<input type="hidden" name="idDenunciador" value="<?php echo $_SESSION['usuarioCliente']->id;?>">
+														<select name="motivo-denuncia" class="form-control">
+															<option value="Fotos Indevidas<">Fotos Indevidas</option>
+															<option value="Descrição Indevida">Descrição Indevida</option>
+															<option value="Esse animal não pertence a ele(a)">Esse animal não pertence a ele(a)</option>
+														</select>
+														<br>
+														<input type="submit" value="Efetuar denuncia" class="btn btn-danger" name="denunciar-anuncio">
+													</form>
+												</div>
+											</div>
+										</div>
+									</div>	
 								</div>
 							</div>
 							<!-- / Denuncia -->
