@@ -13,7 +13,7 @@ class DAOComentarios extends Dao {
 	public $table = "comentario";
 
 	public function insert(){
-		$sql  = "INSERT INTO $this->table (data, idAnimal, idProprietario, depoimento) VALUES (:data, :idAnimal, :idProprietario, :depoimento)";
+		$sql  = "INSERT INTO $this->table (data, idAnimal, idProprietario, depoimento, status) VALUES (:data, :idAnimal, :idProprietario, :depoimento, :status)";
 		$stmt = DB::prepare($sql);
 		$stmt->bindParam(':data', $this->data);
 		$stmt->bindParam(':idAnimal', $this->idAnimal);
@@ -24,12 +24,13 @@ class DAOComentarios extends Dao {
 	 }
 
 	public function update($id){
-		$sql  = "UPDATE $this->table SET data = :data, idAnimal = :idAnimal, idProprietario = :idProprietario, depoimento = :depoimento  WHERE id = :id";
+		$sql  = "UPDATE $this->table SET data = :data, idAnimal = :idAnimal, idProprietario = :idProprietario, depoimento = :depoimento, status = :status  WHERE id = :id";
 		$stmt = DB::prepare($sql);
 		$stmt->bindParam(':data', $this->data);
 		$stmt->bindParam(':idAnimal', $this->idAnimal);
 		$stmt->bindParam(':idProprietario', $this->idProprietario);
 		$stmt->bindParam(':depoimento', $this->depoimento);
+		$stmt->bindParam(':status', $this->status);
 		return $stmt->execute();
 	}
 
