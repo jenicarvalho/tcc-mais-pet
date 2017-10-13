@@ -71,13 +71,10 @@
 						<div class="content col-md-8 col-md-8 col-md-offset-1 col-md-push-3">
 							
 							<!-- Informações do animal -->
-							<div class="job-profile-info">
-
-								
+							<div class="job-profile-info">								
 		       					 <?php
 
 		       					 	// Variaveis de controle do usuario
-
 				                    if($successDenuncia == true) {?>
 				                      <div class="alert alert-success alert-dismissable">
 				                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="fa fa-times"></i></button>
@@ -129,8 +126,22 @@
 
 										<div class="spacer-lg"></div>
 								
-										<a href="#" class="btn btn-warning btn-lg"  data-toggle="modal" data-target="#bsModal1"><span class="fa fa-envelope"></span> Notificar Contato</a>
+									<?php if ( isset($_SESSION['usuarioCliente']) ) : ?>
 
+										<a class="btn btn-warning btn-lg"  data-toggle="modal" data-target="#bsModal1"><span class="fa fa-envelope"></span> Notificar Contato</a>
+									<?php else : ?>
+
+				                      <div class="alert alert-danger alert-dismissable">
+				                        <strong>Para entrar em contato você precisa estar logado!</strong>  <br>
+				                        <a href="?pagina=login">
+				                        	<strong>Faça o login</strong>
+				                        </a> ou 
+				                        <a href="?pagina=signup">
+				                        	<strong>crie uma conta de graça :)</strong>
+				                        </a>
+				                      </div>
+
+									<?php endif ?>
 
 										<!-- Modal -->
 										<div class="modal fade" id="bsModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
