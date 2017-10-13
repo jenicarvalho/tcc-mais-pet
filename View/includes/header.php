@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="assets/css/theme.css">
   <link rel="stylesheet" href="assets/css/theme-elements.css">
   <link rel="stylesheet" href="assets/css/animate.min.css">
+  <link rel="stylesheet" href="assets/css/custom.css">
   <!-- Head Libs -->
   <script src="assets/vendor/modernizr.js"></script>
 
