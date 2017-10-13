@@ -21,7 +21,7 @@
                 <div class="job_listings">           
 
                 <ul class="job_listings">
-                  <?php foreach( $animal->findAll() as $key => $valor) : ?>
+                  <?php foreach( $animal->findAllMeusAnimais($idcliente) as $key => $valor) : ?>
 
                     <?php 
                       $tipo = $valor->tipo;

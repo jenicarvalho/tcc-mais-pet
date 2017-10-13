@@ -12,6 +12,8 @@ if ( isset($_SESSION['usuarioCliente']) ) :
     require_once "Model/Animais.php";
     require_once "Controller/LoginController.php";
 
+    $idcliente = $_SESSION['usuarioCliente']->id;
+
     $animal = new Animais();
     require_once "view/includes/header-dashboard.php";
 ?>
@@ -31,7 +33,7 @@ if ( isset($_SESSION['usuarioCliente']) ) :
                 <div class="job_listings">           
 
                 <ul class="job_listings">
-                  <?php foreach( $animal->findAll() as $key => $valor) : ?>
+                  <?php foreach( $animal->findAllMeusAnimais($idcliente) as $key => $valor) : ?>
 
                     <?php 
                       $tipo = $valor->tipo;
