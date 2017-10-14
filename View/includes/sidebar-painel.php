@@ -44,7 +44,7 @@
                       <i class="fa fa-sign-out contactIcons" aria-hidden="true"></i>
                     </div>
                     <div class="col-md-10 col-sm-10">
-                      <p><a href="?logout=true">Sair</a></p>
+                      <p><a href="?logout=true">Deslogar</a></p>
                     </div>
                   </div>
 
