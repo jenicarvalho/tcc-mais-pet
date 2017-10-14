@@ -38,5 +38,4 @@ if( isset($_POST['fazerLogin']) ) {
 //Logout
 if (isset($_GET['logout']) == true) {
     unset($_SESSION['usuarioCliente']);
-    header('Location: http://localhost/maispet/?pagina=login');
 }
