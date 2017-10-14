@@ -16,25 +16,25 @@
           <div class="row">
             <div class="content col-md-8 col-md-8 col-md-offset-1 col-md-push-3">
 
-              <div class="alert alert-info">
-                <strong>Atenção!</strong> Ao cadastrar um animal ele automaticamente será anunciado.
-              </div>
                 <?php
 
-                    if($success == true) {?>
+                    if($success == true) :?>
                       <div class="alert alert-success alert-dismissable">
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="fa fa-times"></i></button>
                         <strong>Anúncio Realizado!</strong> Seu animal foi cadastrado e agora você esta pronto para receber contatos.
                       </div>
+
+                      <a href="?pagina=novo_anuncio" class="btn btn-success">Cadastrar Novo Animal</a>
                     <?php
-                  }
-                ?>              
+                  else :
+                ?>        
+              <div class="alert alert-info">
+                <strong>Atenção!</strong> Ao cadastrar um animal ele automaticamente será anunciado.
+              </div>      
               <!-- Profile Form -->
               <form method="post" id="submit-job-form" class="job-manager-form" enctype="multipart/form-data">
                 
                 <h3>Cadastre abaixo um novo anúncio de animal</h3>
-                
-
 
                 <!-- Job Information Fields -->
                 <fieldset class="fieldset-job_title">
@@ -182,6 +182,9 @@
 
               </form>
               <!-- Profile Form / End -->
+
+            <?php endif; ?>
+
             </div>
 
             <?php require_once "view/includes/sidebar-painel.php"; ?>
