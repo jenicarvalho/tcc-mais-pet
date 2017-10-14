@@ -1,3 +1,8 @@
+<?php
+  if (isset($_GET['logout']) == true) {
+      unset($_SESSION['usuarioCliente']);
+  }
+?>
 <!DOCTYPE html>
 <html class="not-ie no-js" lang="pt-br">
 <head>
