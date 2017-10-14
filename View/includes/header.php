@@ -76,7 +76,7 @@
               <ul class="header-top-nav header-top-nav__tertiary">
                 <li><a href="?pagina=signup"><i class="fa-pencil-square-o fa"></i> Crie sua conta</a></li>
                 <?php if ( isset($_SESSION['usuarioCliente']) ) : ?>
-                <li><a href="?pagina=painel_cliente"><i class="fa-sign-in fa"></i> Acessar Painel</a></li>
+                <li><a href="?pagina=painel_cliente"><i class="fa-sign-in fa"></i> Minha conta</a></li>
               <?php else :  ?>
                 <li><a href="?pagina=login"><i class="fa-lock fa"></i> Faça login</a></li>
               <?php endif ?>
@@ -122,11 +122,14 @@
       <nav class="nav-main">
         <div class="container">
           <ul data-breakpoint="992" class="flexnav">
-            <li><a href="?pagina=index">Inicial</a></li>
+            <li><a href="?pagina=index">Início</a></li>
             <li><a href="?pagina=lista-animais">Ver todos os animais</a></li>
             <li><a href="?pagina=profissionais">Profissionais</a></li>
             <li><a href="?pagina=mantenedora">Mantenedora</a></li>
-            <li><a href="?pagina=contato">Contato</a></li>
+            <li><a href="?pagina=contato">Entre em Contato</a></li>
+            <?php if ( isset($_SESSION['usuarioCliente']) ) : ?>
+              <li class="destaque"><a href="?pagina=novo_anuncio">Anunciar novo animal</a></li>
+            <?php endif ?>
           </ul>
         </div>
       </nav>      

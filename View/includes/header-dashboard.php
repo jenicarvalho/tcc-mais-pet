@@ -2,7 +2,7 @@
 <html class="not-ie no-js" lang="pt-br">
 <head>
   <meta charset="utf-8">
-  <title>Mais Pet : Painel :</title>
+  <title>.: Painel :. Mais Pet </title>
   <meta name="description" content="Mais Pet">
   <meta name="author" content="Jeniffer Carvalho">
   <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
@@ -93,10 +93,9 @@ $resultado = $proprietario->find($idcliente);
       <nav class="nav-main dashboard">
         <div class="container">
           <ul data-breakpoint="992" class="flexnav">
-            <li><a href="?pagina=painel_cliente">Inicio</a></li>
+            <li><a href="?pagina=painel_cliente">Início</a></li>
             <li><a href="?pagina=painel_perfil">Meu Perfil</a></li>
             <li><a href="?pagina=painel_anuncios">Meus Anúncios</a></li>
-            <li><a href="?pagina=perfis_bloqueados">Perfis Bloqueados</a></li>
             <li><a href="?pagina=painel_comentarios">Comentários</a></li>
             <li><a href="?pagina=index">Voltar ao Site</a></li>
             <li class="destaque"><a href="?pagina=novo_anuncio">Anunciar novo animal</a></li>
