@@ -133,6 +133,7 @@
                       <label for="job_category">Raça</label>
                       <div class="field select-style">
                         <select name="animal_raca"  class="form-control" required>
+                          <option value="<?php echo utf8_encode($resultadoAnimal->raca);?>" selected><?php echo utf8_encode($resultadoAnimal->raca);?></option>
                           <option value="Akita">Akita</option>
                           <option value="Beagle">Beagle</option>
                           <option value="Basset">Basset</option>
@@ -157,7 +158,7 @@
                     <fieldset class="fieldset-job_category">
                       <label for="job_category">Raça</label>
                       <div class="field select-style">
-                        <select name="animal_raca"  class="form-control" required>
+                        <select name="animal_raca"  class="form-control" required>    <option value="<?php echo utf8_encode($resultadoAnimal->raca);?>" selected><?php echo utf8_encode($resultadoAnimal->raca);?></option>
                           <option value="Angorá">Angorá</option>
                           <option value="Himalaio">Himalaio</option>
                           <option value="British Shorthair">British Shorthair</option>
