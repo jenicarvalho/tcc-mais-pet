@@ -37,7 +37,7 @@
 			                <h2 class="with-subtitle" data-animation="fadeInUp" data-animation-delay="0">Últimos Animais <small data-animation="fadeInUp" data-animation-delay="100">Confira os animais que recém chegaram!</small></h2>
 			                <div class="row">
 
-                  			<?php foreach( $animal->findAllCustom("LIMIT 9") as $key => $valor) : ?>
+                  			<?php foreach( $animal->findAllCustom("ORDER BY idAnimal DESC LIMIT 12") as $key => $valor) : ?>
 
                   			<?php $nomeProprietario = $proprietario->find(utf8_encode($valor->idProprietario))?>
 
