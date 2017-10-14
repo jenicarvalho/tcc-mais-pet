@@ -28,6 +28,9 @@
           
           <div class="row">
             <div class="col-md-8 col-sm-offset-2">
+              <div class="alert alert-info">
+                <strong>Não tem uma conta? <a href="?pagina=signup">Clique aqui</a></strong> e faça seu cadastro gratuito.
+              </div>      
               <div class="box">
                 <h3>Login</h3>
                 <form method="POST" role="form">
