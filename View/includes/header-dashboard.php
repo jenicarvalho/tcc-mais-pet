@@ -83,6 +83,7 @@ $resultado = $proprietario->find($idcliente);
             <div class="head-info usuario-info">
               <ul class="head-info-list">
                 <li><span>Bem vindo(a)</span> <?php echo utf8_encode($resultado->nome) ?>!</li>
+                <li class="pull-right"><a href="?pagina=index">Voltar ao site</a></li>
               </ul>
             </div>
             <!-- Banner / End -->
