@@ -796,7 +796,7 @@ body.bg1 {
   font-size: 14px;
 }
 .header-menu-fullw .header-main .head-info .head-info-list > li {
-  display: inline-block;
+  display: block;
   padding-left: 5px;
   padding-right: 5px;
 }
@@ -2903,6 +2903,10 @@ nav.nav-main.dashboard .flexnav > li:first-child > a {
 
 .alert-danger a {
   color: #bb3737 !important;
+}
+
+.alert-info a {
+  color: #0964bd !important;
 }
 
 /* List */
