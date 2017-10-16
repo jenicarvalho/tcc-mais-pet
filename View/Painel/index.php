@@ -10,12 +10,21 @@
 if ( isset($_SESSION['usuarioCliente']) ) : 
   
     require_once "Model/Animais.php";
-    require_once "Controller/LoginController.php";
+    $animal = new Animais();
 
+    require_once "Controller/LoginController.php";
     $idcliente = $_SESSION['usuarioCliente']->id;
 
-    $animal = new Animais();
     require_once "view/includes/header-dashboard.php";
+
+    require_once "Model/Comentarios.php";
+    $comentario = new Comentarios();
+
+    require_once "Model/Proprietarios.php";
+    $proprietario = new Proprietarios();
+    
+    $idcliente = $_SESSION['usuarioCliente']->id;
+
 ?>
 
     <!-- Main -->
@@ -30,10 +39,10 @@ if ( isset($_SESSION['usuarioCliente']) ) :
               <div class="title-accent">
                 <h3>Meus anúncios</h3>
               </div>
-                <div class="job_listings">           
+              <div class="job_listings">           
 
                 <ul class="job_listings">
-                  <?php foreach( $animal->findAllMeusAnimais($idcliente) as $key => $valor) : ?>
+                  <?php foreach( $animal->findAllMeusAnimaisLimit($idcliente) as $key => $valor) : ?>
 
                     <?php 
                       $tipo = $valor->tipo;
@@ -79,6 +88,45 @@ if ( isset($_SESSION['usuarioCliente']) ) :
                 </ul>
               </div>
 
+              <div class="title-accent">
+                <h3>Comentários Recebidos</h3>
+              </div>
+                <?php 
+                  foreach( $comentario->findAllComentarios($idcliente) as $key => $valor): 
+                    $animalObj = $animal->findAnimal($valor->idAnimal);
+                    $proprietarioObj = $proprietario->find($valor->idProprietario);
+                ?>                
+                <div class="col-md-12" style="margin-bottom: 50px">
+                  <hr class="visible-sm visible-xs lg">
+                  <div class="testimonial">
+                    <blockquote>
+                      <p><?php echo $valor->depoimento ?></p>
+                    </blockquote>
+                    <div class="bq-author">
+                      <figure class="author-img">
+                        <img src="uploads/animais/<?php echo $animalObj->fotoAnimal ?>" alt="?php echo $animalObj->nomeAnimal ?>" width="60" height="60">
+                      
+                      <?php if($valor->status == 0 ) : ?>
+                        <br>
+                        <form action="" method="post">
+                          <input type="hidden" name="aceitar" value="sim">
+                          <input type="hidden" name="idComentario" value="<?php echo $valor->id?>">
+                          <input type="submit" class="btn btn-success btn-sm" style="margin: 10px 0;" value="Aceitar" name="comentario-status">
+                        </form>
+                      <?php endif; ?>
+
+                        <form action="" method="post">
+                          <input type="hidden" name="aceitar" value="nao">
+                          <input type="hidden" name="idComentario" value="<?php echo $valor->id?>">
+                          <input type="submit" class="btn btn-danger btn-sm" style="margin: 10px 0;" value="Excluir" name="comentario-status">
+                        </form>
+                      </figure>
+                      <h6><?php echo utf8_encode($proprietarioObj->nome) ?> </h6>
+                      <span class="bq-author-info">Comentou no anúncio do <?php echo $animalObj->nomeAnimal ?> </span>
+                    </div>
+                  </div>
+                </div>                
+                <?php endforeach?>
             </div>
 
             <?php require_once "view/includes/sidebar-painel.php"; ?>
