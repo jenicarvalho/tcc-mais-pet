@@ -1,6 +1,10 @@
 <?php
     require_once "view/includes/header-dashboard.php";
 
+    $aceitaDepoimento = false;
+    $excluiDepoimento = false;
+    require_once "Controller/ComentarioController.php";
+
     require_once "Model/Comentarios.php";
     $comentario = new Comentarios();
 
@@ -27,13 +31,32 @@
                 <h3>Comentários Recebidos</h3>
               </div>
               <div class="row">
-                
+             <?php
+                  // Variaveis de controle do usuario
+                if($aceitaDepoimento == true) {?>
+                    <div class="alert alert-success alert-dismissable">
+                      <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="fa fa-times"></i></button>
+                      <strong>Comentário aceito com sucesso!</strong> <br>
+                      Agora esse comentário estará disponível em seu anúncio.
+                    </div>
+                  <?php
+                }        
+
+                if($excluiDepoimento == true) {?>
+                    <div class="alert alert-success alert-dismissable">
+                      <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="fa fa-times"></i></button>
+                      <strong>Comentário excluído com sucesso!</strong> <br>
+                      Esse comentário foi excluído e não será mostrado no anúncio.
+                    </div>
+                  <?php
+                }
+                ?>                  
                 <?php 
-                    foreach( $comentario->findAllDepoimentos($idcliente) as $key => $valor): 
+                    foreach( $comentario->findAllComentarios($idcliente) as $key => $valor): 
                       $animalObj = $animal->findAnimal($valor->idAnimal);
                       $proprietarioObj = $proprietario->find($valor->idProprietario);
                 ?>                
-                <div class="col-md-12">
+                <div class="col-md-12" style="margin-bottom: 50px">
                   <hr class="visible-sm visible-xs lg">
                   <div class="testimonial">
                     <blockquote>
@@ -41,11 +64,22 @@
                     </blockquote>
                     <div class="bq-author">
                       <figure class="author-img">
-                        <img src="uploads/animais/<?php echo $animalObj->fotoAnimal ?>" alt="?php echo $animalObj->nomeAnimal ?>" width="60">
+                        <img src="uploads/animais/<?php echo $animalObj->fotoAnimal ?>" alt="?php echo $animalObj->nomeAnimal ?>" width="60" height="60">
+                      
+                      <?php if($valor->status == 0 ) : ?>
                         <br>
-                        <a href="#" class="btn btn-success btn-sm" style="margin: 10px 0;">Aceitar</a>
-                        <br>
-                        <a href="#" class="btn btn-danger btn-sm">Excluir </a>
+                        <form action="" method="post">
+                          <input type="hidden" name="aceitar" value="sim">
+                          <input type="hidden" name="idComentario" value="<?php echo $valor->id?>">
+                          <input type="submit" class="btn btn-success btn-sm" style="margin: 10px 0;" value="Aceitar" name="comentario-status">
+                        </form>
+                      <?php endif; ?>
+
+                        <form action="" method="post">
+                          <input type="hidden" name="aceitar" value="nao">
+                          <input type="hidden" name="idComentario" value="<?php echo $valor->id?>">
+                          <input type="submit" class="btn btn-danger btn-sm" style="margin: 10px 0;" value="Excluir" name="comentario-status">
+                        </form>
                       </figure>
                       <h6><?php echo utf8_encode($proprietarioObj->nome) ?> </h6>
                       <span class="bq-author-info">Comentou no anúncio do <?php echo $animalObj->nomeAnimal ?> </span>
