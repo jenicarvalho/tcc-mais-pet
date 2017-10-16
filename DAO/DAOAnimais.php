@@ -55,6 +55,16 @@ class DAOAnimais extends Dao {
 		return $stmt->fetchAll();
 	}
 
+	//retorna todos os itens com limit
+	public function findAllMeusAnimaisLimit($idProprietario) {
+		$sql = "SELECT * FROM $this->table WHERE idProprietario = :idProprietario LIMIT 3";
+		$stmt = DB::prepare($sql);
+		$stmt->bindParam(':idProprietario', $idProprietario, PDO::PARAM_INT);
+		$stmt->execute();
+		return $stmt->fetchAll();
+	}
+
+
 	//deleta o item
 	public function deleteAnimal($idAnimal) {
 		$sql = "DELETE FROM $this->table WHERE idAnimal = :idAnimal";
