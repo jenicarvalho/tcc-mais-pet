@@ -19,6 +19,7 @@ class DAOComentarios extends Dao {
 		$stmt->bindParam(':idAnimal', $this->idAnimal);
 		$stmt->bindParam(':idProprietario', $this->idProprietario);
 		$stmt->bindParam(':depoimento', $this->depoimento);
+		$stmt->bindParam(':status', $this->status);
 
 		return $stmt->execute(); 
 	 }
@@ -31,14 +32,32 @@ class DAOComentarios extends Dao {
 		$stmt->bindParam(':idProprietario', $this->idProprietario);
 		$stmt->bindParam(':depoimento', $this->depoimento);
 		$stmt->bindParam(':status', $this->status);
+		$stmt->bindParam(':id', $id);
+		return $stmt->execute();
+	}
+
+	public function updateStatus($id){
+		$sql  = "UPDATE $this->table SET status = :status  WHERE id = :id";
+		$stmt = DB::prepare($sql);
+		$stmt->bindParam(':status', $this->status);
+		$stmt->bindParam(':id', $id);
 		return $stmt->execute();
 	}
 
 	//retorna todos os itens
-	public function findAllDepoimentos($idProprietario) {
+	public function findAllComentarios($idProprietario) {
 		$sql = "SELECT * FROM $this->table WHERE idProprietario = :idProprietario";
 		$stmt = DB::prepare($sql);
 		$stmt->bindParam(':idProprietario', $idProprietario, PDO::PARAM_INT);
+		$stmt->execute();
+		return $stmt->fetchAll();
+	}
+
+	//retorna todos os itens
+	public function findAllComentariosDoAnimal($idAnimal) {
+		$sql = "SELECT * FROM $this->table WHERE idAnimal = :idAnimal and status = 1";
+		$stmt = DB::prepare($sql);
+		$stmt->bindParam(':idAnimal', $idAnimal, PDO::PARAM_INT);
 		$stmt->execute();
 		return $stmt->fetchAll();
 	}

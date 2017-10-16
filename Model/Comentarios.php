@@ -15,6 +15,7 @@ class Comentarios extends DAOComentarios {
 	public $idAnimal;
 	public $idProprietario;
 	public $depoimento;
+	public $status;
 
 	public function setData($data){
 		$this->data = $data;
@@ -46,6 +47,14 @@ class Comentarios extends DAOComentarios {
 
 	public function getIdProprietario(){
 		return $this->idProprietario;
+	}
+
+	public function setStatus($status){
+		$this->status = $status;
+	}
+
+	public function getStatus(){
+		return $this->status;
 	}
 
 }
