@@ -168,6 +168,35 @@
 								
 								<h4>Descrição</h4>
 								<p><?php echo utf8_encode($dadosAnimal->descricao)?></p>
+
+								<hr>
+
+
+								<h4>Comentários</h4>
+								<div class="comentarios">					
+									<div class="owl-testimonials-listings-wrapper">
+										<div class="owl-carousel owl-theme owl-testimonials-listings">
+							                <?php 
+							                    foreach( $comentario->findAllComentariosDoAnimal($codigoAnimal) as $key => $valor): 
+							                      $animalObj = $animal->findAnimal($valor->idAnimal);
+							                      $proprietarioObj = $proprietario->find($valor->idProprietario);
+							                ?>                
+						                  <hr class="visible-sm visible-xs lg">
+						                  <div class="testimonial">
+						                    <blockquote>
+						                      <p><?php echo $valor->depoimento ?></p>
+						                    </blockquote>
+						                    <div class="bq-author">
+						                      <h6><?php echo utf8_encode($proprietarioObj->nome) ?> </h6>
+						                      <span class="bq-author-info">Comentou no anúncio do <?php echo $animalObj->nomeAnimal ?> </span>
+						                    </div>
+						                  </div>									
+				              			<?php endforeach?>
+										</div>             
+									</div>             
+								</div>             
+									
+								<hr>
 								
 								<?php if ( isset($_SESSION['usuarioCliente']) ) : ?>
 
